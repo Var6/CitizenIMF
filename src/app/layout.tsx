@@ -1,22 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { Analytics } from "@vercel/analytics/react";
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Citizen IMF",
-  description: "One Stop Solution for All Your Financial Needs",
+  title: "CitizenIMF - Your Trusted Insurance Partner",
+  description: "Compare and buy insurance policies for health, motor, life, and travel. Get the best insurance coverage at affordable rates.",
   icons: {
     icon: "/logo.png",
     shortcut: "/logo.png",
@@ -31,15 +24,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
-      >
-        <main>
+      <body className={inter.className}>
         <Navbar />
-        {children}
-        <Footer/>
-        </main>
-        <Analytics/>
+        <main className="min-h-screen">{children}</main>
+        <Footer />
+        <Analytics />
       </body>
     </html>
   );

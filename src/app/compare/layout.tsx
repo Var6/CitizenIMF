@@ -1,7 +1,7 @@
-export default function AboutLayout({
+export default function CompareLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return <>{children}</>;
-}
+} 

@@ -10,8 +10,9 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
-    "@heroicons/react": "^2.1.1",
+    "@heroicons/react": "^2.2.0",
     "@hookform/resolvers": "^3.3.4",
+    "@material-tailwind/react": "^2.1.10",
     "@stripe/stripe-js": "^2.4.0",
     "@vercel/analytics": "^1.5.0",
     "analytics": "github:vercel/analytics",

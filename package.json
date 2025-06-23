@@ -1,46 +1,25 @@
 {
-  "name": "citizen-imf",
+  "name": "my-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.18",
-    "@heroicons/react": "^2.2.0",
-    "@hookform/resolvers": "^3.3.4",
-    "@material-tailwind/react": "^2.1.10",
-    "@stripe/stripe-js": "^2.4.0",
-    "@vercel/analytics": "^1.5.0",
-    "analytics": "github:vercel/analytics",
-    "autoprefixer": "^10.4.0",
-    "axios": "^1.6.7",
-    "clsx": "^2.1.1",
-    "lucide-react": "^0.507.0",
-    "motion": "^12.9.4",
-    "next": "15.3.1",
-    "next-auth": "^4.24.5",
+    "motion": "^12.18.1",
+    "next": "15.3.4",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-hook-form": "^7.50.1",
-    "react-responsive-carousel": "^3.2.23",
-    "stripe": "^14.17.0",
-    "tailwind-merge": "^3.2.0",
-    "tailwindcss": "^4.0.0",
-    "zod": "^3.22.4",
-    "zustand": "^4.5.0"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.3",
-    "tailwindcss": "^4.1.5",
+    "tailwindcss": "^4",
     "typescript": "^5"
   }
 }

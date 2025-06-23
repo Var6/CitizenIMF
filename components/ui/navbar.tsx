@@ -17,9 +17,9 @@ export default function Navbar() {
         {
           category: 'Health Insurance',
           links: [
-            { name: 'Personal Health Insurance', href: '/products#health' },
-            { name: 'Family Health Insurance', href: '/products#family-health' },
-            { name: 'Critical Illness Plans', href: '/products#critical-illness' },
+            { name: 'Personal Health Insurance', href: '/products/health-insurance' },
+            { name: 'Family Health Insurance', href: '/products/health-insurance' },
+            { name: 'Critical Illness Plans', href: '/products/health-insurance' },
             { name: 'Health Calculator', href: '/calculators/health' },
           ]
         },

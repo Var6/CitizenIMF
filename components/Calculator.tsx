@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { motion } from "motion/react"
 
-type TabKey = 'health' | 'car' | 'life' | 'investment';
+type TabKey = 'health' | 'car' | 'life' | 'travel' | 'shop' | 'marine';
 
 type HealthForm = {
   age: string;
@@ -15,6 +15,7 @@ type HealthForm = {
 };
 
 type CarForm = {
+  vehicleType: string;
   carBrand: string;
   carModel: string;
   fuelType: string;
@@ -34,12 +35,32 @@ type LifeForm = {
   mobile: string;
 };
 
-type InvestmentForm = {
-  age: string;
-  monthlyIncome: string;
-  investmentAmount: string;
-  investmentGoal: string;
-  riskProfile: string;
+type TravelForm = {
+  destination: string;
+  tripDuration: string;
+  travelers: string;
+  coverageAmount: string;
+  tripType: string;
+  name: string;
+  mobile: string;
+};
+
+type ShopForm = {
+  businessType: string;
+  shopArea: string;
+  stockValue: string;
+  location: string;
+  coverageType: string;
+  name: string;
+  mobile: string;
+};
+
+type MarineForm = {
+  cargoType: string;
+  cargoValue: string;
+  origin: string;
+  destination: string;
+  transportMode: string;
   name: string;
   mobile: string;
 };
@@ -48,10 +69,12 @@ type FormData = {
   health: HealthForm;
   car: CarForm;
   life: LifeForm;
-  investment: InvestmentForm;
+  travel: TravelForm;
+  shop: ShopForm;
+  marine: MarineForm;
 };
 
-export default function PremiumCalculatorSection() {
+export default function InsurancePremiumCalculator() {
   const [activeTab, setActiveTab] = useState<TabKey>('health')
   const [formData, setFormData] = useState<FormData>({
     health: {
@@ -63,6 +86,7 @@ export default function PremiumCalculatorSection() {
       mobile: ''
     },
     car: {
+      vehicleType: 'car',
       carBrand: '',
       carModel: '',
       fuelType: 'petrol',
@@ -80,12 +104,30 @@ export default function PremiumCalculatorSection() {
       name: '',
       mobile: ''
     },
-    investment: {
-      age: '',
-      monthlyIncome: '',
-      investmentAmount: '1000',
-      investmentGoal: 'retirement',
-      riskProfile: 'moderate',
+    travel: {
+      destination: '',
+      tripDuration: '7',
+      travelers: '1',
+      coverageAmount: '1',
+      tripType: 'leisure',
+      name: '',
+      mobile: ''
+    },
+    shop: {
+      businessType: 'retail',
+      shopArea: '500',
+      stockValue: '5',
+      location: '',
+      coverageType: 'comprehensive',
+      name: '',
+      mobile: ''
+    },
+    marine: {
+      cargoType: 'general',
+      cargoValue: '5',
+      origin: '',
+      destination: '',
+      transportMode: 'sea',
       name: '',
       mobile: ''
     }
@@ -97,28 +139,42 @@ export default function PremiumCalculatorSection() {
       name: 'Health Insurance',
       icon: '🏥',
       color: 'from-green-500 to-emerald-500',
-      description: 'Get instant health insurance quotes'
+      description: 'Medical coverage for you and family'
     },
     {
       id: 'car',
-      name: 'Car Insurance',
+      name: 'Motor Insurance',
       icon: '🚗',
       color: 'from-blue-500 to-cyan-500',
-      description: 'Compare car insurance premiums'
+      description: 'Car & bike insurance quotes'
     },
     {
       id: 'life',
       name: 'Life Insurance',
       icon: '💝',
       color: 'from-purple-500 to-pink-500',
-      description: 'Calculate life insurance coverage'
+      description: 'Life protection for your family'
     },
     {
-      id: 'investment',
-      name: 'Investment Plans',
-      icon: '📈',
-      color: 'from-orange-500 to-red-500',
-      description: 'Plan your investment journey'
+      id: 'travel',
+      name: 'Travel Insurance',
+      icon: '✈️',
+      color: 'from-yellow-500 to-orange-500',
+      description: 'Coverage for domestic & international trips'
+    },
+    {
+      id: 'shop',
+      name: 'Shop Insurance',
+      icon: '🏪',
+      color: 'from-indigo-500 to-purple-500',
+      description: 'Business & shop protection'
+    },
+    {
+      id: 'marine',
+      name: 'Marine Cargo',
+      icon: '🚢',
+      color: 'from-teal-500 to-blue-500',
+      description: 'Cargo transit insurance'
     }
   ]
 
@@ -160,12 +216,12 @@ export default function PremiumCalculatorSection() {
           onChange={(e) => handleInputChange('health', 'members', e.target.value)}
           className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent"
         >
-          <option value="1">Self</option>
-          <option value="2">Self + Spouse</option>
-          <option value="3">Self + Spouse + 1 Child</option>
-          <option value="4">Self + Spouse + 2 Children</option>
-          <option value="5">Self + Parents</option>
-          <option value="6">Entire Family</option>
+          <option value="1">Individual</option>
+          <option value="2">Couple</option>
+          <option value="3">Family (3 members)</option>
+          <option value="4">Family (4 members)</option>
+          <option value="5">Family (5 members)</option>
+          <option value="6">Family (6+ members)</option>
         </select>
       </div>
       <div>
@@ -200,7 +256,19 @@ export default function PremiumCalculatorSection() {
   const renderCarForm = () => (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">Car Brand</label>
+        <label className="block text-sm font-medium text-gray-700 mb-2">Vehicle Type</label>
+        <select
+          value={formData.car.vehicleType}
+          onChange={(e) => handleInputChange('car', 'vehicleType', e.target.value)}
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        >
+          <option value="car">Four Wheeler (Car)</option>
+          <option value="bike">Two Wheeler (Bike)</option>
+          <option value="commercial">Commercial Vehicle</option>
+        </select>
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-2">Brand</label>
         <select
           value={formData.car.carBrand}
           onChange={(e) => handleInputChange('car', 'carBrand', e.target.value)}
@@ -213,32 +281,21 @@ export default function PremiumCalculatorSection() {
           <option value="mahindra">Mahindra</option>
           <option value="honda">Honda</option>
           <option value="toyota">Toyota</option>
-          <option value="ford">Ford</option>
+          <option value="bajaj">Bajaj</option>
+          <option value="tvs">TVS</option>
+          <option value="hero">Hero</option>
           <option value="others">Others</option>
         </select>
       </div>
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">Car Model</label>
+        <label className="block text-sm font-medium text-gray-700 mb-2">Model</label>
         <input
           type="text"
           value={formData.car.carModel}
           onChange={(e) => handleInputChange('car', 'carModel', e.target.value)}
-          placeholder="Enter car model"
+          placeholder="Enter vehicle model"
           className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
-      </div>
-      <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">Fuel Type</label>
-        <select
-          value={formData.car.fuelType}
-          onChange={(e) => handleInputChange('car', 'fuelType', e.target.value)}
-          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-        >
-          <option value="petrol">Petrol</option>
-          <option value="diesel">Diesel</option>
-          <option value="cng">CNG</option>
-          <option value="electric">Electric</option>
-        </select>
       </div>
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-2">Registration Year</label>
@@ -316,64 +373,184 @@ export default function PremiumCalculatorSection() {
     </div>
   )
 
-  const renderInvestmentForm = () => (
+  const renderTravelForm = () => (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">Age</label>
+        <label className="block text-sm font-medium text-gray-700 mb-2">Destination</label>
         <select
-          value={formData.investment.age}
-          onChange={(e) => handleInputChange('investment', 'age', e.target.value)}
+          value={formData.travel.destination}
+          onChange={(e) => handleInputChange('travel', 'destination', e.target.value)}
           className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
         >
-          <option value="">Select Age</option>
-          {Array.from({ length: 47 }, (_, i) => i + 18).map(age => (
-            <option key={age} value={age}>{age} years</option>
-          ))}
+          <option value="">Select Destination</option>
+          <option value="domestic">Domestic (India)</option>
+          <option value="asia">Asia</option>
+          <option value="europe">Europe</option>
+          <option value="usa">USA/Canada</option>
+          <option value="worldwide">Worldwide</option>
         </select>
       </div>
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">Monthly Income</label>
+        <label className="block text-sm font-medium text-gray-700 mb-2">Trip Duration</label>
         <select
-          value={formData.investment.monthlyIncome}
-          onChange={(e) => handleInputChange('investment', 'monthlyIncome', e.target.value)}
+          value={formData.travel.tripDuration}
+          onChange={(e) => handleInputChange('travel', 'tripDuration', e.target.value)}
           className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
         >
-          <option value="">Select Income</option>
-          <option value="25000">₹25,000 - ₹50,000</option>
-          <option value="50000">₹50,000 - ₹1,00,000</option>
-          <option value="100000">₹1,00,000 - ₹2,00,000</option>
-          <option value="200000">₹2,00,000 - ₹5,00,000</option>
-          <option value="500000">₹5,00,000+</option>
+          <option value="7">Up to 7 days</option>
+          <option value="15">Up to 15 days</option>
+          <option value="30">Up to 30 days</option>
+          <option value="60">Up to 60 days</option>
+          <option value="90">Up to 90 days</option>
+          <option value="180">Up to 180 days</option>
+          <option value="365">Annual Multi-trip</option>
         </select>
       </div>
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">Monthly Investment</label>
+        <label className="block text-sm font-medium text-gray-700 mb-2">Number of Travelers</label>
         <select
-          value={formData.investment.investmentAmount}
-          onChange={(e) => handleInputChange('investment', 'investmentAmount', e.target.value)}
+          value={formData.travel.travelers}
+          onChange={(e) => handleInputChange('travel', 'travelers', e.target.value)}
           className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
         >
-          <option value="1000">₹1,000</option>
-          <option value="2500">₹2,500</option>
-          <option value="5000">₹5,000</option>
-          <option value="10000">₹10,000</option>
-          <option value="25000">₹25,000</option>
-          <option value="50000">₹50,000+</option>
+          <option value="1">1 Person</option>
+          <option value="2">2 People</option>
+          <option value="3">3 People</option>
+          <option value="4">4 People</option>
+          <option value="5">5+ People</option>
         </select>
       </div>
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">Investment Goal</label>
+        <label className="block text-sm font-medium text-gray-700 mb-2">Coverage Amount</label>
         <select
-          value={formData.investment.investmentGoal}
-          onChange={(e) => handleInputChange('investment', 'investmentGoal', e.target.value)}
+          value={formData.travel.coverageAmount}
+          onChange={(e) => handleInputChange('travel', 'coverageAmount', e.target.value)}
           className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
         >
-          <option value="retirement">Retirement</option>
-          <option value="child-education">Child Education</option>
-          <option value="wealth-creation">Wealth Creation</option>
-          <option value="tax-saving">Tax Saving</option>
-          <option value="emergency-fund">Emergency Fund</option>
+          <option value="1">$1,00,000</option>
+          <option value="2">$2,00,000</option>
+          <option value="5">$5,00,000</option>
+          <option value="10">$10,00,000</option>
         </select>
+      </div>
+    </div>
+  )
+
+  const renderShopForm = () => (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-2">Business Type</label>
+        <select
+          value={formData.shop.businessType}
+          onChange={(e) => handleInputChange('shop', 'businessType', e.target.value)}
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+        >
+          <option value="retail">Retail Shop</option>
+          <option value="grocery">Grocery Store</option>
+          <option value="electronics">Electronics</option>
+          <option value="clothing">Clothing & Textiles</option>
+          <option value="restaurant">Restaurant</option>
+          <option value="medical">Medical Store</option>
+          <option value="office">Office</option>
+          <option value="others">Others</option>
+        </select>
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-2">Shop Area (sq ft)</label>
+        <select
+          value={formData.shop.shopArea}
+          onChange={(e) => handleInputChange('shop', 'shopArea', e.target.value)}
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+        >
+          <option value="500">Up to 500 sq ft</option>
+          <option value="1000">500 - 1000 sq ft</option>
+          <option value="2000">1000 - 2000 sq ft</option>
+          <option value="5000">2000 - 5000 sq ft</option>
+          <option value="10000">Above 5000 sq ft</option>
+        </select>
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-2">Stock Value</label>
+        <select
+          value={formData.shop.stockValue}
+          onChange={(e) => handleInputChange('shop', 'stockValue', e.target.value)}
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+        >
+          <option value="5">₹5 Lakh</option>
+          <option value="10">₹10 Lakh</option>
+          <option value="25">₹25 Lakh</option>
+          <option value="50">₹50 Lakh</option>
+          <option value="100">₹1 Crore</option>
+          <option value="200">₹2 Crore</option>
+        </select>
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-2">Location</label>
+        <input
+          type="text"
+          value={formData.shop.location}
+          onChange={(e) => handleInputChange('shop', 'location', e.target.value)}
+          placeholder="Enter shop location"
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+        />
+      </div>
+    </div>
+  )
+
+  const renderMarineForm = () => (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-2">Cargo Type</label>
+        <select
+          value={formData.marine.cargoType}
+          onChange={(e) => handleInputChange('marine', 'cargoType', e.target.value)}
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+        >
+          <option value="general">General Cargo</option>
+          <option value="electronics">Electronics</option>
+          <option value="textiles">Textiles</option>
+          <option value="machinery">Machinery</option>
+          <option value="food">Food Products</option>
+          <option value="chemicals">Chemicals</option>
+          <option value="automobiles">Automobiles</option>
+          <option value="others">Others</option>
+        </select>
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-2">Cargo Value</label>
+        <select
+          value={formData.marine.cargoValue}
+          onChange={(e) => handleInputChange('marine', 'cargoValue', e.target.value)}
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+        >
+          <option value="5">₹5 Lakh</option>
+          <option value="10">₹10 Lakh</option>
+          <option value="25">₹25 Lakh</option>
+          <option value="50">₹50 Lakh</option>
+          <option value="100">₹1 Crore</option>
+          <option value="200">₹2 Crore</option>
+          <option value="500">₹5 Crore</option>
+        </select>
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-2">Origin</label>
+        <input
+          type="text"
+          value={formData.marine.origin}
+          onChange={(e) => handleInputChange('marine', 'origin', e.target.value)}
+          placeholder="From (City/Port)"
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-2">Destination</label>
+        <input
+          type="text"
+          value={formData.marine.destination}
+          onChange={(e) => handleInputChange('marine', 'destination', e.target.value)}
+          placeholder="To (City/Port)"
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+        />
       </div>
     </div>
   )
@@ -383,7 +560,9 @@ export default function PremiumCalculatorSection() {
       case 'health': return renderHealthForm()
       case 'car': return renderCarForm()
       case 'life': return renderLifeForm()
-      case 'investment': return renderInvestmentForm()
+      case 'travel': return renderTravelForm()
+      case 'shop': return renderShopForm()
+      case 'marine': return renderMarineForm()
       default: return renderHealthForm()
     }
   }
@@ -407,7 +586,7 @@ export default function PremiumCalculatorSection() {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div 
           className="text-center mb-12"
@@ -426,17 +605,17 @@ export default function PremiumCalculatorSection() {
 
         {/* Tab Navigation */}
         <motion.div 
-          className="flex flex-wrap justify-center gap-4 mb-8"
+          className="flex flex-wrap justify-center gap-3 mb-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          {tabs.map((tab, index) => (
+          {tabs.map((tab) => (
             <motion.button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as TabKey)}
-              className={`flex items-center space-x-3 px-6 py-4 rounded-2xl font-semibold transition-all duration-300 ${
+              className={`flex flex-col items-center space-y-1 px-4 py-3 rounded-2xl font-semibold transition-all duration-300 ${
                 activeTab === tab.id
                   ? `bg-gradient-to-r ${tab.color} text-white shadow-lg transform scale-105`
                   : 'bg-white text-gray-700 hover:bg-gray-50 shadow-md hover:shadow-lg'
@@ -445,8 +624,8 @@ export default function PremiumCalculatorSection() {
               whileTap={{ scale: 0.98 }}
             >
               <span className="text-2xl">{tab.icon}</span>
-              <div className="text-left">
-                <div className="font-bold">{tab.name}</div>
+              <div className="text-center">
+                <div className="font-bold text-sm">{tab.name}</div>
                 <div className={`text-xs ${activeTab === tab.id ? 'text-white/80' : 'text-gray-500'}`}>
                   {tab.description}
                 </div>
@@ -511,7 +690,7 @@ export default function PremiumCalculatorSection() {
                 </span>
               </motion.button>
               <p className="text-sm text-gray-500 mt-3">
-                💯 100% Free • 🔒 Secure • ⚡ Instant Quotes
+                100% Free • Secure • Instant Quotes
               </p>
             </div>
           </form>
@@ -530,11 +709,11 @@ export default function PremiumCalculatorSection() {
             <div className="text-gray-600 text-sm">Quick Process</div>
           </div>
           <div className="bg-white rounded-2xl p-6 shadow-lg">
-            <div className="text-3xl font-bold text-green-600 mb-2">25+</div>
+            <div className="text-3xl font-bold text-green-600 mb-2">10+</div>
             <div className="text-gray-600 text-sm">Insurance Partners</div>
           </div>
           <div className="bg-white rounded-2xl p-6 shadow-lg">
-            <div className="text-3xl font-bold text-orange-600 mb-2">1M+</div>
+            <div className="text-3xl font-bold text-orange-600 mb-2">50K+</div>
             <div className="text-gray-600 text-sm">Happy Customers</div>
           </div>
           <div className="bg-white rounded-2xl p-6 shadow-lg">

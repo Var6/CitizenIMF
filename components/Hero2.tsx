@@ -3,51 +3,108 @@
 import Image from 'next/image';
 
 const categories = [
-  { label: "Car", icon: "🚗" },
-  { label: "2 wheeler", icon: "🚲" },
-  { label: "Health", icon: "👨‍⚕️" },
-  { label: "Term", icon: "☂️" },
-  { label: "Family Health", icon: "👨‍👩‍👧‍👦" },
-  { label: "Multi Individual", icon: "🙍" },
-  { label: "Family Travel", icon: "🚢" },
-  { label: "Student Travel", icon: "👨‍🎓" },
-  { label: "Individual Travel", icon: "✈️🧳" },
-  { label: "More", icon: "🪟" },
+  { label: "Car Insurance", icon: "🚗", href: "/products/four-wheeler" },
+  { label: "2 Wheeler", icon: "🏍️", href: "/products/two-wheeler" },
+  { label: "Health Insurance", icon: "🏥", href: "/products/health" },
+  { label: "Life Insurance", icon: "☂️", href: "/insurance/life" },
+  { label: "Travel Insurance", icon: "✈️", href: "/insurance/travel" },
+  { label: "Personal Accident", icon: "🛡️", href: "/products/accident" },
+  { label: "Shop Insurance", icon: "🏪", href: "/insurance/shop" },
+  { label: "Marine Cargo", icon: "🚢", href: "/products/commercial" },
+  { label: "Home Insurance", icon: "🏠", href: "/insurance/home" },
+  { label: "All Insurance", icon: "📋", href: "/insurance" },
 ];
 
 export default function Hero2Section() {
   return (
-    <section className="flex flex-col lg:flex-row items-center bg-[#f7fcfd] py-12 px-4 lg:px-16 gap-8">
-      <div className="flex-1 w-full">
-        <h1 className="text-4xl md:text-5xl font-bold text-[#009ec7] mb-2">
-          Excellent <br /><span className="text-[#08b3e1]">Customer Service</span>
-        </h1>
-        <p className="text-lg text-gray-700 mb-8">Get Best Insurance Plans In Your Budget</p>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {categories.map((cat) => (
-            <div
-              key={cat.label}
-              className="bg-white rounded-xl shadow-md py-6 flex flex-col items-center hover:shadow-lg transition mb-2"
-            >
-              <span className="text-3xl" >{cat.icon}</span>
-              <span className="mt-1 text-sm font-medium text-gray-700">{cat.label}</span>
+    <section className="bg-gradient-to-br from-[#f7fcfd] to-[#e8f8fc] py-16 px-4 lg:px-16">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col lg:flex-row items-center gap-12">
+          
+          {/* Left Content */}
+          <div className="flex-1 w-full">
+            <div className="mb-8">
+              <h1 className="text-4xl md:text-6xl font-bold text-[#009ec7] mb-4 leading-tight">
+                Your Trusted
+                <br />
+                <span className="text-[#08b3e1] bg-gradient-to-r from-[#009ec7] to-[#08b3e1] bg-clip-text text-transparent">
+                  Insurance Partner
+                </span>
+              </h1>
+              <p className="text-xl text-gray-700 mb-2">
+                Get the Best Insurance Plans Tailored to Your Needs
+              </p>
+              <p className="text-lg text-gray-600">
+                Compare & Buy from India's Leading Insurance Companies
+              </p>
             </div>
-          ))}
-        </div>
-      </div>
-      <div className="flex-1 flex flex-col items-center justify-center">
-        <div className="relative">
-          <div className="bg-[#08b3e1] text-white rounded-bl-[100px] rounded-tr-[100px] px-8 py-6 mb-4 shadow-lg w-fit text-left">
-            <span className="text-2xl font-semibold block">Excellent <br />CUSTOMER SERVICE</span>
+
+            {/* Quick Actions */}
+            <div className="flex flex-wrap gap-4 mb-8">
+              <button className="bg-gradient-to-r from-[#009ec7] to-[#08b3e1] text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all">
+                Get Free Quote
+              </button>
+              <button className="border-2 border-[#009ec7] text-[#009ec7] px-6 py-3 rounded-full font-semibold hover:bg-[#009ec7] hover:text-white transition-all">
+                Renew Policy
+              </button>
+            </div>
+
+            {/* Insurance Categories Grid */}
+            <div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-4">Choose Your Insurance Type:</h3>
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+                {categories.map((cat) => (
+                  <a
+                    key={cat.label}
+                    href={cat.href}
+                    className="bg-white rounded-xl shadow-md p-4 flex flex-col items-center hover:shadow-xl hover:scale-105 transition-all duration-200 group cursor-pointer"
+                  >
+                    <span className="text-2xl mb-2 group-hover:scale-110 transition-transform">{cat.icon}</span>
+                    <span className="text-xs font-medium text-gray-700 text-center leading-tight">{cat.label}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
-          <Image
-            src="/illustrations/support-person.svg"
-            alt="Customer Support Illustration"
-            width={220}
-            height={220}
-            className="mx-auto"
-          />
+
+          {/* Right Content */}
+          <div className="flex-1 flex flex-col items-center justify-center">
+            <div className="relative mb-8">
+              <div className="bg-gradient-to-r from-[#009ec7] to-[#08b3e1] text-white rounded-2xl px-8 py-6 shadow-xl transform rotate-3 hover:rotate-0 transition-transform">
+                <div className="text-center">
+                  <span className="text-3xl font-bold block">24/7</span>
+                  <span className="text-lg font-medium">Customer Support</span>
+                </div>
+              </div>
+              <Image
+                src="/Support.png"
+                alt="Customer Support Illustration"
+                width={280}
+                height={280}
+                className="mx-auto mt-4"
+              />
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-6 mb-4">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-[#009ec7]">50K+</div>
+                  <div className="text-sm text-gray-600">Happy Customers</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-[#009ec7]">10+</div>
+                  <div className="text-sm text-gray-600">Insurance Partners</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-[#009ec7]">99%</div>
+                  <div className="text-sm text-gray-600">Claim Settlement</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
     </section>
   );

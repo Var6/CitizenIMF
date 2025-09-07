@@ -4,163 +4,163 @@ import { useState, useEffect, useRef } from 'react'
 import { motion } from "motion/react"
 import Link from 'next/link'
 
-type PlanType = 'individual' | 'family' | 'senior' | 'critical';
+type PlanType = 'thirdparty' | 'comprehensive' | 'standalone' | 'zerodep';
 
-export default function HealthInsurancePage() {
+export default function TwoWheelerInsurancePage() {
   const [formData, setFormData] = useState({
-    age: '',
-    members: '1',
-    sumInsured: '5',
+    vehicleNumber: '',
+    bikeModel: '',
+    manufacturingYear: '',
     city: '',
     name: '',
     mobile: ''
   })
-  const [activeTab, setActiveTab] = useState<PlanType>('individual')
+  const [activeTab, setActiveTab] = useState<PlanType>('comprehensive')
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef(null)
 
   const planTypes = [
     {
-      id: 'individual',
-      name: 'Individual Plans',
-      icon: '👤',
-      description: 'Perfect for single person coverage',
-      startingPrice: '₹150/month*',
+      id: 'thirdparty',
+      name: 'Third Party',
+      icon: '🛡️',
+      description: 'Mandatory basic coverage',
+      startingPrice: '₹1,500/year*',
       color: 'from-blue-500 to-cyan-500'
     },
     {
-      id: 'family',
-      name: 'Family Floater',
-      icon: '👨‍👩‍👧‍👦',
-      description: 'Complete family protection',
-      startingPrice: '₹350/month*',
+      id: 'comprehensive',
+      name: 'Comprehensive',
+      icon: '🔒',
+      description: 'Complete bike protection',
+      startingPrice: '₹2,500/year*',
       color: 'from-green-500 to-emerald-500'
     },
     {
-      id: 'senior',
-      name: 'Senior Citizen',
-      icon: '👴',
-      description: 'Specialized for 60+ age',
-      startingPrice: '₹800/month*',
+      id: 'standalone',
+      name: 'Standalone OD',
+      icon: '⚡',
+      description: 'Own damage coverage only',
+      startingPrice: '₹1,200/year*',
       color: 'from-orange-500 to-red-500'
     },
     {
-      id: 'critical',
-      name: 'Critical Illness',
-      icon: '🏥',
-      description: 'Coverage for serious diseases',
-      startingPrice: '₹200/month*',
+      id: 'zerodep',
+      name: 'Zero Depreciation',
+      icon: '💎',
+      description: 'No depreciation deduction',
+      startingPrice: '₹3,500/year*',
       color: 'from-purple-500 to-pink-500'
     }
   ]
 
   const benefits = [
     {
-      icon: '🏥',
-      title: 'Cashless Treatment',
-      description: 'Get treatment at 10,000+ network hospitals without paying upfront',
+      icon: '🏍️',
+      title: 'Own Damage Cover',
+      description: 'Protection against theft, accidents, natural disasters and fire damage to your bike',
       color: 'from-blue-500 to-cyan-500'
     },
     {
-      icon: '💰',
-      title: 'Tax Benefits',
-      description: 'Save up to ₹46,800 in taxes under Section 80D',
+      icon: '👥',
+      title: 'Third Party Liability',
+      description: 'Legal protection against third-party injury, death and property damage claims',
       color: 'from-green-500 to-emerald-500'
     },
     {
-      icon: '🚑',
-      title: 'Emergency Coverage',
-      description: 'Ambulance charges and emergency medical expenses covered',
+      icon: '🔧',
+      title: 'Cashless Repairs',
+      description: 'Get your bike repaired at 4000+ authorized garages without upfront payment',
       color: 'from-orange-500 to-red-500'
     },
     {
-      icon: '👨‍⚕️',
-      title: 'Pre & Post Hospitalization',
-      description: '30-60 days coverage before and after hospitalization',
+      icon: '🚑',
+      title: 'Roadside Assistance',
+      description: '24/7 emergency roadside assistance including towing and breakdown support',
       color: 'from-purple-500 to-pink-500'
     },
     {
-      icon: '🔄',
+      icon: '💰',
       title: 'No Claim Bonus',
-      description: 'Increase your sum insured by up to 100% for claim-free years',
+      description: 'Save up to 50% on premium renewal for every claim-free year',
       color: 'from-yellow-500 to-orange-500'
     },
     {
-      icon: '⚡',
+      icon: '📱',
       title: 'Instant Policy',
-      description: 'Get your policy issued within 5 minutes online',
+      description: 'Buy bike insurance online in 2 minutes with instant policy issuance',
       color: 'from-indigo-500 to-purple-500'
     }
   ]
 
   const companies = [
-    { name: 'HDFC ERGO', rating: 4.5, claimRatio: '95.1%', logo: '/companies/hdfc-ergo.png' },
-    { name: 'ICICI Lombard', rating: 4.3, claimRatio: '92.8%', logo: '/companies/icici-lombard.png' },
-    { name: 'Niva Bupa', rating: 4.4, claimRatio: '91.2%', logo: '/companies/niva-bupa.png' },
-    { name: 'Care Health', rating: 4.2, claimRatio: '89.5%', logo: '/companies/care-health.png' },
-    { name: 'Star Health', rating: 4.1, claimRatio: '88.9%', logo: '/companies/star-health.png' },
-    { name: 'Bajaj Allianz', rating: 4.0, claimRatio: '87.2%', logo: '/companies/bajaj-allianz.png' }
+    { name: 'HDFC ERGO', rating: 4.5, claimRatio: '96.8%', logo: '/companies/hdfc-ergo.png' },
+    { name: 'ICICI Lombard', rating: 4.4, claimRatio: '95.2%', logo: '/companies/icici-lombard.png' },
+    { name: 'Bajaj Allianz', rating: 4.3, claimRatio: '94.5%', logo: '/companies/bajaj-allianz.png' },
+    { name: 'Reliance General', rating: 4.2, claimRatio: '93.8%', logo: '/companies/reliance-general.png' },
+    { name: 'Tata AIG', rating: 4.1, claimRatio: '92.9%', logo: '/companies/tata-aig.png' },
+    { name: 'Oriental Insurance', rating: 4.0, claimRatio: '91.5%', logo: '/companies/oriental-insurance.png' }
   ]
 
   const coverageFeatures = {
-    individual: [
-      'Individual coverage up to ₹1 Crore',
-      'Cashless treatment at network hospitals',
-      'Pre & post hospitalization coverage',
-      'Day care procedures covered',
-      'Annual health check-up',
-      'No waiting period for accidents'
+    thirdparty: [
+      'Third-party liability coverage up to ₹1 Lakh',
+      'Death/injury coverage up to ₹15 Lakh',
+      'Legal compliance with Motor Vehicle Act',
+      'Basic protection against legal claims',
+      'Mandatory for all two-wheelers',
+      'Most affordable bike insurance option'
     ],
-    family: [
-      'Entire family covered under one policy',
-      'Shared sum insured for all members',
-      'Newborn baby covered from day 1',
-      'Maternity and child care benefits',
-      'Family discount on premium',
-      'Coverage for parents and in-laws'
+    comprehensive: [
+      'Complete own damage + third party coverage',
+      'Theft and burglary protection',
+      'Natural disaster coverage',
+      'Fire and explosion damage',
+      'Cashless repairs at network garages',
+      'Personal accident cover for owner-driver'
     ],
-    senior: [
-      'No upper age limit for renewals',
-      'Pre-existing disease coverage',
-      'Reduced waiting periods',
-      'Special OPD benefits',
-      'Home healthcare services',
-      'Wellness and preventive care'
+    standalone: [
+      'Own damage coverage without third party',
+      'Ideal when you have valid TP policy',
+      'Theft and accident damage protection',
+      'Natural calamity coverage',
+      'Fire and vandalism protection',
+      'Lower premium than comprehensive'
     ],
-    critical: [
-      'Lump sum payout on diagnosis',
-      'Coverage for 30+ critical illnesses',
-      'No restriction on fund usage',
-      'Multiple claim benefit',
-      'Partial payment for early stages',
-      'Income replacement benefit'
+    zerodep: [
+      'Zero depreciation on bike parts',
+      'No deduction in claim settlement',
+      'Full claim amount for new parts',
+      'Available for bikes up to 5 years old',
+      'Maximum claim settlement value',
+      'Premium add-on for comprehensive policy'
     ]
   }
 
   const steps = [
     {
       step: '01',
-      title: 'Fill Details',
-      description: 'Enter your age, family details, and coverage requirements',
-      icon: '📝'
+      title: 'Enter Bike Details',
+      description: 'Provide your bike registration number and basic details',
+      icon: '🏍️'
     },
     {
       step: '02',
-      title: 'Compare Plans',
-      description: 'Get quotes from top insurers and compare benefits',
+      title: 'Compare Quotes',
+      description: 'Get instant quotes from top insurers and compare',
       icon: '🔍'
     },
     {
       step: '03',
       title: 'Choose & Pay',
-      description: 'Select the best plan and make secure online payment',
+      description: 'Select the best plan and complete secure payment',
       icon: '💳'
     },
     {
       step: '04',
       title: 'Get Policy',
-      description: 'Receive your policy document instantly via email',
-      icon: '📧'
+      description: 'Download instant policy certificate and documents',
+      icon: '📱'
     }
   ]
 
@@ -173,8 +173,8 @@ export default function HealthInsurancePage() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log('Health insurance form submitted:', formData)
-    alert('Thank you! We\'ll send you health insurance quotes shortly.')
+    console.log('Two-wheeler insurance form submitted:', formData)
+    alert('Thank you! We\'ll send you two-wheeler insurance quotes shortly.')
   }
 
   useEffect(() => {
@@ -199,7 +199,7 @@ export default function HealthInsurancePage() {
       {/* Animated Background Elements */}
       <div className="fixed inset-0 pointer-events-none">
         <motion.div
-          className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-green-400/10 to-blue-400/10 rounded-full blur-3xl"
+          className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-orange-400/10 to-red-400/10 rounded-full blur-3xl"
           animate={{
             x: [0, 100, 0],
             y: [0, -50, 0],
@@ -212,7 +212,7 @@ export default function HealthInsurancePage() {
           }}
         />
         <motion.div
-          className="absolute top-20 -right-40 w-96 h-96 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-3xl"
+          className="absolute top-20 -right-40 w-96 h-96 bg-gradient-to-br from-blue-400/10 to-cyan-400/10 rounded-full blur-3xl"
           animate={{
             x: [0, -80, 0],
             y: [0, 100, 0],
@@ -227,14 +227,14 @@ export default function HealthInsurancePage() {
       </div>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-green-600 via-blue-600 to-purple-600 text-white relative z-10 overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-orange-600 via-red-600 to-pink-600 text-white relative z-10 overflow-hidden">
         <motion.div 
           className="absolute inset-0 bg-black/10"
           animate={{
             background: [
-              "linear-gradient(45deg, rgba(34,197,94,0.1), rgba(59,130,246,0.1), rgba(168,85,247,0.1))",
-              "linear-gradient(90deg, rgba(59,130,246,0.1), rgba(168,85,247,0.1), rgba(34,197,94,0.1))",
-              "linear-gradient(135deg, rgba(168,85,247,0.1), rgba(34,197,94,0.1), rgba(59,130,246,0.1))"
+              "linear-gradient(45deg, rgba(234,88,12,0.1), rgba(220,38,38,0.1), rgba(219,39,119,0.1))",
+              "linear-gradient(90deg, rgba(220,38,38,0.1), rgba(219,39,119,0.1), rgba(234,88,12,0.1))",
+              "linear-gradient(135deg, rgba(219,39,119,0.1), rgba(234,88,12,0.1), rgba(220,38,38,0.1))"
             ]
           }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
@@ -248,11 +248,11 @@ export default function HealthInsurancePage() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Health Insurance That 
-                <span className="text-transparent bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text"> Actually Cares</span>
+                Two-Wheeler
+                <span className="text-transparent bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text"> Insurance</span>
               </h1>
-              <p className="text-xl text-green-100 mb-8 leading-relaxed">
-                Get comprehensive health coverage starting from ₹150/month. Protect your family with cashless treatment at 10,000+ hospitals across India.
+              <p className="text-xl text-orange-100 mb-8 leading-relaxed">
+                Protect your bike with comprehensive insurance starting from ₹1,500/year. Get instant quotes, cashless repairs at 4000+ garages, and 24/7 roadside assistance.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <motion.button 
@@ -260,28 +260,28 @@ export default function HealthInsurancePage() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Get Free Quote
+                  Get Instant Quote
                 </motion.button>
                 <motion.button 
-                  className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-green-600 transition-colors"
+                  className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-orange-600 transition-colors"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Compare Plans
+                  Renew Policy
                 </motion.button>
               </div>
               <div className="flex items-center space-x-6 text-sm">
                 <div className="flex items-center">
                   <span className="text-2xl mr-2">⚡</span>
-                  <span>5 Min Policy</span>
+                  <span>2 Min Policy</span>
                 </div>
                 <div className="flex items-center">
-                  <span className="text-2xl mr-2">🏥</span>
-                  <span>10,000+ Hospitals</span>
+                  <span className="text-2xl mr-2">🔧</span>
+                  <span>4000+ Garages</span>
                 </div>
                 <div className="flex items-center">
-                  <span className="text-2xl mr-2">💰</span>
-                  <span>Save Taxes</span>
+                  <span className="text-2xl mr-2">🚨</span>
+                  <span>24/7 Roadside Help</span>
                 </div>
               </div>
             </motion.div>
@@ -294,70 +294,65 @@ export default function HealthInsurancePage() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-                Get Instant Health Insurance Quote
+                Get Instant Two-Wheeler Insurance Quote
               </h3>
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Age</label>
-                    <select
-                      value={formData.age}
-                      onChange={(e) => handleInputChange('age', e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                      required
-                    >
-                      <option value="">Select Age</option>
-                      {Array.from({ length: 60 }, (_, i) => i + 18).map(age => (
-                        <option key={age} value={age}>{age} years</option>
-                      ))}
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Family Members</label>
-                    <select
-                      value={formData.members}
-                      onChange={(e) => handleInputChange('members', e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                      required
-                    >
-                      <option value="1">Self</option>
-                      <option value="2">Self + Spouse</option>
-                      <option value="3">Self + Spouse + 1 Child</option>
-                      <option value="4">Self + Spouse + 2 Children</option>
-                      <option value="5">Self + Parents</option>
-                      <option value="6">Entire Family</option>
-                    </select>
-                  </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Vehicle Registration Number</label>
+                  <input
+                    type="text"
+                    value={formData.vehicleNumber}
+                    onChange={(e) => handleInputChange('vehicleNumber', e.target.value)}
+                    placeholder="Enter registration number (e.g. MH12AB1234)"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent uppercase"
+                    required
+                  />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Sum Insured</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Bike Brand & Model</label>
                     <select
-                      value={formData.sumInsured}
-                      onChange={(e) => handleInputChange('sumInsured', e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                      value={formData.bikeModel}
+                      onChange={(e) => handleInputChange('bikeModel', e.target.value)}
+                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                       required
                     >
-                      <option value="3">₹3 Lakh</option>
-                      <option value="5">₹5 Lakh</option>
-                      <option value="10">₹10 Lakh</option>
-                      <option value="15">₹15 Lakh</option>
-                      <option value="25">₹25 Lakh</option>
-                      <option value="50">₹50 Lakh</option>
-                      <option value="100">₹1 Crore</option>
+                      <option value="">Select your bike</option>
+                      <option value="hero-splendor">Hero Splendor Plus</option>
+                      <option value="honda-activa">Honda Activa 6G</option>
+                      <option value="bajaj-pulsar">Bajaj Pulsar 150</option>
+                      <option value="tvs-jupiter">TVS Jupiter</option>
+                      <option value="yamaha-fz">Yamaha FZ-S</option>
+                      <option value="royal-enfield">Royal Enfield Classic</option>
+                      <option value="ktm-duke">KTM Duke 200</option>
+                      <option value="other">Other</option>
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">City</label>
-                    <input
-                      type="text"
-                      value={formData.city}
-                      onChange={(e) => handleInputChange('city', e.target.value)}
-                      placeholder="Enter your city"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Manufacturing Year</label>
+                    <select
+                      value={formData.manufacturingYear}
+                      onChange={(e) => handleInputChange('manufacturingYear', e.target.value)}
+                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                       required
-                    />
+                    >
+                      <option value="">Select year</option>
+                      {Array.from({ length: 20 }, (_, i) => 2024 - i).map(year => (
+                        <option key={year} value={year}>{year}</option>
+                      ))}
+                    </select>
                   </div>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">City</label>
+                  <input
+                    type="text"
+                    value={formData.city}
+                    onChange={(e) => handleInputChange('city', e.target.value)}
+                    placeholder="Enter your city"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    required
+                  />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
@@ -367,7 +362,7 @@ export default function HealthInsurancePage() {
                       value={formData.name}
                       onChange={(e) => handleInputChange('name', e.target.value)}
                       placeholder="Enter full name"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                       required
                     />
                   </div>
@@ -378,14 +373,14 @@ export default function HealthInsurancePage() {
                       value={formData.mobile}
                       onChange={(e) => handleInputChange('mobile', e.target.value)}
                       placeholder="Enter mobile number"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                       required
                     />
                   </div>
                 </div>
                 <motion.button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-green-600 to-blue-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all"
+                  className="w-full bg-gradient-to-r from-orange-600 to-red-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -401,7 +396,7 @@ export default function HealthInsurancePage() {
       </section>
 
       {/* Plan Types Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-orange-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"
@@ -410,11 +405,11 @@ export default function HealthInsurancePage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text mb-6">
-              Choose Your Health Plan
+            <h2 className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 bg-clip-text mb-6">
+              Choose Your Bike Insurance
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Select the perfect health insurance plan that fits your needs and budget
+              Select the perfect two-wheeler insurance plan that matches your needs and budget
             </p>
           </motion.div>
 
@@ -424,7 +419,7 @@ export default function HealthInsurancePage() {
                 key={plan.id}
                 onClick={() => setActiveTab(plan.id as PlanType)}
                 className={`cursor-pointer bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden group ${
-                  activeTab === plan.id ? 'ring-2 ring-green-500 transform scale-105' : ''
+                  activeTab === plan.id ? 'ring-2 ring-orange-500 transform scale-105' : ''
                 }`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -469,12 +464,12 @@ export default function HealthInsurancePage() {
               {coverageFeatures[activeTab]?.map((feature, index) => (
                 <motion.div 
                   key={index}
-                  className="flex items-center space-x-3 p-4 bg-green-50 rounded-xl"
+                  className="flex items-center space-x-3 p-4 bg-orange-50 rounded-xl"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
                     <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
@@ -498,10 +493,10 @@ export default function HealthInsurancePage() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Why Choose Our <span className="text-transparent bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text">Health Insurance?</span>
+              Why Choose Our <span className="text-transparent bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text">Bike Insurance?</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Get comprehensive health protection with industry-leading benefits and features
+              Comprehensive two-wheeler protection with industry-leading benefits and nationwide service
             </p>
           </motion.div>
 
@@ -538,7 +533,7 @@ export default function HealthInsurancePage() {
       </section>
 
       {/* Insurance Companies */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-green-50">
+      <section className="py-20 bg-gradient-to-br from-orange-50 to-red-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"
@@ -548,7 +543,7 @@ export default function HealthInsurancePage() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Top Insurance Partners</h2>
-            <p className="text-xl text-gray-600">Choose from India's most trusted health insurance companies</p>
+            <p className="text-xl text-gray-600">Choose from India's most trusted two-wheeler insurance companies</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -578,7 +573,7 @@ export default function HealthInsurancePage() {
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{company.name}</h3>
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-gray-600">Claim Settlement</span>
-                  <span className="font-bold text-green-600">{company.claimRatio}</span>
+                  <span className="font-bold text-orange-600">{company.claimRatio}</span>
                 </div>
               </motion.div>
             ))}
@@ -596,8 +591,8 @@ export default function HealthInsurancePage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">How to Buy Health Insurance</h2>
-            <p className="text-xl text-gray-600">Simple 4-step process to get your health insurance</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">How to Buy Two-Wheeler Insurance</h2>
+            <p className="text-xl text-gray-600">Simple 4-step process to get your bike insured</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -611,20 +606,20 @@ export default function HealthInsurancePage() {
                 viewport={{ once: true }}
               >
                 <motion.div 
-                  className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center text-white text-3xl shadow-lg"
+                  className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-orange-500 to-red-500 flex items-center justify-center text-white text-3xl shadow-lg"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ duration: 0.3 }}
                 >
                   {step.icon}
                 </motion.div>
                 
-                <div className="text-2xl font-bold text-green-600 mb-2">{step.step}</div>
+                <div className="text-2xl font-bold text-orange-600 mb-2">{step.step}</div>
                 <h4 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h4>
                 <p className="text-gray-600">{step.description}</p>
                 
                 {/* Connecting Line */}
                 {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-green-300 to-blue-300 transform -translate-x-4"></div>
+                  <div className="hidden md:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-orange-300 to-red-300 transform -translate-x-4"></div>
                 )}
               </motion.div>
             ))}
@@ -633,15 +628,15 @@ export default function HealthInsurancePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-green-600 via-blue-600 to-purple-600 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-orange-600 via-red-600 to-pink-600 text-white relative overflow-hidden">
         <motion.div 
           className="absolute inset-0"
           animate={{
             background: [
-              "linear-gradient(45deg, #16a34a, #2563eb, #9333ea)",
-              "linear-gradient(90deg, #2563eb, #9333ea, #16a34a)",
-              "linear-gradient(135deg, #9333ea, #16a34a, #2563eb)",
-              "linear-gradient(180deg, #16a34a, #2563eb, #9333ea)"
+              "linear-gradient(45deg, #ea580c, #dc2626, #db2777)",
+              "linear-gradient(90deg, #dc2626, #db2777, #ea580c)",
+              "linear-gradient(135deg, #db2777, #ea580c, #dc2626)",
+              "linear-gradient(180deg, #ea580c, #dc2626, #db2777)"
             ]
           }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
@@ -655,17 +650,17 @@ export default function HealthInsurancePage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            Ready to Protect Your Health?
+            Ready to Protect Your Ride?
           </motion.h3>
           
           <motion.p 
-            className="text-xl text-green-100 max-w-3xl mx-auto mb-8"
+            className="text-xl text-orange-100 max-w-3xl mx-auto mb-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Join over 100,000+ satisfied customers who trust Citizen IMF for their health insurance needs. Get instant quotes and buy online in just 5 minutes.
+            Join over 2 lakh+ satisfied riders who trust Citizen IMF for their two-wheeler insurance needs. Get instant quotes and ride with confidence today.
           </motion.p>
           
           <motion.div 
@@ -680,14 +675,14 @@ export default function HealthInsurancePage() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Get Free Health Quote
+              Get Free Bike Quote
             </motion.button>
             <motion.button 
-              className="border-2 border-white text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-green-600 transition-colors"
+              className="border-2 border-white text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-orange-600 transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Talk to Expert
+              Renew Existing Policy
             </motion.button>
           </motion.div>
 
@@ -700,10 +695,10 @@ export default function HealthInsurancePage() {
             viewport={{ once: true }}
           >
             {[
-              { icon: "⚡", title: "5 Min", desc: "Policy Issuance" },
-              { icon: "🏥", title: "10,000+", desc: "Network Hospitals" },
-              { icon: "💰", title: "₹46,800", desc: "Tax Savings" },
-              { icon: "📞", title: "24/7", desc: "Customer Support" }
+              { icon: "⚡", title: "2 Min", desc: "Policy Issuance" },
+              { icon: "🔧", title: "4000+", desc: "Network Garages" },
+              { icon: "🚨", title: "24/7", desc: "Roadside Assistance" },
+              { icon: "💯", title: "96.8%", desc: "Claim Settlement" }
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -719,7 +714,7 @@ export default function HealthInsurancePage() {
                   {item.icon}
                 </motion.div>
                 <h4 className="text-2xl font-bold text-yellow-200 mb-2">{item.title}</h4>
-                <p className="text-green-100 text-sm">{item.desc}</p>
+                <p className="text-orange-100 text-sm">{item.desc}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -727,7 +722,7 @@ export default function HealthInsurancePage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-orange-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"
@@ -736,31 +731,31 @@ export default function HealthInsurancePage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Health Insurance FAQs</h2>
-            <p className="text-xl text-gray-600">Get answers to common health insurance questions</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Two-Wheeler Insurance FAQs</h2>
+            <p className="text-xl text-gray-600">Get answers to common bike insurance questions</p>
           </motion.div>
 
           <div className="space-y-4">
             {[
               {
-                q: "What is the waiting period in health insurance?",
-                a: "Most health plans have a 30-day waiting period for illnesses, 1-2 years for specific diseases, and 2-4 years for pre-existing conditions. Accidents are covered from day 1."
+                q: "Is two-wheeler insurance mandatory in India?",
+                a: "Yes, third-party insurance is mandatory for all two-wheelers as per the Motor Vehicle Act, 1988. Riding without valid insurance can result in fines up to ₹2,000 and/or imprisonment up to 3 months."
               },
               {
-                q: "Can I get cashless treatment at any hospital?",
-                a: "Cashless treatment is available only at network hospitals of your insurance company. We have tie-ups with 10,000+ hospitals across India for hassle-free treatment."
+                q: "What is the difference between third-party and comprehensive insurance?",
+                a: "Third-party insurance covers only third-party damages and liabilities. Comprehensive insurance includes third-party coverage plus own damage protection against theft, accidents, natural disasters, and fire."
               },
               {
-                q: "How much health insurance coverage do I need?",
-                a: "We recommend minimum ₹5 lakh for individuals and ₹10 lakh for families. In metros, consider ₹10-25 lakh due to higher medical costs. Our advisors can help determine the right amount."
+                q: "Can I buy bike insurance online?",
+                a: "Yes, you can easily buy two-wheeler insurance online in just 2 minutes. Our platform offers instant quotes, policy comparison, and immediate policy issuance with all major insurers."
               },
               {
-                q: "Are pre-existing diseases covered?",
-                a: "Yes, pre-existing diseases are covered after the waiting period (usually 2-4 years). Some insurers offer reduced waiting periods or immediate coverage for certain conditions."
+                q: "What documents are required for bike insurance?",
+                a: "You need your bike's registration certificate (RC), valid driving license, Aadhaar card, previous policy copy (for renewal), and passport-size photographs for bike insurance."
               },
               {
-                q: "Can I buy health insurance online?",
-                a: "Absolutely! You can compare plans, get quotes, and buy health insurance online through our platform. The entire process takes just 5 minutes and your policy is issued instantly."
+                q: "What is No Claim Bonus (NCB) in bike insurance?",
+                a: "NCB is a discount on your premium for every claim-free year. You can get up to 50% discount on your bike insurance premium. NCB belongs to the policyholder, not the vehicle."
               }
             ].map((faq, index) => (
               <motion.div
@@ -787,10 +782,10 @@ export default function HealthInsurancePage() {
             viewport={{ once: true }}
           >
             <Link 
-              href="/faq" 
-              className="inline-flex items-center text-green-600 font-semibold hover:text-green-700 transition-colors"
+              href="/faq/two-wheeler-insurance" 
+              className="inline-flex items-center text-orange-600 font-semibold hover:text-orange-700 transition-colors"
             >
-              View All Health Insurance FAQs
+              View All Two-Wheeler Insurance FAQs
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>

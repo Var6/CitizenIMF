@@ -11,72 +11,45 @@ export default function Navbar() {
 
   const menuItems = [
     {
-      title: 'Insurance',
+     title: 'Insurance',
       hasDropdown: true,
       dropdownItems: [
-        {
-          category: 'Health Insurance',
-          links: [
-            { name: 'Personal Health Insurance', href: '/products/health-insurance' },
-            { name: 'Family Health Insurance', href: '/products/health-insurance' },
-            { name: 'Critical Illness Plans', href: '/products/health-insurance' },
-            { name: 'Health Calculator', href: '/calculators/health' },
-          ]
-        },
         {
           category: 'Motor Insurance',
           links: [
-            { name: 'Car Insurance', href: '/products#car' },
-            { name: 'Bike Insurance', href: '/products#bike' },
-            { name: 'Commercial Vehicle', href: '/products#commercial' },
-            { name: 'Motor Calculator', href: '/calculators/motor' },
+            { name: 'Two Wheeler Insurance', href: '/insurance/two-wheeler' },
+            { name: 'Four Wheeler Insurance', href: '/insurance/four-wheeler' },
+            { name: 'Commercial Motor', href: '/insurance/commercial-motor' },
           ]
         },
         {
-          category: 'Life Insurance',
+          category: 'Health & Life',
           links: [
-            { name: 'Term Plans', href: '/products#term' },
-            { name: 'Child Plans', href: '/products#child' },
-            { name: 'Pension Plans', href: '/products#pension' },
-            { name: 'Life Calculator', href: '/calculators/life' },
+            { name: 'Health Insurance', href: '/products/health' },
+            { name: 'Personal Accident', href: '/products/accident' },
+            { name: 'Life Insurance', href: '/insurance/life' },
           ]
         },
         {
-          category: 'Other Insurance',
+          category: 'Business Insurance',
           links: [
-            { name: 'Travel Insurance', href: '/products#travel' },
-            { name: 'Business Insurance', href: '/products#business' },
-            { name: 'Personal Accident', href: '/products#accident' },
-            { name: 'All Products', href: '/products' },
+            { name: 'Shop Insurance', href: '/insurance/shop' },
+            { name: 'Marine Cargo', href: '/insurance/marine-cargo' },
+            { name: 'Keyman Insurance', href: '/insurance/keyman' },
+            { name: 'Professional Indemnity', href: '/insurance/professional-indemnity' },
+          ]
+        },
+        {
+          category: 'Personal Insurance',
+          links: [
+            { name: 'Home Insurance', href: '/insurance/home' },
+            { name: 'Travel Insurance', href: '/insurance/travel' },
           ]
         }
       ]
     },
-    {
-      title: 'Investment',
-      hasDropdown: true,
-      dropdownItems: [
-        {
-          category: 'Investment Plans',
-          links: [
-            { name: 'Mutual Funds', href: '/products#mutual-funds' },
-            { name: 'Guaranteed Return Plans', href: '/products#guaranteed-return' },
-            { name: 'ULIP Plans', href: '/investment/ulip' },
-            { name: 'Investment Calculator', href: '/calculators/investment' },
-          ]
-        },
-        {
-          category: 'Retirement Planning',
-          links: [
-            { name: 'Pension Plans', href: '/products#pension' },
-            { name: 'Retirement Plans', href: '/investment/retirement' },
-            { name: 'Annuity Plans', href: '/investment/annuity' },
-            { name: 'Retirement Calculator', href: '/calculators/retirement' },
-          ]
-        }
-      ]
-    },
-    {
+   
+   {
       title: 'Companies',
       hasDropdown: true,
       dropdownItems: [
@@ -84,46 +57,29 @@ export default function Navbar() {
           category: 'Life Insurance',
           links: [
             { name: 'LIC', href: '/companies/lic' },
-            { name: 'HDFC Life', href: '/companies/hdfc-life' },
-            { name: 'SBI Life', href: '/companies/sbi-life' },
-            { name: 'ICICI Prudential', href: '/companies/icici-prudential' },
+            { name: 'Max Life / Axis Max Life', href: '/companies/max-life' },
+            { name: 'PNB Met Life', href: '/companies/pnb-met-life' },
+          ]
+        },
+        {
+          category: 'Health Insurance',
+          links: [
+            { name: 'Niva Bupa', href: '/companies/niva-bupa' },
+            { name: 'Care Health', href: '/companies/care-health' },
           ]
         },
         {
           category: 'General Insurance',
           links: [
-            { name: 'HDFC ERGO', href: '/companies/hdfc-ergo' },
+            { name: 'National Insurance', href: '/companies/national-insurance' },
+            { name: 'SBI General Insurance', href: '/companies/sbi-general' },
+            { name: 'Bajaj Allianz General', href: '/companies/bajaj-allianz' },
+            { name: 'Tata AIG General', href: '/companies/tata-aig' },
             { name: 'ICICI Lombard', href: '/companies/icici-lombard' },
-            { name: 'Bajaj Allianz', href: '/companies/bajaj-allianz' },
-            { name: 'New India Assurance', href: '/companies/new-india' },
           ]
         }
       ]
     },
-    {
-      title: 'Support',
-      hasDropdown: true,
-      dropdownItems: [
-        {
-          category: 'Customer Support',
-          links: [
-            { name: 'Renew Policy', href: '/renew' },
-            { name: 'Claim Support', href: '/claims' },
-            { name: 'Track Application', href: '/track' },
-            { name: 'Contact Us', href: '/contact' },
-          ]
-        },
-        {
-          category: 'Resources',
-          links: [
-            { name: 'Insurance Guide', href: '/guide' },
-            { name: 'FAQ', href: '/faq' },
-            { name: 'Calculators', href: '/calculators' },
-            { name: 'Blog', href: '/blog' },
-          ]
-        }
-      ]
-    }
   ]
 
   const handleDropdown = (index: number) => {

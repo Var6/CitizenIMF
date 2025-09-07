@@ -9,127 +9,200 @@ export default function ProductsPage() {
   const [searchTerm, setSearchTerm] = useState('')
 
   const products = [
+    // Motor Insurance
     {
       id: 1,
-      title: "Mutual Funds",
-      description: "Unlock your financial potential with our expertly managed mutual funds. Diversify your investments and enjoy the benefits of professional management. Start building your wealth today for a secure tomorrow!",
-      category: "investment",
-      icon: "📈",
+      title: "Two Wheeler Insurance",
+      description: "Comprehensive protection for your bike or scooter. Get coverage against accidents, theft, and third-party liability. Enjoy hassle-free claims and 24/7 roadside assistance for your two-wheeler.",
+      category: "motor",
+      subcategory: "two-wheeler",
+      icon: "🏍️",
       color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-blue-500"
+      bgColor: "bg-blue-500",
+      href: "/products/two-wheeler"
     },
     {
       id: 2,
-      title: "Guaranteed Return Plans",
-      description: "Secure your financial future with our Guaranteed Return Plans, offering peace of mind and predictable growth. Benefit from consistent returns while safeguarding your investments. Start planning for a worry-free tomorrow today!",
-      category: "investment",
-      icon: "🛡️",
-      color: "from-green-500 to-emerald-500",
-      bgColor: "bg-green-500"
+      title: "Four Wheeler Insurance",
+      description: "Complete car insurance coverage with comprehensive and third-party options. Protect your vehicle against accidents, theft, natural disasters, and enjoy cashless repairs at network garages.",
+      category: "motor",
+      subcategory: "four-wheeler",
+      icon: "🚗",
+      color: "from-indigo-500 to-blue-500",
+      bgColor: "bg-indigo-500",
+      href: "/products/four-wheeler"
     },
     {
       id: 3,
-      title: "Pension Plans",
-      description: "Prepare for a comfortable retirement with our flexible Pension Plans designed to ensure financial stability. Enjoy regular income and peace of mind as you plan for your future. Invest in your golden years today!",
-      category: "retirement",
-      icon: "👴",
-      color: "from-orange-500 to-red-500",
-      bgColor: "bg-orange-500"
+      title: "Commercial Motor Insurance",
+      description: "Specialized insurance for commercial vehicles including trucks, buses, and fleet vehicles. Get comprehensive coverage for your business vehicles with competitive premiums.",
+      category: "motor",
+      subcategory: "commercial-motor",
+      icon: "🚛",
+      color: "from-purple-500 to-indigo-500",
+      bgColor: "bg-purple-500",
+      href: "/products/commercial"
     },
+
+    // Health & Life Insurance
     {
       id: 4,
-      title: "Term Plans",
-      description: "Protect your loved ones with our affordable Term Plans, providing financial security in uncertain times. Enjoy peace of mind knowing your family is covered for a specified term. Choose a plan that fits your needs and secure their future today!",
-      category: "life",
-      icon: "💝",
-      color: "from-purple-500 to-pink-500",
-      bgColor: "bg-purple-500"
+      title: "Health Insurance",
+      description: "Comprehensive health coverage for you and your family. Access to network hospitals, cashless treatment, and protection against rising medical costs. Choose from individual and family floater plans.",
+      category: "health-life",
+      subcategory: "health",
+      icon: "🏥",
+      color: "from-green-500 to-emerald-500",
+      bgColor: "bg-green-500",
+      href: "/products/health"
     },
     {
       id: 5,
-      title: "Child Plans",
-      description: "Invest in your child's future with our comprehensive Child Plans, designed to provide financial security for their education and dreams. Enjoy flexible options that grow alongside your child. Secure their bright tomorrow today!",
-      category: "family",
-      icon: "👶",
-      color: "from-yellow-500 to-orange-500",
-      bgColor: "bg-yellow-500"
+      title: "Personal Accident Insurance",
+      description: "Financial protection against accidental injuries, disability, or death. Get lump sum payouts and coverage for medical expenses resulting from accidents. Affordable premiums with comprehensive benefits.",
+      category: "health-life",
+      subcategory: "personal-accident",
+      icon: "⛑️",
+      color: "from-red-500 to-rose-500",
+      bgColor: "bg-red-500",
+      href: "/insurance/personal-accident"
     },
     {
       id: 6,
-      title: "All Vehicle Insurance",
-      description: "Get complete protection for your vehicle with our All Vehicle Insurance, covering cars, bikes, and more. Enjoy peace of mind on the road with tailored plans that fit your needs. Drive confidently knowing you're fully insured!",
-      category: "vehicle",
-      icon: "🚗",
-      color: "from-indigo-500 to-purple-500",
-      bgColor: "bg-indigo-500"
+      title: "Life Insurance",
+      description: "Secure your family's financial future with our life insurance plans. Choose from term plans, endowment policies, and ULIPs. Ensure your loved ones are protected even when you're not around.",
+      category: "health-life",
+      subcategory: "life",
+      icon: "💝",
+      color: "from-pink-500 to-rose-500",
+      bgColor: "bg-pink-500",
+      href: "/insurance/life"
     },
+
+    // Business Insurance
     {
       id: 7,
-      title: "Personal Health Insurance",
-      description: "Protect your health and well-being with our comprehensive Personal Health Insurance plans. Enjoy access to quality medical care and financial support during emergencies. Invest in your health today for a secure tomorrow!",
-      category: "health",
-      icon: "🏥",
-      color: "from-red-500 to-pink-500",
-      bgColor: "bg-red-500"
+      title: "Shop Insurance",
+      description: "Protect your business premises, stock, and equipment against fire, theft, and other risks. Comprehensive coverage for retail shops, offices, and small businesses with flexible policy options.",
+      category: "business",
+      subcategory: "shop",
+      icon: "🏪",
+      color: "from-orange-500 to-red-500",
+      bgColor: "bg-orange-500",
+      href: "/insurance/shop"
     },
     {
       id: 8,
-      title: "Family Health Insurance",
-      description: "Ensure your family's health and safety with our Family Health Insurance plans, offering comprehensive coverage for all members. Enjoy peace of mind with access to quality healthcare and financial protection. Safeguard your loved ones' well-being today!",
-      category: "health",
-      icon: "👨‍👩‍👧‍👦",
+      title: "Marine Cargo Insurance",
+      description: "Comprehensive coverage for goods in transit by sea, air, or land. Protect your cargo against damage, loss, or theft during transportation. Essential for import-export businesses.",
+      category: "business",
+      subcategory: "marine-cargo",
+      icon: "🚢",
       color: "from-teal-500 to-cyan-500",
-      bgColor: "bg-teal-500"
+      bgColor: "bg-teal-500",
+      href: "/insurance/marine-cargo"
     },
     {
       id: 9,
-      title: "Critical Illness Plans",
-      description: "Prepare for the unexpected with our Critical Illness Plans, designed to provide financial support during challenging times. Receive a lump sum payout upon diagnosis of covered illnesses, ensuring you can focus on recovery. Protect your future and your loved ones today!",
-      category: "health",
-      icon: "🚑",
-      color: "from-rose-500 to-red-500",
-      bgColor: "bg-rose-500"
+      title: "Keyman Insurance",
+      description: "Protect your business against the loss of key employees. Financial security for your company in case of death or disability of crucial team members. Maintain business continuity and stability.",
+      category: "business",
+      subcategory: "keyman",
+      icon: "👨‍💼",
+      color: "from-violet-500 to-purple-500",
+      bgColor: "bg-violet-500",
+      href: "/insurance/keyman"
     },
     {
       id: 10,
-      title: "Personal Accident Insurance",
-      description: "Protect yourself and your loved ones with Personal Accident Insurance, offering financial support in the event of accidental injury or death. Gain peace of mind knowing you're covered during life's unexpected moments.",
-      category: "accident",
-      icon: "⛑️",
-      color: "from-amber-500 to-orange-500",
-      bgColor: "bg-amber-500"
+      title: "Professional Indemnity Insurance",
+      description: "Protection for professionals against claims of negligence, errors, or omissions in their services. Essential for consultants, doctors, lawyers, and other service professionals.",
+      category: "business",
+      subcategory: "professional-indemnity",
+      icon: "⚖️",
+      color: "from-slate-500 to-gray-600",
+      bgColor: "bg-slate-500",
+      href: "/insurance/professional-indemnity"
     },
+
+    // Personal Insurance
     {
       id: 11,
-      title: "Travel Insurance",
-      description: "Travel worry-free with our comprehensive Travel Insurance, designed to protect you against unexpected events. From trip cancellations to medical emergencies, we've got you covered. Explore the world with confidence and peace of mind!",
-      category: "travel",
-      icon: "✈️",
-      color: "from-sky-500 to-blue-500",
-      bgColor: "bg-sky-500"
+      title: "Home Insurance",
+      description: "Comprehensive protection for your home and belongings against fire, theft, natural disasters, and other risks. Coverage for structure, contents, and personal liability with affordable premiums.",
+      category: "personal",
+      subcategory: "home",
+      icon: "🏠",
+      color: "from-emerald-500 to-green-500",
+      bgColor: "bg-emerald-500",
+      href: "/insurance/home"
     },
     {
       id: 12,
-      title: "MSME/Shop Insurance",
-      description: "Safeguard your business with our MSME/Shop Insurance, tailored to protect your assets and operations. Enjoy comprehensive coverage against risks like theft, fire, and liability. Secure your livelihood today and focus on growing your business!",
-      category: "business",
-      icon: "🏪",
-      color: "from-violet-500 to-purple-500",
-      bgColor: "bg-violet-500"
+      title: "Travel Insurance",
+      description: "Travel worry-free with comprehensive coverage for domestic and international trips. Protection against trip cancellations, medical emergencies, lost baggage, and flight delays.",
+      category: "personal",
+      subcategory: "travel",
+      icon: "✈️",
+      color: "from-sky-500 to-blue-500",
+      bgColor: "bg-sky-500",
+      href: "/insurance/travel"
+    },
+
+    // Investment Products
+    {
+      id: 13,
+      title: "Mutual Funds",
+      description: "Diversified investment opportunities with professional fund management. Choose from equity, debt, and hybrid funds to build wealth over time. Start your investment journey with systematic investment plans.",
+      category: "investment",
+      subcategory: "mutual-funds",
+      icon: "📈",
+      color: "from-yellow-500 to-orange-500",
+      bgColor: "bg-yellow-500",
+      href: "/investment/mutual-funds"
+    },
+    {
+      id: 14,
+      title: "Guaranteed Return Plans",
+      description: "Secure investment options with guaranteed returns. Perfect for conservative investors seeking stable growth with capital protection. Ideal for achieving specific financial goals with certainty.",
+      category: "investment",
+      subcategory: "guaranteed-returns",
+      icon: "🛡️",
+      color: "from-amber-500 to-yellow-500",
+      bgColor: "bg-amber-500",
+      href: "/investment/guaranteed-returns"
+    },
+    {
+      id: 15,
+      title: "Pension Plans",
+      description: "Plan for a comfortable retirement with our pension and annuity products. Systematic wealth creation during working years and regular income post-retirement. Secure your golden years today.",
+      category: "investment",
+      subcategory: "pension",
+      icon: "👴",
+      color: "from-indigo-500 to-purple-500",
+      bgColor: "bg-indigo-500",
+      href: "/investment/pension"
+    },
+    {
+      id: 16,
+      title: "Child Plans",
+      description: "Secure your child's future with dedicated education and marriage plans. Systematic savings with insurance coverage to ensure your child's dreams are protected against uncertainties.",
+      category: "investment",
+      subcategory: "child-plans",
+      icon: "👶",
+      color: "from-rose-500 to-pink-500",
+      bgColor: "bg-rose-500",
+      href: "/investment/child-plans"
     }
   ]
 
   const categories = [
     { id: 'all', name: 'All Products', icon: '🎯' },
-    { id: 'investment', name: 'Investment', icon: '💰' },
-    { id: 'health', name: 'Health', icon: '🏥' },
-    { id: 'life', name: 'Life Insurance', icon: '💝' },
-    { id: 'vehicle', name: 'Vehicle', icon: '🚗' },
-    { id: 'family', name: 'Family', icon: '👨‍👩‍👧‍👦' },
-    { id: 'retirement', name: 'Retirement', icon: '👴' },
-    { id: 'travel', name: 'Travel', icon: '✈️' },
-    { id: 'business', name: 'Business', icon: '🏪' },
-    { id: 'accident', name: 'Accident', icon: '⛑️' }
+    { id: 'motor', name: 'Motor Insurance', icon: '🚗' },
+    { id: 'health-life', name: 'Health & Life', icon: '🏥' },
+    { id: 'business', name: 'Business Insurance', icon: '🏢' },
+    { id: 'personal', name: 'Personal Insurance', icon: '🏠' },
+    { id: 'investment', name: 'Investment', icon: '💰' }
   ]
 
   const filteredProducts = products.filter(product => {
@@ -140,14 +213,27 @@ export default function ProductsPage() {
   })
 
   return (
-    <div className="min-h-screen bg-white relative overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="fixed inset-0 pointer-events-none">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+      {/* Enhanced Background Animation */}
+      <div className="absolute inset-0 pointer-events-none">
         <motion.div
-          className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-3xl"
+          className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-br from-cyan-400/20 to-blue-600/20 rounded-full blur-3xl"
           animate={{
             x: [0, 100, 0],
             y: [0, -50, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div
+          className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-br from-purple-400/20 to-pink-600/20 rounded-full blur-3xl"
+          animate={{
+            x: [0, -100, 0],
+            y: [0, 50, 0],
             scale: [1, 1.1, 1],
           }}
           transition={{
@@ -157,98 +243,95 @@ export default function ProductsPage() {
           }}
         />
         <motion.div
-          className="absolute top-20 -right-40 w-96 h-96 bg-gradient-to-br from-green-400/10 to-blue-400/10 rounded-full blur-3xl"
+          className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-br from-emerald-400/10 to-teal-600/10 rounded-full blur-2xl"
           animate={{
-            x: [0, -80, 0],
-            y: [0, 100, 0],
-            scale: [1, 0.8, 1],
+            rotate: [0, 360],
+            scale: [1, 1.3, 1],
           }}
           transition={{
-            duration: 25,
+            duration: 30,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "linear"
           }}
         />
-        <motion.div
-          className="absolute bottom-20 left-1/2 w-72 h-72 bg-gradient-to-br from-orange-400/10 to-yellow-400/10 rounded-full blur-3xl"
-          animate={{
-            x: [0, -60, 0],
-            y: [0, -80, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 18,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
+        
+        {/* Floating particles */}
+        {Array.from({ length: 30 }).map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-white/20 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [0, -100, 0],
+              opacity: [0, 1, 0],
+            }}
+            transition={{
+              duration: Math.random() * 10 + 5,
+              repeat: Infinity,
+              delay: Math.random() * 5,
+              ease: "easeInOut"
+            }}
+          />
+        ))}
       </div>
 
       {/* Breadcrumb */}
       <motion.div 
-        className="bg-gradient-to-r from-gray-100 via-blue-50 to-green-50 py-4 relative z-10"
+        className="bg-white/10 backdrop-blur-sm py-4 relative z-10 border-b border-white/20"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center space-x-2 text-sm">
-            <Link href="/" className="text-blue-600 hover:text-blue-700 font-medium transition-colors">Home</Link>
-            <span className="text-gray-500">/</span>
-            <span className="text-gray-700 font-semibold">Products</span>
+            <Link href="/" className="text-cyan-400 hover:text-cyan-300 font-medium transition-colors">Home</Link>
+            <span className="text-gray-400">/</span>
+            <span className="text-white font-semibold">Products</span>
           </nav>
         </div>
       </motion.div>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 via-purple-600 via-green-600 to-orange-500 text-white relative z-10 overflow-hidden">
-        <motion.div 
-          className="absolute inset-0 bg-black/10"
-          animate={{
-            background: [
-              "linear-gradient(45deg, rgba(59,130,246,0.1), rgba(168,85,247,0.1), rgba(34,197,94,0.1), rgba(249,115,22,0.1))",
-              "linear-gradient(90deg, rgba(168,85,247,0.1), rgba(34,197,94,0.1), rgba(249,115,22,0.1), rgba(59,130,246,0.1))",
-              "linear-gradient(135deg, rgba(34,197,94,0.1), rgba(249,115,22,0.1), rgba(59,130,246,0.1), rgba(168,85,247,0.1))",
-              "linear-gradient(180deg, rgba(249,115,22,0.1), rgba(59,130,246,0.1), rgba(168,85,247,0.1), rgba(34,197,94,0.1))"
-            ]
-          }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        />
-        
+      <section className="py-20 text-white relative z-10 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <motion.h1 
-              className="text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-yellow-200 to-white bg-clip-text text-transparent"
+              className="text-6xl lg:text-8xl font-black mb-6"
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              Products
+              <span className="text-transparent bg-gradient-to-r from-cyan-300 via-purple-300 to-pink-300 bg-clip-text">
+                Products
+              </span>
             </motion.h1>
             
             <motion.h2 
-              className="text-3xl lg:text-5xl font-semibold text-transparent bg-gradient-to-r from-yellow-300 via-orange-300 to-red-300 bg-clip-text mb-6"
+              className="text-3xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-yellow-300 via-orange-300 to-red-300 bg-clip-text mb-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              We're covering all the insurance fields
+              Complete Insurance & Investment Solutions
             </motion.h2>
             
             <motion.p 
-              className="text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed"
+              className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              We cover all insurance fields to ensure comprehensive protection for you and your assets. From health and auto to home and life, our tailored solutions meet your unique needs. Trust us to safeguard what matters most!
+              From motor and health insurance to investment plans and business protection, we offer comprehensive solutions tailored to your needs. Discover the right protection and growth opportunities for you and your family.
             </motion.p>
           </div>
         </div>
 
         {/* Floating Elements */}
         <motion.div 
-          className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full blur-sm"
+          className="absolute top-20 left-10 w-20 h-20 bg-cyan-400/20 rounded-full blur-xl"
           animate={{
             y: [0, -20, 0],
             x: [0, 10, 0],
@@ -256,7 +339,7 @@ export default function ProductsPage() {
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div 
-          className="absolute bottom-20 right-10 w-16 h-16 bg-yellow-400/20 rounded-full blur-sm"
+          className="absolute bottom-20 right-10 w-16 h-16 bg-pink-400/20 rounded-full blur-xl"
           animate={{
             y: [0, 15, 0],
             x: [0, -15, 0],
@@ -266,7 +349,7 @@ export default function ProductsPage() {
       </section>
 
       {/* Search and Filter Section */}
-      <section className="py-10 bg-gradient-to-br from-gray-50 to-blue-50 relative z-10">
+      <section className="py-10 bg-white/5 backdrop-blur-sm relative z-10 border-y border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="flex flex-col lg:flex-row gap-6 items-center justify-between"
@@ -285,7 +368,7 @@ export default function ProductsPage() {
                 placeholder="Search products..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full px-6 py-4 rounded-full border border-gray-200 focus:outline-none focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 text-gray-700 bg-white shadow-lg"
+                className="w-full px-6 py-4 rounded-2xl border-2 border-white/20 bg-white/10 backdrop-blur-sm text-white placeholder-gray-300 focus:ring-4 focus:ring-cyan-500/30 focus:border-cyan-400 transition-all duration-300 shadow-lg"
               />
               <motion.div 
                 className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"
@@ -297,7 +380,7 @@ export default function ProductsPage() {
 
             {/* Category Filter */}
             <motion.div 
-              className="flex flex-wrap gap-2 justify-center"
+              className="flex flex-wrap gap-3 justify-center"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -307,12 +390,12 @@ export default function ProductsPage() {
                 <motion.button
                   key={category.id}
                   onClick={() => setSelectedCategory(category.id)}
-                  className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+                  className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 ${
                     selectedCategory === category.id
-                      ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
-                      : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
+                      ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg'
+                      : 'bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 border border-white/20'
                   }`}
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -331,56 +414,64 @@ export default function ProductsPage() {
       <section className="py-20 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
             layout
           >
             {filteredProducts.map((product, index) => (
               <motion.div
                 key={product.id}
-                className="bg-white rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 relative overflow-hidden group border border-gray-100"
+                className="group relative bg-white/10 backdrop-blur-lg rounded-3xl p-6 shadow-2xl hover:shadow-cyan-500/25 transition-all duration-500 overflow-hidden border border-white/20"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.05 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -10, scale: 1.02 }}
                 layout
               >
                 {/* Animated Background Gradient */}
                 <motion.div 
-                  className={`absolute inset-0 bg-gradient-to-br ${product.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
+                  className={`absolute inset-0 bg-gradient-to-br ${product.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
                 />
                 
-                {/* Floating Icon */}
-                <motion.div 
-                  className="relative z-10"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className={`w-20 h-20 ${product.bgColor} rounded-2xl flex items-center justify-center text-3xl text-white mb-6 mx-auto shadow-lg`}>
-                    {product.icon}
-                  </div>
-                </motion.div>
-
+                {/* Gradient border effect */}
+                <div className={`absolute inset-0 rounded-3xl bg-gradient-to-r ${product.color} p-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-500`}>
+                  <div className="bg-slate-900/90 backdrop-blur-lg rounded-3xl h-full w-full" />
+                </div>
+                
                 {/* Content */}
-                <div className="relative z-10 text-center">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
+                <div className="relative z-10">
+                  {/* Icon */}
+                  <motion.div 
+                    className={`w-16 h-16 ${product.bgColor} rounded-2xl flex items-center justify-center text-2xl text-white mb-4 shadow-lg`}
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {product.icon}
+                  </motion.div>
+
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors line-clamp-2">
                     {product.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-6 text-sm">
+                  
+                  {/* Description */}
+                  <p className="text-gray-300 text-sm leading-relaxed mb-6 line-clamp-4">
                     {product.description}
                   </p>
 
                   {/* Action Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  <div className="flex flex-col gap-2">
+                    <Link href={product.href}>
+                      <motion.button 
+                        className={`w-full bg-gradient-to-r ${product.color} text-white px-4 py-2.5 rounded-xl font-semibold hover:shadow-lg transition-all text-sm`}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        Learn More
+                      </motion.button>
+                    </Link>
                     <motion.button 
-                      className={`bg-gradient-to-r ${product.color} text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all`}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      Learn More
-                    </motion.button>
-                    <motion.button 
-                      className="border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-full font-semibold hover:border-blue-500 hover:text-blue-500 transition-all"
+                      className="w-full border border-white/30 text-gray-300 px-4 py-2.5 rounded-xl font-semibold hover:border-cyan-400 hover:text-cyan-400 transition-all text-sm"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -391,16 +482,12 @@ export default function ProductsPage() {
 
                 {/* Decorative Elements */}
                 <motion.div 
-                  className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-yellow-400/20 to-orange-400/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute top-4 right-4 w-6 h-6 bg-gradient-to-br from-cyan-400/30 to-purple-400/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   animate={{
                     scale: [1, 1.2, 1],
                     rotate: [0, 180, 360],
                   }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                />
-                
-                <motion.div 
-                  className={`absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r ${product.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
                 />
               </motion.div>
             ))}
@@ -415,31 +502,18 @@ export default function ProductsPage() {
               transition={{ duration: 0.6 }}
             >
               <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-2xl font-bold text-gray-700 mb-2">No products found</h3>
-              <p className="text-gray-500">Try adjusting your search or filter criteria</p>
+              <h3 className="text-2xl font-bold text-white mb-2">No products found</h3>
+              <p className="text-gray-400">Try adjusting your search or filter criteria</p>
             </motion.div>
           )}
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-green-600 text-white relative z-10 overflow-hidden">
-        <motion.div 
-          className="absolute inset-0"
-          animate={{
-            background: [
-              "linear-gradient(45deg, #2563eb, #9333ea, #059669)",
-              "linear-gradient(90deg, #9333ea, #059669, #2563eb)",
-              "linear-gradient(135deg, #059669, #2563eb, #9333ea)",
-              "linear-gradient(180deg, #2563eb, #9333ea, #059669)"
-            ]
-          }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        />
-        
+      <section className="py-20 bg-gradient-to-r from-cyan-600 via-purple-600 to-pink-600 text-white relative z-10 overflow-hidden">        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.h3 
-            className="text-4xl lg:text-5xl font-bold mb-6 text-transparent bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text"
+            className="text-4xl lg:text-6xl font-black mb-6 text-transparent bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -449,7 +523,7 @@ export default function ProductsPage() {
           </motion.h3>
           
           <motion.p 
-            className="text-xl text-blue-100 max-w-3xl mx-auto mb-8"
+            className="text-xl text-gray-200 max-w-3xl mx-auto mb-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -466,14 +540,14 @@ export default function ProductsPage() {
             viewport={{ once: true }}
           >
             <motion.button 
-              className="bg-yellow-400 text-gray-900 px-10 py-4 rounded-full font-semibold text-lg hover:bg-yellow-300 transition-colors shadow-lg"
+              className="bg-yellow-400 text-gray-900 px-10 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 transition-colors shadow-lg"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               Get Free Quote
             </motion.button>
             <motion.button 
-              className="border-2 border-white text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-gray-900 transition-colors"
+              className="border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-gray-900 transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

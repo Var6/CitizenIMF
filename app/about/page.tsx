@@ -187,7 +187,7 @@ export default function AboutPage() {
           <nav className="flex items-center space-x-2 text-sm">
             <Link href="/" className="text-blue-600 hover:text-blue-700 font-medium transition-colors">Home</Link>
             <span className="text-gray-500">/</span>
-            <span className="text-gray-700 font-semibold">About</span>
+            <span className="text-gray-700 font-semibold">About Us</span>
           </nav>
         </div>
       </motion.div>

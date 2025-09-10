@@ -17,9 +17,9 @@ export default function Navbar() {
         {
           category: 'Motor Insurance',
           links: [
-            { name: 'Two Wheeler Insurance', href: '/insurance/two-wheeler' },
-            { name: 'Four Wheeler Insurance', href: '/insurance/four-wheeler' },
-            { name: 'Commercial Motor', href: '/insurance/commercial-motor' },
+            { name: 'Two Wheeler Insurance', href: '/products/two-wheeler' },
+            { name: 'Four Wheeler Insurance', href: '/products/four-wheeler' },
+            { name: 'Commercial Motor', href: '/products/commercial' },
           ]
         },
         {
@@ -27,23 +27,23 @@ export default function Navbar() {
           links: [
             { name: 'Health Insurance', href: '/products/health' },
             { name: 'Personal Accident', href: '/products/accident' },
-            { name: 'Life Insurance', href: '/insurance/life' },
+            { name: 'Life Insurance', href: '/products/life' },
           ]
         },
         {
           category: 'Business Insurance',
           links: [
-            { name: 'Shop Insurance', href: '/insurance/shop' },
-            { name: 'Marine Cargo', href: '/insurance/marine-cargo' },
-            { name: 'Keyman Insurance', href: '/insurance/keyman' },
-            { name: 'Professional Indemnity', href: '/insurance/professional-indemnity' },
+            { name: 'Shop Insurance', href: '/products/shop' },
+            { name: 'Marine Cargo', href: '/products/cargo' },
+            { name: 'Keyman Insurance', href: '/products/keyman' },
+            { name: 'Professional Indemnity', href: '/products/indemnity' },
           ]
         },
         {
           category: 'Personal Insurance',
           links: [
-            { name: 'Home Insurance', href: '/insurance/home' },
-            { name: 'Travel Insurance', href: '/insurance/travel' },
+            { name: 'Home Insurance', href: '/products/home' },
+            { name: 'Travel Insurance', href: '/products/travel' },
           ]
         }
       ]
@@ -56,26 +56,26 @@ export default function Navbar() {
         {
           category: 'Life Insurance',
           links: [
-            { name: 'LIC', href: '/companies/lic' },
-            { name: 'Max Life / Axis Max Life', href: '/companies/max-life' },
-            { name: 'PNB Met Life', href: '/companies/pnb-met-life' },
+            { name: 'LIC', href: 'https://licindia.in/' },
+            { name: 'Max Life / Axis Max Life', href: 'https://www.axismaxlife.com/' },
+            { name: 'PNB Met Life', href: 'https://www.pnbmetlife.com/' },
           ]
         },
         {
           category: 'Health Insurance',
           links: [
-            { name: 'Niva Bupa', href: '/companies/niva-bupa' },
-            { name: 'Care Health', href: '/companies/care-health' },
+            { name: 'Niva Bupa', href: 'https://www.nivabupa.com/' },
+            { name: 'Care Health', href: 'https://www.careinsurance.com/' },
           ]
         },
         {
           category: 'General Insurance',
           links: [
-            { name: 'National Insurance', href: '/companies/national-insurance' },
-            { name: 'SBI General Insurance', href: '/companies/sbi-general' },
-            { name: 'Bajaj Allianz General', href: '/companies/bajaj-allianz' },
-            { name: 'Tata AIG General', href: '/companies/tata-aig' },
-            { name: 'ICICI Lombard', href: '/companies/icici-lombard' },
+            { name: 'National Insurance', href: 'https://nationalinsurance.nic.co.in/' },
+            { name: 'SBI General Insurance', href: 'https://www.sbigeneral.in' },
+            { name: 'Bajaj Allianz General', href: 'https://www.bajajallianzlife.com/' },
+            { name: 'Tata AIG General', href: 'https://www.tataaig.com/' },
+            { name: 'ICICI Lombard', href: 'https://www.icicilombard.com/' },
           ]
         }
       ]
@@ -144,6 +144,7 @@ export default function Navbar() {
                                 <li key={linkIndex}>
                                   <Link
                                     href={link.href}
+                                     target="_blank" rel="noopener noreferrer"
                                     className="text-sm text-gray-600 hover:text-blue-600 transition-colors block py-1"
                                   >
                                     {link.name}

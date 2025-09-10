@@ -1,192 +1,137 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
-import { motion } from "motion/react"
-import Link from 'next/link'
+import { useState, SVGProps } from 'react'
+import { motion } from "framer-motion"
 
-type PlanType = 'basic' | 'standard' | 'comprehensive' | 'premium';
+type PlanType = 'basic' | 'comprehensive' | 'fleet';
 
-export default function MarineCargoInsurancePage() {
+// Arrow component for FAQ
+const ChevronDown = (props: SVGProps<SVGSVGElement>) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="m6 9 6 6 6-6" />
+  </svg>
+);
+
+export default function CommercialVehicleInsurance() {
   const [formData, setFormData] = useState({
-    cargoType: '',
-    shipmentValue: '',
-    originPort: '',
-    destinationPort: '',
-    shipmentMode: '',
-    companyName: '',
-    contactPerson: '',
-    mobile: '',
-    email: ''
+    vehicleType: '',
+    vehicleAge: '',
+    gvw: '',
+    usage: '',
+    location: '',
+    ownerName: '',
+    mobile: ''
   })
-  const [activeTab, setActiveTab] = useState<PlanType>('comprehensive')
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef(null)
+  const [activeTab, setActiveTab] = useState<PlanType>('basic')
+  const [openFaq, setOpenFaq] = useState<number | null>(0)
 
   const planTypes = [
     {
       id: 'basic',
-      name: 'Basic Coverage',
-      icon: '⚓',
-      description: 'Essential protection',
-      startingPrice: '0.15% of cargo value*',
+      name: 'Third Party Cover',
+      icon: '🛡️',
+      description: 'Mandatory legal protection',
+      startingPrice: '₹3,500/year*',
       color: 'from-blue-500 to-cyan-500'
     },
     {
-      id: 'standard',
-      name: 'Standard Coverage',
-      icon: '🚢',
-      description: 'Comprehensive protection',
-      startingPrice: '0.25% of cargo value*',
+      id: 'comprehensive',
+      name: 'Comprehensive',
+      icon: '🚛',
+      description: 'Complete vehicle protection',
+      startingPrice: '₹15,000/year*',
       color: 'from-green-500 to-emerald-500'
     },
     {
-      id: 'comprehensive',
-      name: 'All Risks Coverage',
-      icon: '🌊',
-      description: 'Maximum protection',
-      startingPrice: '0.35% of cargo value*',
-      color: 'from-purple-500 to-blue-500'
-    },
-    {
-      id: 'premium',
-      name: 'Premium Plus',
-      icon: '⭐',
-      description: 'Ultimate coverage',
-      startingPrice: '0.45% of cargo value*',
-      color: 'from-orange-500 to-red-500'
+      id: 'fleet',
+      name: 'Fleet Insurance',
+      icon: '🏢',
+      description: 'Multi-vehicle coverage',
+      startingPrice: '₹45,000/year*',
+      color: 'from-purple-500 to-pink-500'
     }
   ]
 
   const benefits = [
     {
-      icon: '🛡️',
-      title: 'All Perils Coverage',
-      description: 'Protection against physical loss or damage from any external cause during transit',
+      icon: '⚖️',
+      title: 'Legal Compliance',
+      description: 'Meet mandatory insurance requirements and avoid penalties.',
       color: 'from-blue-500 to-cyan-500'
     },
     {
-      icon: '🌍',
-      title: 'Global Coverage',
-      description: 'Worldwide protection for sea, air, rail, and road transportation across all routes',
+      icon: '🔧',
+      title: 'Repair Coverage',
+      description: 'Complete vehicle damage repair and replacement coverage.',
       color: 'from-green-500 to-emerald-500'
     },
     {
-      icon: '⚡',
-      title: 'Quick Claims Settlement',
-      description: 'Fast and efficient claims processing with dedicated marine insurance experts',
+      icon: '🚑',
+      title: 'Emergency Support',
+      description: '24/7 roadside assistance and towing services.',
       color: 'from-orange-500 to-red-500'
     },
     {
-      icon: '📋',
-      title: 'Flexible Terms',
-      description: 'Customizable coverage terms and conditions to match your specific cargo requirements',
+      icon: '💼',
+      title: 'Business Protection',
+      description: 'Protect your business assets and income from claims.',
       color: 'from-purple-500 to-pink-500'
-    },
-    {
-      icon: '💰',
-      title: 'Competitive Rates',
-      description: 'Industry-leading premium rates with transparent pricing and no hidden charges',
-      color: 'from-yellow-500 to-orange-500'
-    },
-    {
-      icon: '🏆',
-      title: 'Expert Support',
-      description: '24/7 marine insurance specialists and claims assistance worldwide',
-      color: 'from-indigo-500 to-purple-500'
     }
   ]
 
-  const companies = [
-    { name: 'HDFC ERGO Marine', rating: 4.6, claimRatio: '98.5%', logo: '/companies/hdfc-ergo.png' },
-    { name: 'ICICI Lombard Marine', rating: 4.5, claimRatio: '97.8%', logo: '/companies/icici-lombard.png' },
-    { name: 'Bajaj Allianz Marine', rating: 4.4, claimRatio: '96.9%', logo: '/companies/bajaj-allianz.png' },
-    { name: 'Tata AIG Marine', rating: 4.3, claimRatio: '95.7%', logo: '/companies/tata-aig.png' },
-    { name: 'Oriental Marine', rating: 4.2, claimRatio: '94.8%', logo: '/companies/oriental-insurance.png' },
-    { name: 'United India Marine', rating: 4.1, claimRatio: '93.5%', logo: '/companies/united-india.png' }
-  ]
-
-  const coverageFeatures = {
+  const coverageFeatures: Record<PlanType, string[]> = {
     basic: [
-      'Named perils coverage (fire, explosion, collision)',
-      'General average and salvage charges',
-      'Jettison and washing overboard',
-      'Basic theft and pilferage protection',
-      'Standard war risks coverage',
-      'Certificate of insurance for customs'
-    ],
-    standard: [
-      'All basic coverage plus extended perils',
-      'Fresh water damage and contamination',
-      'Hook damage and breakage coverage',
-      'Delay in delivery compensation',
-      'Enhanced theft and pilferage protection',
-      'Sue and labor charges included'
+      'Third party liability up to ₹7.5 Lakhs',
+      'Personal accident cover for driver',
+      'Legal compliance certificate',
+      'Nationwide validity',
+      'Online policy issuance',
+      'Easy renewal process'
     ],
     comprehensive: [
-      'All risks coverage for any external cause',
-      'Full replacement value protection',
-      'Warehouse to warehouse coverage',
-      'Transit delays and storage charges',
-      'Currency fluctuation protection',
-      'Professional indemnity coverage'
+      'Own damage coverage up to IDV',
+      'Third party liability protection',
+      'Fire, theft, natural calamity cover',
+      'Personal accident for driver/cleaner',
+      'Zero depreciation add-on available',
+      '24/7 roadside assistance'
     ],
-    premium: [
-      'Maximum all-risks coverage available',
-      'Pre and post-shipment storage',
-      'Inland transit comprehensive coverage',
-      'Consequential loss protection',
-      'Currency and freight coverage',
-      'Premium claims handling service'
+    fleet: [
+      'Coverage for multiple vehicles',
+      'Bulk discount pricing',
+      'Centralized policy management',
+      'Dedicated fleet manager',
+      'Priority claim settlement',
+      'Custom coverage options'
     ]
   }
 
-  const steps = [
+  const vehicleTypes = [
+    { name: 'Truck', icon: '🚛', desc: 'Heavy goods vehicles' },
+    { name: 'Tractor', icon: '🚜', desc: 'Agricultural tractors' },
+    { name: 'Bus', icon: '🚌', desc: 'Passenger buses' },
+    { name: 'Taxi', icon: '🚕', desc: 'Commercial taxis' },
+    { name: 'Tempo', icon: '🚐', desc: 'Light commercial vehicles' },
+    { name: 'JCB', icon: '🏗️', desc: 'Construction equipment' }
+  ]
+
+  const faqs = [
     {
-      step: '01',
-      title: 'Cargo Details',
-      description: 'Provide cargo type, value, and shipment route information',
-      icon: '📦'
+      question: "What is commercial vehicle insurance?",
+      answer: "Commercial vehicle insurance provides financial protection for vehicles used for business purposes like goods transportation, passenger services, or construction work. It covers third-party liabilities and vehicle damages."
     },
     {
-      step: '02',
-      title: 'Get Quotes',
-      description: 'Receive instant quotes from top marine insurers',
-      icon: '💼'
+      question: "Is commercial vehicle insurance mandatory?",
+      answer: "Yes, third-party liability insurance is mandatory for all commercial vehicles in India under the Motor Vehicles Act. Driving without valid insurance can result in penalties and legal action."
     },
     {
-      step: '03',
-      title: 'Select & Pay',
-      description: 'Choose your coverage and complete secure payment',
-      icon: '💳'
+      question: "What's the difference between commercial and private car insurance?",
+      answer: "Commercial vehicle insurance covers vehicles used for business purposes with higher liability limits and specific coverage for commercial risks. Private car insurance is for personal use vehicles with different premium structures."
     },
     {
-      step: '04',
-      title: 'Certificate',
-      description: 'Download marine insurance certificate instantly',
-      icon: '📜'
+      question: "Can I insure multiple vehicles under one policy?",
+      answer: "Yes, fleet insurance allows you to cover multiple commercial vehicles under a single policy with bulk discounts and centralized management benefits."
     }
-  ]
-
-  const cargoTypes = [
-    'Electronics & Technology',
-    'Textiles & Garments',
-    'Machinery & Equipment',
-    'Automotive Parts',
-    'Pharmaceuticals',
-    'Food & Beverages',
-    'Chemicals',
-    'Raw Materials',
-    'Consumer Goods',
-    'Other'
-  ]
-
-  const shipmentModes = [
-    'Sea Freight (FCL)',
-    'Sea Freight (LCL)',
-    'Air Freight',
-    'Multi-modal',
-    'Road Transport',
-    'Rail Transport'
   ]
 
   const handleInputChange = (field: string, value: string) => {
@@ -196,75 +141,15 @@ export default function MarineCargoInsurancePage() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    console.log('Marine cargo insurance form submitted:', formData)
-    alert('Thank you! We\'ll send you marine cargo insurance quotes shortly.')
+  const handleSubmit = () => {
+    console.log('Commercial vehicle insurance form submitted:', formData)
+    alert('Thank you! We\'ll send you commercial vehicle insurance quotes shortly.')
   }
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.2 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
 
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="fixed inset-0 pointer-events-none">
-        <motion.div
-          className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/10 to-teal-400/10 rounded-full blur-3xl"
-          animate={{
-            x: [0, 100, 0],
-            y: [0, -50, 0],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div
-          className="absolute top-20 -right-40 w-96 h-96 bg-gradient-to-br from-cyan-400/10 to-blue-400/10 rounded-full blur-3xl"
-          animate={{
-            x: [0, -80, 0],
-            y: [0, 100, 0],
-            scale: [1, 0.8, 1],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-      </div>
-
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-700 via-cyan-600 to-teal-600 text-white relative z-10 overflow-hidden">
-        <motion.div 
-          className="absolute inset-0 bg-black/10"
-          animate={{
-            background: [
-              "linear-gradient(45deg, rgba(29,78,216,0.1), rgba(8,145,178,0.1), rgba(13,148,136,0.1))",
-              "linear-gradient(90deg, rgba(8,145,178,0.1), rgba(13,148,136,0.1), rgba(29,78,216,0.1))",
-              "linear-gradient(135deg, rgba(13,148,136,0.1), rgba(29,78,216,0.1), rgba(8,145,178,0.1))"
-            ]
-          }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        />
-
+      <section className="py-20 bg-gradient-to-br from-blue-700 via-indigo-800 to-purple-900 text-white relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -273,45 +158,14 @@ export default function MarineCargoInsurancePage() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Marine Cargo
+                Commercial Vehicle
                 <span className="text-transparent bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text"> Insurance</span>
               </h1>
-              <p className="text-xl text-cyan-100 mb-8 leading-relaxed">
-                Protect your cargo shipments worldwide with comprehensive marine insurance starting from 0.15% of cargo value. Global coverage for sea, air, and land transportation.
+              <p className="text-xl text-blue-100 mb-8 leading-relaxed">
+                Protect your business vehicles with comprehensive insurance coverage. Get quotes for trucks, tractors, buses, and all commercial vehicles starting from ₹3,500/year.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <motion.button 
-                  className="bg-yellow-400 text-gray-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 transition-colors shadow-lg"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Get Instant Quote
-                </motion.button>
-                <motion.button 
-                  className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Download Brochure
-                </motion.button>
-              </div>
-              <div className="flex items-center space-x-6 text-sm">
-                <div className="flex items-center">
-                  <span className="text-2xl mr-2">🌍</span>
-                  <span>Global Coverage</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-2xl mr-2">⚡</span>
-                  <span>Quick Claims</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-2xl mr-2">🏆</span>
-                  <span>Expert Support</span>
-                </div>
-              </div>
             </motion.div>
 
-            {/* Quote Form */}
             <motion.div 
               className="bg-white rounded-3xl p-8 shadow-2xl"
               initial={{ opacity: 0, x: 50 }}
@@ -319,145 +173,171 @@ export default function MarineCargoInsurancePage() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-                Get Marine Cargo Insurance Quote
+                Get Instant Vehicle Quote
               </h3>
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Cargo Type</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Vehicle Type</label>
                     <select
-                      value={formData.cargoType}
-                      onChange={(e) => handleInputChange('cargoType', e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      value={formData.vehicleType}
+                      onChange={(e) => handleInputChange('vehicleType', e.target.value)}
+                      className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-gray-50 text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                       required
                     >
-                      <option value="">Select cargo type</option>
-                      {cargoTypes.map(type => (
-                        <option key={type} value={type}>{type}</option>
-                      ))}
+                      <option value="">Select Vehicle Type</option>
+                      <option value="truck">Truck</option>
+                      <option value="tractor">Tractor</option>
+                      <option value="bus">Bus</option>
+                      <option value="taxi">Taxi</option>
+                      <option value="tempo">Tempo</option>
+                      <option value="jcb">JCB/Construction</option>
+                      <option value="other">Other</option>
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Shipment Value (USD)</label>
-                    <input
-                      type="number"
-                      value={formData.shipmentValue}
-                      onChange={(e) => handleInputChange('shipmentValue', e.target.value)}
-                      placeholder="Enter cargo value"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Vehicle Age</label>
+                    <select
+                      value={formData.vehicleAge}
+                      onChange={(e) => handleInputChange('vehicleAge', e.target.value)}
+                      className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-gray-50 text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                       required
-                    />
+                    >
+                      <option value="">Select Age</option>
+                      <option value="new">Brand New</option>
+                      <option value="0-1">0-1 Years</option>
+                      <option value="1-3">1-3 Years</option>
+                      <option value="3-5">3-5 Years</option>
+                      <option value="5-10">5-10 Years</option>
+                      <option value="10+">10+ Years</option>
+                    </select>
                   </div>
                 </div>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Origin Port/City</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">GVW (Gross Vehicle Weight)</label>
+                    <select
+                      value={formData.gvw}
+                      onChange={(e) => handleInputChange('gvw', e.target.value)}
+                      className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-gray-50 text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                      required
+                    >
+                      <option value="">Select GVW</option>
+                      <option value="<3.5">Less than 3.5 Tons</option>
+                      <option value="3.5-7.5">3.5 - 7.5 Tons</option>
+                      <option value="7.5-12">7.5 - 12 Tons</option>
+                      <option value="12-16">12 - 16 Tons</option>
+                      <option value="16+">Above 16 Tons</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Usage Type</label>
+                    <select
+                      value={formData.usage}
+                      onChange={(e) => handleInputChange('usage', e.target.value)}
+                      className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-gray-50 text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                      required
+                    >
+                      <option value="">Select Usage</option>
+                      <option value="goods">Goods Transport</option>
+                      <option value="passenger">Passenger Transport</option>
+                      <option value="agriculture">Agriculture</option>
+                      <option value="construction">Construction</option>
+                      <option value="other">Other Commercial</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Registration Location</label>
                     <input
                       type="text"
-                      value={formData.originPort}
-                      onChange={(e) => handleInputChange('originPort', e.target.value)}
-                      placeholder="From where"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      value={formData.location}
+                      onChange={(e) => handleInputChange('location', e.target.value)}
+                      placeholder="Enter city/state"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-gray-50 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                       required
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Destination Port/City</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Owner Name</label>
                     <input
                       type="text"
-                      value={formData.destinationPort}
-                      onChange={(e) => handleInputChange('destinationPort', e.target.value)}
-                      placeholder="To where"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      value={formData.ownerName}
+                      onChange={(e) => handleInputChange('ownerName', e.target.value)}
+                      placeholder="Vehicle owner name"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-gray-50 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                       required
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Shipment Mode</label>
-                  <select
-                    value={formData.shipmentMode}
-                    onChange={(e) => handleInputChange('shipmentMode', e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    required
-                  >
-                    <option value="">Select transport mode</option>
-                    {shipmentModes.map(mode => (
-                      <option key={mode} value={mode}>{mode}</option>
-                    ))}
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Company Name</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Mobile Number</label>
                   <input
-                    type="text"
-                    value={formData.companyName}
-                    onChange={(e) => handleInputChange('companyName', e.target.value)}
-                    placeholder="Enter company name"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    type="tel"
+                    value={formData.mobile}
+                    onChange={(e) => handleInputChange('mobile', e.target.value)}
+                    placeholder="Enter mobile number"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-gray-50 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                     required
                   />
                 </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Contact Person</label>
-                    <input
-                      type="text"
-                      value={formData.contactPerson}
-                      onChange={(e) => handleInputChange('contactPerson', e.target.value)}
-                      placeholder="Enter contact name"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Mobile Number</label>
-                    <input
-                      type="tel"
-                      value={formData.mobile}
-                      onChange={(e) => handleInputChange('mobile', e.target.value)}
-                      placeholder="Enter mobile number"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      required
-                    />
-                  </div>
-                </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-                  <input
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => handleInputChange('email', e.target.value)}
-                    placeholder="Enter email address"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    required
-                  />
-                </div>
-                
                 <motion.button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all"
-                  whileHover={{ scale: 1.02 }}
+                  onClick={handleSubmit}
+                  className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all cursor-pointer"
+                  whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  Get Free Quotes Now
+                  Get Free Vehicle Quotes
                 </motion.button>
                 <p className="text-center text-sm text-gray-500">
-                  🔒 100% Secure • ⚡ Instant Quotes • 💯 Free Service
+                  🔒 Secure • ⚡ Instant • 💯 Free Service
                 </p>
-              </form>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
+      {/* Vehicle Types Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">We Cover All Commercial Vehicles</h2>
+            <p className="text-lg text-gray-600">Comprehensive insurance for every type of commercial vehicle</p>
+          </motion.div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {vehicleTypes.map((vehicle, index) => (
+              <motion.div 
+                key={index}
+                className="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition-all group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+              >
+                <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">{vehicle.icon}</div>
+                <h3 className="font-bold text-gray-800 mb-1">{vehicle.name}</h3>
+                <p className="text-xs text-gray-500">{vehicle.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Plan Types Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"
@@ -466,21 +346,21 @@ export default function MarineCargoInsurancePage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 bg-clip-text mb-6">
-              Marine Insurance Coverage
+            <h2 className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text mb-6">
+              Choose Your Coverage Plan
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Choose the perfect marine cargo insurance plan for your shipment requirements
+              Select the right protection level for your commercial vehicle business needs.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {planTypes.map((plan, index) => (
               <motion.div
                 key={plan.id}
                 onClick={() => setActiveTab(plan.id as PlanType)}
-                className={`cursor-pointer bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden group ${
-                  activeTab === plan.id ? 'ring-2 ring-blue-500 transform scale-105' : ''
+                className={`cursor-pointer bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden group border-2 ${
+                  activeTab === plan.id ? 'border-blue-500 transform scale-105' : 'border-gray-200'
                 }`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -488,18 +368,8 @@ export default function MarineCargoInsurancePage() {
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <motion.div 
-                  className={`absolute inset-0 bg-gradient-to-br ${plan.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
-                />
-                
                 <div className="relative z-10 text-center">
-                  <motion.div 
-                    className="text-5xl mb-4"
-                    whileHover={{ scale: 1.2, rotate: 10 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {plan.icon}
-                  </motion.div>
+                  <div className="text-5xl mb-4">{plan.icon}</div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{plan.name}</h3>
                   <p className="text-gray-600 text-sm mb-4">{plan.description}</p>
                   <div className={`text-lg font-bold text-transparent bg-gradient-to-r ${plan.color} bg-clip-text`}>
@@ -510,41 +380,37 @@ export default function MarineCargoInsurancePage() {
             ))}
           </div>
 
-          {/* Plan Details */}
           <motion.div 
-            className="bg-white rounded-3xl p-8 shadow-xl"
-            initial={{ opacity: 0, y: 30 }}
+            className="bg-gray-50 rounded-3xl p-8 shadow-xl"
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            key={activeTab}
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            <h3 className="text-3xl font-bold text-gray-800 mb-6">
               {planTypes.find(p => p.id === activeTab)?.name} Features
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {coverageFeatures[activeTab]?.map((feature, index) => (
-                <motion.div 
+            <ul className="space-y-4">
+              {coverageFeatures[activeTab].map((feature, index) => (
+                <motion.li 
                   key={index}
-                  className="flex items-center space-x-3 p-4 bg-blue-50 rounded-xl"
+                  className="flex items-start"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
-                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                  <span className="text-green-500 mr-3 mt-1">✓</span>
                   <span className="text-gray-700">{feature}</span>
-                </motion.div>
+                </motion.li>
               ))}
-            </div>
+            </ul>
           </motion.div>
         </div>
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"
@@ -553,309 +419,75 @@ export default function MarineCargoInsurancePage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Why Choose Our <span className="text-transparent bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text">Marine Insurance?</span>
-            </h2>
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Why Choose Our Vehicle Insurance</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive cargo protection with industry-leading benefits and worldwide coverage
+              Comprehensive protection with business-focused benefits and support.
             </p>
           </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
-              <motion.div
+              <motion.div 
                 key={index}
-                className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden group"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-white rounded-2xl p-8 text-center group transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -10, scale: 1.02 }}
               >
-                <motion.div 
-                  className={`absolute inset-0 bg-gradient-to-br ${benefit.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
-                />
-                
-                <div className="relative z-10">
-                  <motion.div 
-                    className="text-6xl mb-6"
-                    whileHover={{ scale: 1.2, rotate: 10 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {benefit.icon}
-                  </motion.div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
+                <div className={`text-5xl mb-5 inline-block p-4 rounded-full bg-gradient-to-br ${benefit.color} text-white transition-transform duration-300 group-hover:scale-110`}>
+                  {benefit.icon}
                 </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-3">{benefit.title}</h3>
+                <p className="text-gray-600 text-sm">{benefit.description}</p>
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Insurance Companies */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Leading Marine Insurers</h2>
-            <p className="text-xl text-gray-600">Partner with India's most trusted marine insurance specialists</p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {companies.map((company, index) => (
-              <motion.div
-                key={index}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-20 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
-                    <span className="text-xs text-gray-500">Logo</span>
-                  </div>
-                  <div className="text-right">
-                    <div className="flex items-center text-yellow-500">
-                      <span className="font-bold mr-1">{company.rating}</span>
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{company.name}</h3>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-600">Claim Settlement</span>
-                  <span className="font-bold text-blue-600">{company.claimRatio}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section ref={sectionRef} className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">How to Get Marine Cargo Insurance</h2>
-            <p className="text-xl text-gray-600">Simple 4-step process to protect your cargo shipments</p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {steps.map((step, index) => (
-              <motion.div
-                key={index}
-                className="text-center relative"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-              >
-                <motion.div 
-                  className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center text-white text-3xl shadow-lg"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  {step.icon}
-                </motion.div>
-                
-                <div className="text-2xl font-bold text-blue-600 mb-2">{step.step}</div>
-                <h4 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h4>
-                <p className="text-gray-600">{step.description}</p>
-                
-                {/* Connecting Line */}
-                {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-blue-300 to-cyan-300 transform -translate-x-4"></div>
-                )}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-700 via-cyan-600 to-teal-600 text-white relative overflow-hidden">
-        <motion.div 
-          className="absolute inset-0"
-          animate={{
-            background: [
-              "linear-gradient(45deg, #1d4ed8, #0891b2, #0d9488)",
-              "linear-gradient(90deg, #0891b2, #0d9488, #1d4ed8)",
-              "linear-gradient(135deg, #0d9488, #1d4ed8, #0891b2)",
-              "linear-gradient(180deg, #1d4ed8, #0891b2, #0d9488)"
-            ]
-          }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        />
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <motion.h3 
-            className="text-4xl lg:text-6xl font-bold mb-6 text-transparent bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            Secure Your Cargo Today
-          </motion.h3>
-          
-          <motion.p 
-            className="text-xl text-cyan-100 max-w-3xl mx-auto mb-8"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            Join thousands of businesses worldwide who trust us for their marine cargo insurance needs. Get comprehensive coverage and peace of mind for your international shipments.
-          </motion.p>
-          
-          <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <motion.button 
-              className="bg-yellow-400 text-gray-900 px-10 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 transition-colors shadow-lg"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Get Marine Quote
-            </motion.button>
-            <motion.button 
-              className="border-2 border-white text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Speak to Expert
-            </motion.button>
-          </motion.div>
-
-          {/* Trust Indicators */}
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-4 gap-8"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            viewport={{ once: true }}
-          >
-            {[
-              { icon: "🌍", title: "Global", desc: "Worldwide Coverage" },
-              { icon: "⚡", title: "24/7", desc: "Expert Support" },
-              { icon: "💯", title: "98.5%", desc: "Claim Settlement" },
-              { icon: "🏆", title: "50+ Years", desc: "Marine Expertise" }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                className="bg-white/10 rounded-2xl p-6 backdrop-blur-sm border border-white/20"
-                whileHover={{ y: -5, scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
-                <motion.div 
-                  className="text-4xl mb-3"
-                  whileHover={{ scale: 1.2, rotate: 10 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  {item.icon}
-                </motion.div>
-                <h4 className="text-2xl font-bold text-yellow-200 mb-2">{item.title}</h4>
-                <p className="text-cyan-100 text-sm">{item.desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
-            className="text-center mb-16"
+            className="text-center mb-12"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Marine Cargo Insurance FAQs</h2>
-            <p className="text-xl text-gray-600">Get answers to common marine insurance questions</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+            <p className="text-xl text-gray-600">Common queries about commercial vehicle insurance.</p>
           </motion.div>
-
           <div className="space-y-4">
-            {[
-              {
-                q: "What is marine cargo insurance?",
-                a: "Marine cargo insurance provides protection for goods during transportation by sea, air, rail, or road against physical loss or damage from external causes. It covers the cargo from warehouse to warehouse during the entire transit."
-              },
-              {
-                q: "What does marine cargo insurance cover?",
-                a: "Coverage typically includes physical loss or damage due to perils of the sea, fire, explosion, theft, pilferage, non-delivery, general average, salvage charges, and sue and labor expenses. The extent depends on the type of policy chosen."
-              },
-              {
-                q: "How is marine cargo insurance premium calculated?",
-                a: "Premium is calculated as a percentage of the cargo value (CIF + 10%). Rates vary based on cargo type, route, mode of transport, packaging, and coverage type. Typical rates range from 0.15% to 0.5% of cargo value."
-              },
-              {
-                q: "What is the difference between FPA, WA, and All Risks coverage?",
-                a: "FPA (Free from Particular Average) covers total loss only. WA (With Average) covers partial losses above a certain percentage. All Risks provides the broadest coverage for any physical loss or damage from external causes."
-              },
-              {
-                q: "Is marine insurance mandatory for exports/imports?",
-                a: "While not legally mandatory, marine insurance is essential for international trade. Many buyers require it, and banks often mandate it for LC transactions. It protects against significant financial losses during transit."
-              },
-              {
-                q: "How quickly are marine insurance claims settled?",
-                a: "Claims are typically settled within 15-30 days after submission of complete documents. Emergency cases and total loss claims may be expedited. Our marine specialists ensure smooth and fast claim processing."
-              }
-            ].map((faq, index) => (
+            {faqs.map((faq, index) => (
               <motion.div
                 key={index}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-gray-50 rounded-xl shadow-sm overflow-hidden"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="p-6">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">{faq.q}</h4>
-                  <p className="text-gray-600 leading-relaxed">{faq.a}</p>
-                </div>
+                <button
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  className="w-full flex justify-between items-center text-left p-6 font-semibold text-gray-800"
+                >
+                  <span>{faq.question}</span>
+                  <ChevronDown className={`transform transition-transform duration-300 ${openFaq === index ? 'rotate-180' : ''}`} />
+                </button>
+                <motion.div
+                  initial={false}
+                  animate={{ height: openFaq === index ? 'auto' : 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="overflow-hidden"
+                >
+                  <div className="p-6 pt-0 text-gray-600">
+                    {faq.answer}
+                  </div>
+                </motion.div>
               </motion.div>
             ))}
           </div>
-
-          <motion.div 
-            className="text-center mt-12"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <Link 
-              href="/faq/marine-cargo-insurance" 
-              className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors"
-            >
-              View All Marine Insurance FAQs
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </motion.div>
         </div>
       </section>
     </div>

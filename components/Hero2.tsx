@@ -97,7 +97,7 @@ export default function Hero2Section() {
                   <div className="text-sm text-gray-600">Insurance Partners</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-[#009ec7]">99%</div>
+                  <div className="text-2xl font-bold text-[#009ec7]">95%</div>
                   <div className="text-sm text-gray-600">Claim Settlement</div>
                 </div>
               </div>

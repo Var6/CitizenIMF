@@ -136,7 +136,7 @@ export default function Navbar() {
                       <div className="grid grid-cols-2 gap-4 p-6">
                         {item.dropdownItems.map((category, catIndex) => (
                           <div key={catIndex}>
-                            <h3 className="text-sm font-semibold text-gray-900 mb-3 text-blue-600">
+                            <h3 className="text-sm font-semibold text-gray-900 mb-3 hover:text-blue-600">
                               {category.category}
                             </h3>
                             <ul className="space-y-2">
@@ -144,7 +144,8 @@ export default function Navbar() {
                                 <li key={linkIndex}>
                                   <Link
                                     href={link.href}
-                                     target="_blank" rel="noopener noreferrer"
+                                    target={link.href.startsWith('https') ? '_blank' : '_self'}
+                                    rel={link.href.startsWith('https') ? 'noopener noreferrer' : ''}
                                     className="text-sm text-gray-600 hover:text-blue-600 transition-colors block py-1"
                                   >
                                     {link.name}

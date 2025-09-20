@@ -2,6 +2,7 @@
 
 import { useState, SVGProps } from 'react'
 import { motion } from "framer-motion"
+import { sendEmail } from '@/lib/email';
 
 type PlanType = 'basic' | 'comprehensive' | 'fleet';
 
@@ -141,9 +142,21 @@ export default function CommercialVehicleInsurance() {
     }))
   }
 
-  const handleSubmit = () => {
-    console.log('Commercial vehicle insurance form submitted:', formData)
-    alert('Thank you! We\'ll send you commercial vehicle insurance quotes shortly.')
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault()
+       try {
+      await sendEmail({
+        name: formData.ownerName,
+        type: window.location.href, // 🔥 send current page URL
+        mobile: formData.mobile,
+        city: formData.location,
+      })
+  
+      alert("✅ Thank you! We will send you personal accident insurance quotes shortly.")
+    } catch (error) {
+      console.error("Email error:", error)
+      alert("❌ Failed to send enquiry. Please try again.")
+    }
   }
 
   return (
@@ -287,7 +300,7 @@ export default function CommercialVehicleInsurance() {
                 </div>
 
                 <motion.button
-                  onClick={handleSubmit}
+                  onClick={()=>handleSubmit}
                   className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all cursor-pointer"
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}

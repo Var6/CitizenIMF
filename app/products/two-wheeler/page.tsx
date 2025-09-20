@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion } from "motion/react"
 import Link from 'next/link'
+import { sendEmail } from '@/lib/email';
 
 type PlanType = 'thirdparty' | 'comprehensive' | 'standalone' | 'zerodep';
 
@@ -171,12 +172,22 @@ export default function TwoWheelerInsurancePage() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    console.log('Two-wheeler insurance form submitted:', formData)
-    alert('Thank you! We\'ll send you two-wheeler insurance quotes shortly.')
-  }
-
+ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+     e.preventDefault()
+      try {
+     await sendEmail({
+       name: formData.name,
+       type: window.location.href, // 🔥 send current page URL
+       mobile: formData.mobile,
+       city: formData.city,
+     })
+ 
+     alert("✅ Thank you! We will send you personal accident insurance quotes shortly.")
+   } catch (error) {
+     console.error("Email error:", error)
+     alert("❌ Failed to send enquiry. Please try again.")
+   }
+ }
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {

@@ -1,4 +1,5 @@
 'use client'
+import { sendEmail } from '@/lib/email';
 import { useState } from 'react'
 
 const ChevronDown = (props:any) => (
@@ -54,10 +55,22 @@ export default function IndemnityInsurance() {
     setFormData(prev => ({ ...prev, [field]: value }))
   }
 
-  const handleSubmit = () => {
-    console.log('Indemnity insurance form submitted:', formData)
-    alert('Thank you! We\'ll send you customized indemnity insurance quotes.')
-  }
+ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+     e.preventDefault()
+      try {
+     await sendEmail({
+       name: formData.name,
+       type: window.location.href, // 🔥 send current page URL
+       mobile: formData.mobile,
+       city: formData.email,
+     })
+ 
+     alert("✅ Thank you! We will send you personal accident insurance quotes shortly.")
+   } catch (error) {
+     console.error("Email error:", error)
+     alert("❌ Failed to send enquiry. Please try again.")
+   }
+ }
 
   return (
     <div className="min-h-screen bg-white">
@@ -95,7 +108,7 @@ export default function IndemnityInsurance() {
               <input type="text" value={formData.name} onChange={(e)=>handleInputChange('name',e.target.value)} placeholder="Full Name" className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900"/>
               <input type="email" value={formData.email} onChange={(e)=>handleInputChange('email',e.target.value)} placeholder="Email" className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900"/>
               <input type="tel" value={formData.mobile} onChange={(e)=>handleInputChange('mobile',e.target.value)} placeholder="Mobile Number" className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900"/>
-              <button onClick={handleSubmit} className="w-full bg-gradient-to-r from-teal-500 to-blue-500 text-white py-3 rounded-lg font-bold text-lg shadow-lg">Get Indemnity Insurance Quotes</button>
+              <button onClick={()=>handleSubmit} className="w-full bg-gradient-to-r from-teal-500 to-blue-500 text-white py-3 rounded-lg font-bold text-lg shadow-lg">Get Indemnity Insurance Quotes</button>
             </div>
           </div>
         </div>

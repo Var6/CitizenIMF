@@ -8,46 +8,85 @@ import Footer from "@/components/ui/Footer";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
-// Metadata for SEO + social sharing
+// Metadata
 export const metadata: Metadata = {
-  title: "Citizen IMF | Health Insurance & Investment Plans",
+  metadataBase: new URL("https://citizenimf.com"),
+  title: {
+    default: "Citizen IMF | Health Insurance & Investment Plans in India",
+    template: "%s | Citizen IMF",
+  },
   description:
-    "Citizen IMF provides trusted health insurance, life coverage, and smart investment plans to secure your future. Explore affordable policies tailored for you.",
+    "Citizen IMF provides comprehensive health insurance, life coverage, motor insurance, and smart investment plans across India. Get personalized quotes and expert financial advice to secure your future.",
   keywords: [
-    "health insurance",
+    "health insurance India",
     "investment plans",
     "life insurance",
+    "motor insurance",
+    "two wheeler insurance",
+    "four wheeler insurance",
     "Citizen IMF",
     "financial planning",
-    "secure future",
+    "insurance advisor",
+    "mutual funds",
+    "pension plans",
+    "child plans",
+    "business insurance",
+    "travel insurance",
+    "personal accident insurance",
   ],
   icons: {
-    icon: "/logo.png", // Place your logo in /public/logo.png
+    icon: "/logo.png",
+    apple: "/logo.png",
   },
   openGraph: {
-    title: "Citizen IMF | Health Insurance & Investment Plans",
+    title: "Citizen IMF | Health Insurance & Investment Plans in India",
     description:
-      "Secure your future with Citizen IMF. Health insurance, life coverage, and investment solutions tailored for your needs.",
+      "Secure your future with Citizen IMF. Comprehensive insurance solutions and investment plans tailored for Indian families and businesses.",
     url: "https://citizenimf.com",
     siteName: "Citizen IMF",
     images: [
       {
-        url: "/logo.png", // Can replace with a banner later
-        width: 500,
-        height: 500,
-        alt: "Citizen IMF Logo",
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Citizen IMF - Insurance and Investment Solutions",
       },
     ],
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Citizen IMF | Insurance & Investment Solutions",
+    description:
+      "Comprehensive insurance and investment plans for Indian families and businesses.",
+    images: ["/logo.png"],
+    creator: "@citizenimf",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "your-google-verification-code",
+  },
+  category: "Finance and Insurance",
 };
 
 export default function RootLayout({
@@ -56,14 +95,57 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en-IN">
       <head>
-        {/* Title bar logo */}
-        <link rel="icon" href="/logo.png" sizes="any" />
+        {/* Favicon */}
+        <link rel="icon" href="/logo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/logo.png" />
+        <link rel="shortcut icon" href="/logo.png" />
+
+        {/* Theme color */}
+        <meta name="theme-color" content="#0891b2" />
+        <meta name="msapplication-TileColor" content="#0891b2" />
+
+        {/* Preconnect fonts */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+
+        {/* Structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Citizen IMF",
+              url: "https://citizenimf.com",
+              logo: "https://citizenimf.com/logo.png",
+              description:
+                "Comprehensive insurance and investment solutions for Indian families and businesses",
+              address: {
+                "@type": "PostalAddress",
+                addressCountry: "IN",
+              },
+              contactPoint: {
+                "@type": "ContactPoint",
+                contactType: "customer service",
+                areaServed: "IN",
+                availableLanguage: ["English", "Hindi"],
+              },
+              sameAs: [
+                "https://facebook.com/citizenimf",
+                "https://twitter.com/citizenimf",
+                "https://linkedin.com/company/citizenimf",
+              ],
+            }),
+          }}
+        />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />

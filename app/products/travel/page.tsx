@@ -1,4 +1,5 @@
 "use client"
+import { sendEmail } from '@/lib/email';
 import { useState } from 'react'
 
 const ChevronDown = (props:any) => (
@@ -63,10 +64,22 @@ export default function TravelInsurance() {
     setFormData(prev => ({ ...prev, [field]: value }))
   }
 
-  const handleSubmit = () => {
-    console.log('Travel insurance form submitted:', formData)
-    alert('Great! We\'ll send you the best travel insurance quotes for your trip.')
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+     try {
+    await sendEmail({
+      name: formData.destination,
+      type: window.location.href, // 🔥 send current page URL
+      mobile: formData.mobile,
+      city: formData.destination,
+    })
+
+    alert("✅ Thank you! We will send you personal accident insurance quotes shortly.")
+  } catch (error) {
+    console.error("Email error:", error)
+    alert("❌ Failed to send enquiry. Please try again.")
   }
+}
 
   return (
     <div className="min-h-screen bg-white">
@@ -171,7 +184,7 @@ export default function TravelInsurance() {
                 </div>
 
                 <button
-                  onClick={handleSubmit}
+                  onClick={()=>handleSubmit}
                   className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white py-3 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transition-all"
                 >
                   Get Travel Quotes

@@ -1,4 +1,5 @@
 'use client'
+import { sendEmail } from '@/lib/email';
 import { useState } from 'react'
 
 const ChevronDown = (props:any) => (
@@ -54,10 +55,22 @@ export default function KeymanInsurance() {
     setFormData(prev => ({ ...prev, [field]: value }))
   }
 
-  const handleSubmit = () => {
-    console.log('Keyman insurance form submitted:', formData)
-    alert('Thank you! We\'ll send you customized keyman insurance quotes.')
-  }
+ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+     e.preventDefault()
+      try {
+     await sendEmail({
+       name: formData.keymanName,
+       type: window.location.href, // 🔥 send current page URL
+       mobile: formData.mobile,
+       city: formData.companyName,
+     })
+ 
+     alert("✅ Thank you! We will send you personal accident insurance quotes shortly.")
+   } catch (error) {
+     console.error("Email error:", error)
+     alert("❌ Failed to send enquiry. Please try again.")
+   }
+ }
 
   return (
     <div className="min-h-screen bg-white">
@@ -87,7 +100,7 @@ export default function KeymanInsurance() {
                 <option value="5C">₹5 Crores</option>
               </select>
               <input type="tel" value={formData.mobile} onChange={(e)=>handleInputChange('mobile',e.target.value)} placeholder="Mobile Number" className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900"/>
-              <button onClick={handleSubmit} className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 rounded-lg font-bold text-lg shadow-lg">Get Keyman Insurance Quotes</button>
+              <button onClick={()=>handleSubmit} className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 rounded-lg font-bold text-lg shadow-lg">Get Keyman Insurance Quotes</button>
             </div>
           </div>
         </div>

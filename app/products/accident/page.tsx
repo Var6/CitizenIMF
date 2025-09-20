@@ -2,6 +2,7 @@
 
 import { useState, SVGProps } from 'react'
 import { motion } from "framer-motion"
+import { sendEmail } from '@/lib/email';
 
 type PlanType = 'basic' | 'comprehensive' | 'family' | 'premium';
 
@@ -197,11 +198,23 @@ export default function PersonalAccidentPage() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log('Accident insurance form submitted:', formData)
-    alert('Thank you! We\'ll send you personal accident insurance quotes shortly.')
+     try {
+    await sendEmail({
+      name: formData.name,
+      type: window.location.href, // 🔥 send current page URL
+      mobile: formData.mobile,
+      city: formData.city,
+    })
+
+    alert("✅ Thank you! We will send you personal accident insurance quotes shortly.")
+  } catch (error) {
+    console.error("Email error:", error)
+    alert("❌ Failed to send enquiry. Please try again.")
   }
+}
+  
 
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">

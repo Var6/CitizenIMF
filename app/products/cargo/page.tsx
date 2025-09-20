@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion } from "motion/react"
 import Link from 'next/link'
+import { sendEmail } from '@/lib/email';
 
 type PlanType = 'basic' | 'standard' | 'comprehensive' | 'premium';
 
@@ -196,11 +197,22 @@ export default function MarineCargoInsurancePage() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log('Marine cargo insurance form submitted:', formData)
-    alert('Thank you! We\'ll send you marine cargo insurance quotes shortly.')
+     try {
+    await sendEmail({
+      name: formData.contactPerson,
+      type: window.location.href, // 🔥 send current page URL
+      mobile: formData.mobile,
+      city: formData.companyName,
+    })
+
+    alert("✅ Thank you! We will send you personal accident insurance quotes shortly.")
+  } catch (error) {
+    console.error("Email error:", error)
+    alert("❌ Failed to send enquiry. Please try again.")
   }
+}
 
   useEffect(() => {
     const observer = new IntersectionObserver(

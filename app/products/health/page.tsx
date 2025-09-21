@@ -1,11 +1,8 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
-import { motion } from "framer-motion"
-import Link from 'next/link'
-import { sendEmail } from '@/lib/email';
-
-type PlanType = 'individual' | 'family' | 'senior' | 'critical';
+import { useState } from 'react'
+import { motion } from "motion/react"
+import { sendEmail } from '@/lib/email'
 
 export default function HealthInsurancePage() {
   const [formData, setFormData] = useState({
@@ -14,115 +11,187 @@ export default function HealthInsurancePage() {
     sumInsured: '5',
     city: '',
     name: '',
-    mobile: ''
+    mobile: '',
   })
-  const [activeTab, setActiveTab] = useState<PlanType>('individual')
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLDivElement | null>(null)
-
-  const planTypes = [
-    { id: 'individual', name: 'Individual Plans', icon: '👤', description: 'Perfect for single person coverage', startingPrice: '₹150/month*', color: 'from-blue-500 to-cyan-500' },
-    { id: 'family', name: 'Family Floater', icon: '👨‍👩‍👧‍👦', description: 'Complete family protection', startingPrice: '₹350/month*', color: 'from-green-500 to-emerald-500' },
-    { id: 'senior', name: 'Senior Citizen', icon: '👴', description: 'Specialized for 60+ age', startingPrice: '₹800/month*', color: 'from-orange-500 to-red-500' },
-    { id: 'critical', name: 'Critical Illness', icon: '🏥', description: 'Coverage for serious diseases', startingPrice: '₹200/month*', color: 'from-purple-500 to-pink-500' }
-  ]
-
-  const benefits = [
-    { icon: '🏥', title: 'Cashless Treatment', description: 'Get treatment at 10,000+ network hospitals without paying upfront', color: 'from-blue-500 to-cyan-500' },
-    { icon: '💰', title: 'Tax Benefits', description: 'Save up to ₹46,800 in taxes under Section 80D', color: 'from-green-500 to-emerald-500' },
-    { icon: '🚑', title: 'Emergency Coverage', description: 'Ambulance charges and emergency medical expenses covered', color: 'from-orange-500 to-red-500' },
-    { icon: '👨‍⚕️', title: 'Pre & Post Hospitalization', description: '30-60 days coverage before and after hospitalization', color: 'from-purple-500 to-pink-500' },
-    { icon: '🔄', title: 'No Claim Bonus', description: 'Increase your sum insured by up to 100% for claim-free years', color: 'from-yellow-500 to-orange-500' },
-    { icon: '⚡', title: 'Instant Policy', description: 'Get your policy issued within 5 minutes online', color: 'from-indigo-500 to-purple-500' }
-  ]
-
-  const companies = [
-    { name: 'HDFC ERGO', rating: 4.5, claimRatio: '95.1%', logo: '/companies/hdfc-ergo.png' },
-    { name: 'ICICI Lombard', rating: 4.3, claimRatio: '92.8%', logo: '/companies/icici-lombard.png' },
-    { name: 'Niva Bupa', rating: 4.4, claimRatio: '91.2%', logo: '/companies/niva-bupa.png' },
-    { name: 'Care Health', rating: 4.2, claimRatio: '89.5%', logo: '/companies/care-health.png' },
-    { name: 'Star Health', rating: 4.1, claimRatio: '88.9%', logo: '/companies/star-health.png' },
-    { name: 'Bajaj Allianz', rating: 4.0, claimRatio: '87.2%', logo: '/companies/bajaj-allianz.png' }
-  ]
-
-  const coverageFeatures = {
-    individual: [ 'Individual coverage up to ₹1 Crore', 'Cashless treatment at network hospitals', 'Pre & post hospitalization coverage', 'Day care procedures covered', 'Annual health check-up', 'No waiting period for accidents' ],
-    family: [ 'Entire family covered under one policy', 'Shared sum insured for all members', 'Newborn baby covered from day 1', 'Maternity and child care benefits', 'Family discount on premium', 'Coverage for parents and in-laws' ],
-    senior: [ 'No upper age limit for renewals', 'Pre-existing disease coverage', 'Reduced waiting periods', 'Special OPD benefits', 'Home healthcare services', 'Wellness and preventive care' ],
-    critical: [ 'Lump sum payout on diagnosis', 'Coverage for 30+ critical illnesses', 'No restriction on fund usage', 'Multiple claim benefit', 'Partial payment for early stages', 'Income replacement benefit' ]
-  }
-
-  const steps = [
-    { step: '01', title: 'Fill Details', description: 'Enter your age, family details, and coverage requirements', icon: '📝' },
-    { step: '02', title: 'Compare Plans', description: 'Get quotes from top insurers and compare benefits', icon: '🔍' },
-    { step: '03', title: 'Choose & Pay', description: 'Select the best plan and make secure online payment', icon: '💳' },
-    { step: '04', title: 'Get Policy', description: 'Receive your policy document instantly via email', icon: '📧' }
-  ]
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }))
+    setFormData((prev) => ({ ...prev, [field]: value }))
   }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault()
-       try {
+    e.preventDefault()
+    console.log("Form submitted:", formData)
+
+    try {
       await sendEmail({
         name: formData.name,
-        type: window.location.href, // 🔥 send current page URL
+        type: window.location.href,
         mobile: formData.mobile,
         city: formData.city,
       })
-  
-      alert("✅ Thank you! We will send you personal accident insurance quotes shortly.")
+
+      alert("✅ Thank you! We will send you health insurance quotes shortly.")
     } catch (error) {
       console.error("Email error:", error)
       alert("❌ Failed to send enquiry. Please try again.")
     }
   }
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) setIsVisible(true)
-    }, { threshold: 0.2 })
-
-    if (sectionRef.current) observer.observe(sectionRef.current)
-    return () => observer.disconnect()
-  }, [])
-
   return (
-    <div className="min-h-screen bg-white relative overflow-hidden">
-      {/* ...keeping hero, plans, benefits, companies, steps, CTA, FAQ as in your code... */}
+    <div className="min-h-screen bg-gradient-to-b from-blue-100 via-white to-purple-50">
+      {/* Hero Section */}
+      <section className="py-20 px-6 text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-4xl lg:text-5xl font-extrabold mb-6"
+        >
+          Protect Your Health with <br />
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-orange-300">
+            Affordable Insurance Plans
+          </span>
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-lg max-w-2xl mx-auto text-blue-100"
+        >
+          Compare, choose and save money on your health insurance policy in just a few clicks. 💙⚡
+        </motion.p>
+      </section>
 
-      {/* Companies section fix */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-green-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6 text-center">Top Insurance Partners</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {companies.map((company, index) => (
+      {/* Form Section */}
+      <section className="py-16 px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mx-auto bg-white rounded-3xl shadow-2xl p-10"
+        >
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-6">
+            Get Instant Quotes
+          </h2>
+          <p className="text-center text-gray-600 mb-10">
+            Fill out your details and receive the best health insurance options tailored for you. 🚀
+          </p>
+
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Age & Members */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <select
+                value={formData.age}
+                onChange={(e) => handleInputChange('age', e.target.value)}
+                className="px-4 py-3 rounded-xl border border-gray-300 text-gray-900 focus:ring-2 focus:ring-blue-500"
+                required
+              >
+                <option value="">Your Age</option>
+                <option value="18-25">18-25 years</option>
+                <option value="26-35">26-35 years</option>
+                <option value="36-45">36-45 years</option>
+                <option value="46-55">46-55 years</option>
+                <option value="56-65">56-65 years</option>
+                <option value="65+">65+ years</option>
+              </select>
+
+              <select
+                value={formData.members}
+                onChange={(e) => handleInputChange('members', e.target.value)}
+                className="px-4 py-3 rounded-xl border border-gray-300 text-gray-900 focus:ring-2 focus:ring-blue-500"
+                required
+              >
+                <option value="1">Self</option>
+                <option value="2">Self + Spouse</option>
+                <option value="3">Self + 1 Child</option>
+                <option value="4">Self + Spouse + 1 Child</option>
+                <option value="5">Self + Spouse + 2 Children</option>
+                <option value="6">Self + Parents</option>
+              </select>
+            </div>
+
+            {/* Sum Insured */}
+            <select
+              value={formData.sumInsured}
+              onChange={(e) => handleInputChange('sumInsured', e.target.value)}
+              className="w-full px-4 py-3 rounded-xl border border-gray-300 text-gray-900 focus:ring-2 focus:ring-blue-500"
+              required
+            >
+              <option value="">Sum Insured</option>
+              <option value="3">₹3 Lakhs</option>
+              <option value="5">₹5 Lakhs</option>
+              <option value="10">₹10 Lakhs</option>
+              <option value="15">₹15 Lakhs</option>
+              <option value="25">₹25 Lakhs</option>
+              <option value="50">₹50 Lakhs</option>
+              <option value="100">₹1 Crore</option>
+            </select>
+
+            {/* City, Name, Mobile */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <input
+                type="text"
+                value={formData.city}
+                onChange={(e) => handleInputChange('city', e.target.value)}
+                placeholder="Your City"
+                className="px-4 py-3 rounded-xl border border-gray-300 text-gray-900 focus:ring-2 focus:ring-blue-500"
+                required
+              />
+              <input
+                type="text"
+                value={formData.name}
+                onChange={(e) => handleInputChange('name', e.target.value)}
+                placeholder="Full Name"
+                className="px-4 py-3 rounded-xl border border-gray-300 text-gray-900 focus:ring-2 focus:ring-blue-500"
+                required
+              />
+              <input
+                type="tel"
+                value={formData.mobile}
+                onChange={(e) => handleInputChange('mobile', e.target.value)}
+                placeholder="Mobile Number"
+                className="px-4 py-3 rounded-xl border border-gray-300 text-gray-900 focus:ring-2 focus:ring-blue-500"
+                required
+              />
+            </div>
+
+            {/* Submit Button */}
+            <motion.button
+              type="submit"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-2xl transition-all"
+            >
+              Get Free Quotes Now
+            </motion.button>
+
+            <p className="text-center text-sm text-gray-500">
+              🔒 Secure • ⚡ Instant • 💯 Free Quotes
+            </p>
+          </form>
+        </motion.div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+            Why Choose Our Health Insurance?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { icon: '💰', title: 'Affordable Premiums', desc: 'Compare and choose the most budget-friendly plan.' },
+              { icon: '⚡', title: 'Instant Quotes', desc: 'Get personalized quotes in seconds without hassle.' },
+              { icon: '🏥', title: 'Cashless Hospitals', desc: 'Access thousands of top hospitals across India.' },
+            ].map((benefit, index) => (
               <motion.div
                 key={index}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                transition={{ delay: index * 0.2 }}
+                className="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-md text-center"
               >
-                <div className="flex items-center justify-between mb-4">
-                  <img src={company.logo} alt={`${company.name} logo`} className="w-20 h-12 object-contain" />
-                  <div className="text-right">
-                    <div className="flex items-center text-yellow-500">
-                      <span className="font-bold mr-1">{company.rating}</span>
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{company.name}</h3>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-600">Claim Settlement</span>
-                  <span className="font-bold text-green-600">{company.claimRatio}</span>
-                </div>
+                <div className="text-4xl mb-4">{benefit.icon}</div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">{benefit.title}</h3>
+                <p className="text-gray-600">{benefit.desc}</p>
               </motion.div>
             ))}
           </div>

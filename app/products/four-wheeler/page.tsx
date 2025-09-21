@@ -300,7 +300,7 @@ export default function FourWheelerInsurancePage() {
 
             {/* Quote Form */}
             <motion.div 
-              className="bg-white rounded-3xl p-8 shadow-2xl"
+              className="bg-white rounded-3xl p-8 shadow-2xl text-black"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}

@@ -97,7 +97,7 @@ export default function LifeInsurance() {
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-xl">
+            <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-6 shadow-xl">
               <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Get Life Quote</h3>
               
               <div className="space-y-3">
@@ -182,9 +182,8 @@ export default function LifeInsurance() {
                   required
                 />
 
-                <button
-                  onClick={()=>handleSubmit}
-                  className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white py-3 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transition-all"
+                <button type='submit'
+                  className="w-full hover:cursor-pointer bg-gradient-to-r from-yellow-400 to-orange-500 text-white py-3 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transition-all"
                 >
                   Get Life Insurance Quotes
                 </button>
@@ -192,7 +191,7 @@ export default function LifeInsurance() {
                   👨‍👩‍👧‍👦 Family Protection • 💰 Tax Benefits • ✅ Instant Quotes
                 </p>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </section>

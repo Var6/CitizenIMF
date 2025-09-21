@@ -85,7 +85,7 @@ export default function IndemnityInsurance() {
               Protect your career and reputation with indemnity insurance. Cover legal costs and compensation claims for errors, omissions, or negligence.
             </p>
           </div>
-          <div className="bg-white rounded-2xl p-6 shadow-xl">
+          <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-6 shadow-xl">
             <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Get Indemnity Quote</h3>
             <div className="space-y-3">
               <select value={formData.profession} onChange={(e)=>handleInputChange('profession',e.target.value)} className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900">
@@ -108,9 +108,9 @@ export default function IndemnityInsurance() {
               <input type="text" value={formData.name} onChange={(e)=>handleInputChange('name',e.target.value)} placeholder="Full Name" className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900"/>
               <input type="email" value={formData.email} onChange={(e)=>handleInputChange('email',e.target.value)} placeholder="Email" className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900"/>
               <input type="tel" value={formData.mobile} onChange={(e)=>handleInputChange('mobile',e.target.value)} placeholder="Mobile Number" className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900"/>
-              <button onClick={()=>handleSubmit} className="w-full bg-gradient-to-r from-teal-500 to-blue-500 text-white py-3 rounded-lg font-bold text-lg shadow-lg">Get Indemnity Insurance Quotes</button>
+              <button type='submit'  className="w-full hover:cursor-pointer bg-gradient-to-r from-teal-500 to-blue-500 text-white py-3 rounded-lg font-bold text-lg shadow-lg">Get Indemnity Insurance Quotes</button>
             </div>
-          </div>
+          </form>
         </div>
       </section>
 

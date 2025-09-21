@@ -97,7 +97,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-xl">
+            <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-6 shadow-xl">
               <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Get Travel Quote</h3>
               
               <div className="space-y-3">
@@ -184,8 +184,8 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                 </div>
 
                 <button
-                  onClick={()=>handleSubmit}
-                  className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white py-3 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transition-all"
+                type='submit'
+                  className="w-full hover:cursor-pointer bg-gradient-to-r from-yellow-400 to-orange-500 text-white py-3 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transition-all"
                 >
                   Get Travel Quotes
                 </button>
@@ -193,7 +193,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   🌍 Global Coverage • ⚡ Instant Policy • 💯 Trusted
                 </p>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </section>

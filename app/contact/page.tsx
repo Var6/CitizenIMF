@@ -28,7 +28,7 @@ export default function ContactPage() {
     {
       icon: "📧",
       title: "Email Address",
-      value: "citizenimf@gmail.com",
+      value: "hello@citizenimf.com",
       description: "Send us your queries and we'll respond quickly",
       color: "from-green-500 to-emerald-500",
       href: "mailto:citizenimf@gmail.com"
@@ -59,8 +59,8 @@ export default function ContactPage() {
   ]
 
   const businessHours = [
-    { day: "Monday - Sunday", time: "10:00 AM - 6:00 PM" },
-    { day: "Sunday", time: "Closed" },
+    { day: "Wednesday - Monday", time: "10:00 AM - 6:00 PM" },
+    { day: "Tusday", time: "Closed" },
   ]
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -177,14 +177,7 @@ export default function ContactPage() {
               Contact
             </motion.h1>
             
-            <motion.h2 
-              className="text-3xl lg:text-5xl font-semibold text-transparent bg-gradient-to-r from-yellow-300 via-orange-300 to-red-300 bg-clip-text mb-6"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              Contact us
-            </motion.h2>
+            
             
             <motion.p 
               className="text-2xl text-blue-100 font-light"

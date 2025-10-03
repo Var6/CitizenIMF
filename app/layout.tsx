@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 // Google Fonts
 const geistSans = Geist({
@@ -84,7 +85,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code",
+    google: "your-google-verification-code", // replace with real Search Console code
   },
   category: "Finance and Insurance",
 };
@@ -97,10 +98,8 @@ export default function RootLayout({
   return (
     <html lang="en-IN">
       <head>
-        {/* Favicon */}
-        <link rel="icon" href="/logo.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/logo.png" />
-        <link rel="shortcut icon" href="/logo.png" />
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://citizenimf.com" />
 
         {/* Theme color */}
         <meta name="theme-color" content="#0891b2" />
@@ -114,7 +113,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
 
-        {/* Structured data */}
+        {/* Structured data (Organization schema) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -149,6 +148,7 @@ export default function RootLayout({
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

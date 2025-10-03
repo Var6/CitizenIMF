@@ -101,12 +101,12 @@ export default function PersonalAccidentPage() {
   ]
 
   const companies = [
-    { name: 'LIC', rating: 4.6, claimRatio: '98.2%', logo: 'https://placehold.co/120x60/d1d5db/374151?text=LIC' },
-    { name: 'MaxLife', rating: 4.4, claimRatio: '96.8%', logo: 'https://placehold.co/120x60/d1d5db/374151?text=MaxLife' },
-    { name: 'HDFC Life', rating: 4.3, claimRatio: '95.2%', logo: 'https://placehold.co/120x60/d1d5db/374151?text=HDFC+Life' },
-    { name: 'PNB MetLife', rating: 4.2, claimRatio: '94.5%', logo: 'https://placehold.co/120x60/d1d5db/374151?text=PNB+MetLife' },
-    { name: 'Niva Bupa', rating: 4.4, claimRatio: '93.8%', logo: 'https://placehold.co/120x60/d1d5db/374151?text=Niva+Bupa' },
-    { name: 'Care Health', rating: 4.1, claimRatio: '92.1%', logo: 'https://placehold.co/120x60/d1d5db/374151?text=Care+Health' }
+    { name: 'LIC', rating: 4.6, claimRatio: '98.2%', logo: '/partners/lic.jpg' },
+    { name: 'MaxLife', rating: 4.4, claimRatio: '96.8%', logo: '/partners/max-life.jpg' },
+    { name: 'bajaj', rating: 4.3, claimRatio: '95.2%', logo: '/partners/bajaj.jpg' },
+    { name: 'PNB MetLife', rating: 4.2, claimRatio: '94.5%', logo: '/partners/pnb.jpg' },
+    { name: 'Niva Bupa', rating: 4.4, claimRatio: '93.8%', logo: '/partners/niva.jpg' },
+    { name: 'Care Health', rating: 4.1, claimRatio: '92.1%', logo: '/partners/care.jpg' }
   ]
 
   const coverageFeatures: Record<PlanType, string[]> = {

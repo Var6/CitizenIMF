@@ -15,10 +15,10 @@ export default function TrustBuildingSection() {
   const sectionRef = useRef(null)
 
   const finalValues = {
-    customers: 100000,
-    policies: 250000,
+    customers: 250200,
+    policies: 256200,
     partners: 25,
-    claims: 95
+    claims: 915
   }
 
   const achievements = [

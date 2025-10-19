@@ -65,7 +65,7 @@ export default function ProductsPage() {
       icon: "⛑️",
       color: "from-red-500 to-rose-500",
       bgColor: "bg-red-500",
-      href: "/insurance/personal-accident"
+      href: "/products/personal-accident"
     },
     {
       id: 6,
@@ -76,7 +76,7 @@ export default function ProductsPage() {
       icon: "💝",
       color: "from-pink-500 to-rose-500",
       bgColor: "bg-pink-500",
-      href: "/insurance/life"
+      href: "/products/life"
     },
 
     // Business Insurance
@@ -89,7 +89,7 @@ export default function ProductsPage() {
       icon: "🏪",
       color: "from-orange-500 to-red-500",
       bgColor: "bg-orange-500",
-      href: "/insurance/shop"
+      href: "/products/shop"
     },
     {
       id: 8,
@@ -100,7 +100,7 @@ export default function ProductsPage() {
       icon: "🚢",
       color: "from-teal-500 to-cyan-500",
       bgColor: "bg-teal-500",
-      href: "/insurance/marine-cargo"
+      href: "/products/marine-cargo"
     },
     {
       id: 9,
@@ -111,7 +111,7 @@ export default function ProductsPage() {
       icon: "👨‍💼",
       color: "from-violet-500 to-purple-500",
       bgColor: "bg-violet-500",
-      href: "/insurance/keyman"
+      href: "/products/keyman"
     },
     {
       id: 10,
@@ -122,7 +122,7 @@ export default function ProductsPage() {
       icon: "⚖️",
       color: "from-slate-500 to-gray-600",
       bgColor: "bg-slate-500",
-      href: "/insurance/professional-indemnity"
+      href: "/products/professional-indemnity"
     },
 
     // Personal Insurance
@@ -135,7 +135,7 @@ export default function ProductsPage() {
       icon: "🏠",
       color: "from-emerald-500 to-green-500",
       bgColor: "bg-emerald-500",
-      href: "/insurance/home"
+      href: "/products/home"
     },
     {
       id: 12,
@@ -146,7 +146,7 @@ export default function ProductsPage() {
       icon: "✈️",
       color: "from-sky-500 to-blue-500",
       bgColor: "bg-sky-500",
-      href: "/insurance/travel"
+      href: "/products/travel"
     },
 
     // Investment Products
@@ -159,7 +159,7 @@ export default function ProductsPage() {
       icon: "📈",
       color: "from-yellow-500 to-orange-500",
       bgColor: "bg-yellow-500",
-      href: "/investment/mutual-funds"
+      href: "/products/mutual-funds"
     },
     {
       id: 14,
@@ -170,7 +170,7 @@ export default function ProductsPage() {
       icon: "🛡️",
       color: "from-amber-500 to-yellow-500",
       bgColor: "bg-amber-500",
-      href: "/investment/guaranteed-returns"
+      href: "/products/guaranteed-returns"
     },
     {
       id: 15,
@@ -181,7 +181,7 @@ export default function ProductsPage() {
       icon: "👴",
       color: "from-indigo-500 to-purple-500",
       bgColor: "bg-indigo-500",
-      href: "/investment/pension"
+      href: "/products/pension"
     },
     {
       id: 16,
@@ -192,7 +192,7 @@ export default function ProductsPage() {
       icon: "👶",
       color: "from-rose-500 to-pink-500",
       bgColor: "bg-rose-500",
-      href: "/investment/child-plans"
+      href: "/products/child-plans"
     }
   ]
 
@@ -418,6 +418,9 @@ export default function ProductsPage() {
             layout
           >
             {filteredProducts.map((product, index) => (
+              <Link href={product.href} key={product.id}>
+
+
               <motion.div
                 key={product.id}
                 className="group relative bg-white/10 backdrop-blur-lg rounded-3xl p-6 shadow-2xl hover:shadow-cyan-500/25 transition-all duration-500 overflow-hidden border border-white/20"
@@ -427,7 +430,7 @@ export default function ProductsPage() {
                 viewport={{ once: true }}
                 whileHover={{ y: -10, scale: 1.02 }}
                 layout
-              >
+                >
                 {/* Animated Background Gradient */}
                 <motion.div 
                   className={`absolute inset-0 bg-gradient-to-br ${product.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
@@ -461,7 +464,7 @@ export default function ProductsPage() {
 
                   {/* Action Buttons */}
                   <div className="flex flex-col gap-2">
-                    <Link href={product.href}>
+                   
                       <motion.button 
                         className={`w-full bg-gradient-to-r ${product.color} text-white px-4 py-2.5 rounded-xl font-semibold hover:shadow-lg transition-all text-sm`}
                         whileHover={{ scale: 1.05 }}
@@ -469,12 +472,12 @@ export default function ProductsPage() {
                       >
                         Learn More
                       </motion.button>
-                    </Link>
+                 
                     <motion.button 
                       className="w-full border border-white/30 text-gray-300 px-4 py-2.5 rounded-xl font-semibold hover:border-cyan-400 hover:text-cyan-400 transition-all text-sm"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                    >
+                      >
                       Get Quote
                     </motion.button>
                   </div>
@@ -490,6 +493,7 @@ export default function ProductsPage() {
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 />
               </motion.div>
+            </Link>
             ))}
           </motion.div>
 

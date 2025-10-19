@@ -7,34 +7,48 @@ export default function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const slides = [
-    {
-      id: 1,
-      title: "Empowering Financial Freedom",
-      subtitle: "Join the revolution of citizen-driven financial solutions",
-      description: "Discover innovative ways to manage your finances with our cutting-edge platform designed for modern citizens.",
-      buttonText: "Get Started",
-      buttonLink: "/join-us",
-      bgColor: "from-blue-600 to-green-600"
-    },
-    {
-      id: 2,
-      title: "Trusted Partners Network",
-      subtitle: "Building bridges for financial success",
-      description: "Connect with verified partners and expand your financial opportunities through our secure ecosystem.",
-      buttonText: "Our Partners",
-      buttonLink: "/partners",
-      bgColor: "from-orange-600 to-yellow-500"
-    },
-    {
-      id: 3,
-      title: "Innovative Products",
-      subtitle: "Technology meets financial excellence",
-      description: "Explore our range of products designed to simplify your financial journey and maximize your potential.",
-      buttonText: "View Products",
-      buttonLink: "/products",
-      bgColor: "from-green-600 to-blue-600"
-    }
-  ]
+  {
+    id: 1,
+    title: "Empowering Financial Freedom",
+    subtitle: "Smart insurance solutions for modern citizens",
+    description:
+      "Experience the power of InsurTech — combining innovation and intelligence to secure your future. We simplify protection so you can focus on what truly matters.",
+    buttonText: "Get Started",
+    buttonLink: "/join-us",
+    bgColor: "from-blue-600 to-green-600"
+  },
+  {
+    id: 2,
+    title: "Trusted Partner Ecosystem",
+    subtitle: "Collaborate. Grow. Succeed.",
+    description:
+      "Join a network of reliable partners, agents, and businesses working together to deliver trusted insurance and financial solutions through advanced digital infrastructure.",
+    buttonText: "Our Partners",
+    buttonLink: "/partners",
+    bgColor: "from-orange-600 to-yellow-500"
+  },
+  {
+    id: 3,
+    title: "Innovative Insurance Simplified",
+    subtitle: "Technology that protects and empowers",
+    description:
+      "From life and health to motor and business insurance — our AI-powered platform brings transparency, speed, and convenience to every policy you choose.",
+    buttonText: "Explore Solutions",
+    buttonLink: "/products",
+    bgColor: "from-green-600 to-blue-600"
+  },
+  {
+    id: 4,
+    title: "Digital Transformation in Insurance",
+    subtitle: "The future of finance is here",
+    description:
+      "We bridge the gap between insurance and technology, helping individuals and enterprises make smarter, data-driven decisions for long-term security and growth.",
+    buttonText: "Learn More",
+    buttonLink: "/about",
+    bgColor: "from-purple-600 to-indigo-600"
+  }
+];
+
 
   useEffect(() => {
     const timer = setInterval(() => {

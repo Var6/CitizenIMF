@@ -6,13 +6,13 @@ const categories = [
   { label: "Car Insurance", icon: "🚗", href: "/products/four-wheeler" },
   { label: "2 Wheeler", icon: "🏍️", href: "/products/two-wheeler" },
   { label: "Health Insurance", icon: "🏥", href: "/products/health" },
-  { label: "Life Insurance", icon: "☂️", href: "/insurance/life" },
-  { label: "Travel Insurance", icon: "✈️", href: "/insurance/travel" },
+  { label: "Life Insurance", icon: "☂️", href: "/products/life" },
+  { label: "Travel Insurance", icon: "✈️", href: "/products/travel" },
   { label: "Personal Accident", icon: "🛡️", href: "/products/accident" },
-  { label: "Shop Insurance", icon: "🏪", href: "/insurance/shop" },
+  { label: "Shop Insurance", icon: "🏪", href: "/products/shop" },
   { label: "Marine Cargo", icon: "🚢", href: "/products/commercial" },
-  { label: "Home Insurance", icon: "🏠", href: "/insurance/home" },
-  { label: "All Insurance", icon: "📋", href: "/insurance" },
+  { label: "Home Insurance", icon: "🏠", href: "/products/home" },
+  { label: "All Insurance", icon: "📋", href: "/products" },
 ];
 
 export default function Hero2Section() {

@@ -1,7 +1,9 @@
+
 'use client'
 
 import { useState } from 'react'
 import { motion } from "motion/react"
+import { sendEmail } from '@/lib/email'  // adjust the path if needed
 
 type TabKey = 'health' | 'car' | 'life' | 'travel' | 'shop' | 'marine';
 

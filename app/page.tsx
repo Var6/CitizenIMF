@@ -12,7 +12,7 @@ import WhyChooseSection from "@/components/WhyChooseUS";
 export default function Home() {
   return (
    <div>
-    <HeroCarousel/>
+    {/* <HeroCarousel/> */}
     <Hero2Section/>
     <PremiumCalculatorSection/>
     <ServicesSection/>

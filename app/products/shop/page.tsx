@@ -283,49 +283,6 @@ export default function ShopInsurance() {
         </div>
       </section>
 
-      {/* Benefits */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Why Choose Our Shop Insurance
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                icon: '💼',
-                title: 'Business Protection',
-                desc: 'Complete coverage for your shop and inventory',
-              },
-              {
-                icon: '⚡',
-                title: 'Quick Claims',
-                desc: 'Fast claim processing and settlement',
-              },
-              {
-                icon: '💰',
-                title: 'Affordable Rates',
-                desc: 'Competitive premiums for all business sizes',
-              },
-              {
-                icon: '📞',
-                title: '24/7 Support',
-                desc: 'Round-the-clock customer assistance',
-              },
-            ].map((benefit, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition-all"
-              >
-                <div className="text-4xl mb-4">{benefit.icon}</div>
-                <h3 className="text-lg font-bold text-gray-800 mb-2">
-                  {benefit.title}
-                </h3>
-                <p className="text-gray-600 text-sm">{benefit.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* FAQ */}
       <section className="py-16 bg-white">

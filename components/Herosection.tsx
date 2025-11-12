@@ -15,7 +15,7 @@ export default function HeroCarousel() {
       "Experience the power of InsurTech — combining innovation and intelligence to secure your future. We simplify protection so you can focus on what truly matters.",
     buttonText: "Get Started",
     buttonLink: "/join-us",
-    bgColor: "from-blue-600 to-green-600"
+    bgColor: "from-blue-600 to-netural-100"
   },
   {
     id: 2,

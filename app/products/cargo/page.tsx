@@ -555,55 +555,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Why Choose Our <span className="text-transparent bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text">Marine Insurance?</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive cargo protection with industry-leading benefits and worldwide coverage
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={index}
-                className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden group"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10, scale: 1.02 }}
-              >
-                <motion.div 
-                  className={`absolute inset-0 bg-gradient-to-br ${benefit.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
-                />
-                
-                <div className="relative z-10">
-                  <motion.div 
-                    className="text-6xl mb-6"
-                    whileHover={{ scale: 1.2, rotate: 10 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {benefit.icon}
-                  </motion.div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+  
 
       {/* Insurance Companies */}
       <section className="py-20 bg-gradient-to-br from-blue-50 to-cyan-50">

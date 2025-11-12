@@ -24,14 +24,14 @@ export default function IndemnityInsurance() {
       id: 'basic',
       name: 'Professional Basic',
       icon: '📑',
-      price: '₹9,500/year*',
+      price: '₹6,500/year*',
       features: ['Covers negligence claims', 'Legal defense cost', 'Professional liability cover']
     },
     {
       id: 'premium',
       name: 'Comprehensive Indemnity',
       icon: '⚖️',
-      price: '₹18,900/year*',
+      price: '₹15,000/year*',
       features: ['High sum assured', 'Extended legal cover', 'Worldwide protection', 'Cyber liability rider', 'Tax benefits']
     }
   ]
@@ -140,24 +140,7 @@ export default function IndemnityInsurance() {
         </div>
       </section>
 
-      {/* Benefits */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Why Choose Indemnity Insurance</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[{icon:'⚖️',title:'Legal Protection',desc:'Covers legal defense costs and settlements'},
-              {icon:'🛡️',title:'Professional Security',desc:'Safeguards against negligence claims'},
-              {icon:'🌍',title:'Global Coverage',desc:'Protection worldwide for your services'},
-              {icon:'💼',title:'Client Confidence',desc:'Reassures clients with financial security'}].map((b,i)=>(
-              <div key={i} className="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-lg">
-                <div className="text-4xl mb-4">{b.icon}</div>
-                <h3 className="text-lg font-bold text-gray-800 mb-2">{b.title}</h3>
-                <p className="text-gray-600 text-sm">{b.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+     
 
       {/* FAQ */}
       <section className="py-16 bg-white">

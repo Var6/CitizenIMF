@@ -16,7 +16,7 @@ export default function PartnersSection() {
     { name: 'max-life', logo: '/partners/max-life.jpg' },
     { name: 'national', logo: '/partners/national.jpg' },
     { name: 'niva', logo: '/partners/niva.jpg' },
-    { name: 'pnb', logo: '/partners/pnb.jpg' },
+    { name: 'pnb', logo: '/partners/pnb.png' },
     { name: 'tata', logo: '/partners/tata.jpg' },
   ]
 

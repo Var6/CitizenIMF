@@ -32,7 +32,7 @@ export default function CommercialVehicleInsurance() {
       name: 'Third Party Cover',
       icon: '🛡️',
       description: 'Mandatory legal protection',
-      startingPrice: '₹3,500/year*',
+      startingPrice: '₹20,500/year*',
       color: 'from-blue-500 to-cyan-500'
     },
     {
@@ -175,7 +175,7 @@ export default function CommercialVehicleInsurance() {
                 <span className="text-transparent bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text"> Insurance</span>
               </h1>
               <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-                Protect your business vehicles with comprehensive insurance coverage. Get quotes for trucks, tractors, buses, and all commercial vehicles starting from ₹3,500/year.
+                Protect your business vehicles with comprehensive insurance coverage. Get quotes for trucks, tractors, buses, and all commercial vehicles starting from ₹18,000*/year.
               </p>
             </motion.div>
 
@@ -422,41 +422,7 @@ export default function CommercialVehicleInsurance() {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Why Choose Our Vehicle Insurance</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive protection with business-focused benefits and support.
-            </p>
-          </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => (
-              <motion.div 
-                key={index}
-                className="bg-white rounded-2xl p-8 text-center group transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div className={`text-5xl mb-5 inline-block p-4 rounded-full bg-gradient-to-br ${benefit.color} text-white transition-transform duration-300 group-hover:scale-110`}>
-                  {benefit.icon}
-                </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-3">{benefit.title}</h3>
-                <p className="text-gray-600 text-sm">{benefit.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+    
 
       {/* FAQ Section */}
       <section className="py-20 bg-white">

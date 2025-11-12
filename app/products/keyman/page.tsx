@@ -196,7 +196,7 @@ export default function KeymanInsurance() {
                 <span className="text-sm text-slate-300 ml-2">4.9/5 Customer Rating</span>
               </div>
               <div className="text-sm text-slate-300">
-                <span className="font-bold text-cyan-300">50,000+</span> Businesses Protected
+                <span className="font-bold text-cyan-300">5+</span> Businesses Protected
               </div>
             </div>
           </div>
@@ -361,42 +361,7 @@ export default function KeymanInsurance() {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6">
-              Why Choose Keyman Insurance
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive protection that goes beyond traditional coverage to safeguard your business future
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, i) => (
-              <div 
-                key={i} 
-                className="group bg-white rounded-3xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 hover:border-transparent relative overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-5 transition-opacity duration-500 from-blue-500 to-purple-500"></div>
-                
-                <div className={`w-20 h-20 bg-gradient-to-br ${benefit.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                  {benefit.icon}
-                </div>
-                
-                <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-blue-600 transition-colors">
-                  {benefit.title}
-                </h3>
-                
-                <p className="text-gray-600 leading-relaxed">
-                  {benefit.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+ 
 
       {/* Enhanced FAQ Section */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">

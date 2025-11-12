@@ -660,6 +660,7 @@ export default function JoinUsPage() {
             transition={{ duration: 0.8, delay: 0.8 }}
             viewport={{ once: true }}
           >
+            
             {[
               { icon: "🌟", title: "Career Growth", desc: "Multiple advancement opportunities" },
               { icon: "🤝", title: "Team Spirit", desc: "Collaborative work environment" },

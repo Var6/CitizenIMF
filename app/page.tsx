@@ -14,7 +14,6 @@ export default function Home() {
    <div>
     {/* <HeroCarousel/> */}
     <Hero2Section/>
-    <PremiumCalculatorSection/>
     <ServicesSection/>
     <TrustBuildingSection/>
     <PartnersSection/>

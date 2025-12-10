@@ -38,20 +38,9 @@ export default function Hero2Section() {
                 Compare & Buy from India's Leading Insurance Companies
               </p>
             </div>
-
-            {/* Quick Actions */}
-            <div className="flex flex-wrap gap-4 mb-8">
-              <button className="bg-gradient-to-r from-[#009ec7] to-[#08b3e1] text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all">
-                Get Free Quote
-              </button>
-              <button className="border-2 border-[#009ec7] text-[#009ec7] px-6 py-3 rounded-full font-semibold hover:bg-[#009ec7] hover:text-white transition-all">
-                Renew Policy
-              </button>
-            </div>
-
             {/* Insurance Categories Grid */}
             <div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">Choose Your Insurance Type:</h3>
+              <h3 className="text-lg font-semibold text-gray-800 mb-4 text-center">Choose Your Insurance Type</h3>
               <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
                 {categories.map((cat) => (
                   <a
@@ -89,7 +78,7 @@ export default function Hero2Section() {
             <div className="text-center">
               <div className="flex items-center justify-center gap-6 mb-4">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-[#009ec7]">50K+</div>
+                  <div className="text-2xl font-bold text-[#009ec7]">5K+</div>
                   <div className="text-sm text-gray-600">Happy Customers</div>
                 </div>
                 <div className="text-center">

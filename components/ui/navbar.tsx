@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from "motion/react"
+import { Button } from '../Movingborder'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -198,9 +199,15 @@ export default function Navbar() {
                 </Link>
                 <Link
                   href="/contact"
-                  className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:shadow-lg transition-all"
+                  className="text-blue-600 border border-blue-600 px-4 py-2 rounded-full text-sm font-medium hover:shadow-lg transition-all"
                 >
                   Get Quote
+                </Link>
+                <Link href={'https://www.citizenhousing.in'}>
+                <Button borderRadius="1.75rem"
+                        className="bg-gradient-to-r from-blue-600 to-green-800 text-white rounded-full  hover:shadow-lg transition-all ">
+                 CITIZEN HOUSING
+                </Button>
                 </Link>
               </div>
             </div>

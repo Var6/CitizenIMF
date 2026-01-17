@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/Footer";
 import { Analytics } from "@vercel/analytics/next";
+import TopRibbon from "@/components/ui/Topribbion";
 
 // Google Fonts
 const geistSans = Geist({
@@ -145,6 +146,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <TopRibbon/>
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />

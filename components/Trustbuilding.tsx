@@ -14,12 +14,6 @@ export default function TrustBuildingSection() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const sectionRef = useRef(null)
 
-  const finalValues = {
-    customers: 250200,
-    policies: 256200,
-    partners: 25,
-    claims: 915
-  }
 
   const achievements = [
     {
@@ -162,33 +156,7 @@ export default function TrustBuildingSection() {
     return () => observer.disconnect()
   }, [])
 
-  useEffect(() => {
-    if (isVisible) {
-      const duration = 2000
-      const steps = 60
-      const stepDuration = duration / steps
-
-      let currentStep = 0
-      const timer = setInterval(() => {
-        currentStep++
-        const progress = currentStep / steps
-
-        setCounters({
-          customers: Math.floor(finalValues.customers * progress),
-          policies: Math.floor(finalValues.policies * progress),
-          partners: Math.floor(finalValues.partners * progress),
-          claims: Math.floor(finalValues.claims * progress)
-        })
-
-        if (currentStep >= steps) {
-          clearInterval(timer)
-          setCounters(finalValues)
-        }
-      }, stepDuration)
-
-      return () => clearInterval(timer)
-    }
-  }, [isVisible])
+  
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -216,65 +184,7 @@ export default function TrustBuildingSection() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Statistics Section */}
-        <motion.div 
-          className="text-center mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text mb-6">
-            Trusted by Thousands
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-16">
-            Join over 100,000+ satisfied customers who trust Citizen IMF for their insurance and investment needs
-          </p>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {achievements.map((achievement, index) => (
-              <motion.div
-                key={index}
-                className="text-center bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden group"
-                initial={{ opacity: 0, y: 50, scale: 0.8 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10, scale: 1.05 }}
-              >
-                <motion.div 
-                  className={`absolute inset-0 bg-gradient-to-br ${achievement.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
-                />
-                
-                <motion.div 
-                  className="text-5xl mb-4"
-                  whileHover={{ scale: 1.2, rotate: 10 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  {achievement.icon}
-                </motion.div>
-                
-                <motion.div 
-                  className={`text-4xl lg:text-5xl font-bold mb-2 text-transparent bg-gradient-to-r ${achievement.color} bg-clip-text`}
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{ duration: 0.8, delay: 0.5 + index * 0.1, type: "spring", bounce: 0.5 }}
-                  viewport={{ once: true }}
-                >
-                  {achievement.value.toLocaleString()}{achievement.suffix}
-                </motion.div>
-                
-                <div className="font-bold text-gray-900 text-lg mb-2">{achievement.label}</div>
-                <div className="text-gray-600 text-sm">{achievement.description}</div>
-                
-                <motion.div 
-                  className={`absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r ${achievement.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
-                />
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
+  
         {/* Process Steps */}
         <motion.div 
           className="mb-20"

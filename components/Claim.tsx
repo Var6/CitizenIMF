@@ -176,11 +176,7 @@ export default function ClaimsBlogNewsletter() {
               ))}
             </div>
 
-            <div className="text-center">
-              <button className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-lg transition-all transform hover:scale-105">
-                Start Your Claim Now
-              </button>
-            </div>
+           
           </div>
         )}
 
@@ -251,11 +247,11 @@ export default function ClaimsBlogNewsletter() {
             }`}
           >
             <div className="max-w-4xl mx-auto text-center">
-              <div className="bg-gradient-to-br from-orange-500 via-yellow-500 to-green-500 rounded-3xl p-12 text-white">
+              <div className="bg-gradient-to-br from-orange-500 via-yellow-500 to-green-500 rounded-3xl p-12 text-black">
                 <h2 className="text-4xl lg:text-5xl font-bold mb-6">
                   Stay Updated with Our Newsletter
                 </h2>
-                <p className="text-xl mb-8 text-orange-100">
+                <p className="text-xl mb-8 text-orange-600">
                   Get the latest financial insights, investment tips, and exclusive offers delivered to your inbox weekly.
                 </p>
 
@@ -281,15 +277,15 @@ export default function ClaimsBlogNewsletter() {
                 <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                   <div className="bg-white/10 rounded-xl p-6 backdrop-blur-sm">
                     <div className="text-3xl font-bold mb-2">50K+</div>
-                    <div className="text-orange-100">Subscribers</div>
+                    <div className="text-orange-600">Subscribers</div>
                   </div>
                   <div className="bg-white/10 rounded-xl p-6 backdrop-blur-sm">
                     <div className="text-3xl font-bold mb-2">Weekly</div>
-                    <div className="text-orange-100">Updates</div>
+                    <div className="text-orange-600">Updates</div>
                   </div>
                   <div className="bg-white/10 rounded-xl p-6 backdrop-blur-sm">
                     <div className="text-3xl font-bold mb-2">100%</div>
-                    <div className="text-orange-100">Free Content</div>
+                    <div className="text-orange-600">Free Content</div>
                   </div>
                 </div>
 

@@ -106,14 +106,14 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:block">
-            <div className="ml-10 flex items-center space-x-1">
+          <div className="hidden lg:flex flex-1 items-center justify-between ml-10">
+            <div className="flex items-center space-x-1">
               {menuItems.map((item, index) => (
                 <div key={index} className="relative group">
                   <button
                     onMouseEnter={() => handleDropdown(index)}
                     onMouseLeave={() => setActiveDropdown(null)}
-                    className="text-gray-700 hover:text-blue-600 px-4 py-2 text-sm font-medium transition-colors flex items-center"
+                    className="text-orange-700 hover:text-blue-600 text-left py-2 text-lg font-bold transition-colors flex items-center"
                   >
                     {item.title}
                     {item.hasDropdown && (
@@ -179,13 +179,13 @@ export default function Navbar() {
               ))}
 
               {/* Direct Navigation Items */}
-              <Link href="/about" className="text-gray-700 hover:text-blue-600 px-4 py-2 text-sm font-medium transition-colors">
+              <Link href="/about" className="text-orange-700 hover:text-blue-600  py-2 text-lg px-2 font-medium transition-colors">
                 About
               </Link>
-              <Link href="/partners" className="text-gray-700 hover:text-blue-600 px-4 py-2 text-sm font-medium transition-colors">
+              <Link href="/partners" className="text-orange-700 hover:text-blue-600 py-2 text-lg px-2 font-medium transition-colors">
                 Partners
               </Link>
-              <Link href="/join-us" className="text-gray-700 hover:text-blue-600 px-4 py-2 text-sm font-medium transition-colors">
+              <Link href="/join-us" className="text-orange-700 hover:text-blue-600  py-2 text-lg px-2 font-medium transition-colors">
                 Join Us
               </Link>
 
@@ -203,13 +203,17 @@ export default function Navbar() {
                 >
                   Get Quote
                 </Link>
-                <Link href={'https://www.citizenhousing.in'}>
-                <Button borderRadius="1.75rem"
-                        className="bg-gradient-to-r from-blue-600 to-green-800 text-white rounded-full  hover:shadow-lg transition-all ">
-                 CITIZEN HOUSING
-                </Button>
-                </Link>
-              </div>
+                </div>
+  </div>
+                <div className="flex items-center">
+  <Link href="https://www.citizenhousing.in">
+    <Button
+      borderRadius="1.75rem"
+      className="bg-gradient-to-r from-blue-600 to-green-800 text-white rounded-full hover:shadow-lg transition-all"
+    >
+      CITIZEN HOUSING
+    </Button>
+  </Link>
             </div>
           </div>
 

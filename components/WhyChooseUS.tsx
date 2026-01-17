@@ -150,37 +150,7 @@ export default function WhyChooseSection() {
           ))}
         </div>
 
-        <div 
-          className={`grid grid-cols-2 md:grid-cols-4 gap-8 mb-20 transform transition-all duration-1000 ${
-            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-          }`}
-          style={{ transitionDelay: '600ms' }}
-        >
-          <div className="text-center bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-xl p-6 transform hover:scale-105 transition-transform">
-            <div className="text-4xl font-bold mb-2">
-              {counters.insurance.toLocaleString()} +
-            </div>
-            <div className="text-lg text-blue-100">Policies Sold</div>
-          </div>
-          <div className="text-center bg-gradient-to-br from-green-600 to-green-700 text-white rounded-xl p-6 transform hover:scale-105 transition-transform">
-            <div className="text-4xl font-bold mb-2">
-              {counters.team} +
-            </div>
-            <div className="text-lg text-green-100">Distribution Network</div>
-          </div>
-          <div className="text-center bg-gradient-to-br from-orange-600 to-orange-700 text-white rounded-xl p-6 transform hover:scale-105 transition-transform">
-            <div className="text-4xl font-bold mb-2">
-              {counters.customers.toLocaleString()} +
-            </div>
-            <div className="text-lg text-orange-100">Clams Assisted</div>
-          </div>
-          <div className="text-center bg-gradient-to-br from-yellow-500 to-yellow-600 text-white rounded-xl p-6 transform hover:scale-105 transition-transform">
-            <div className="text-4xl font-bold mb-2">
-              {counters.success}%
-            </div>
-            <div className="text-lg text-yellow-100">Our success rate</div>
-          </div>
-        </div>
+        
 
         <div 
           className={`transform transition-all duration-1000 ${

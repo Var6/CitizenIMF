@@ -48,8 +48,8 @@ export default function TopRibbon() {
         {/* RIGHT: Flashing Contact Info */}
         <motion.div
           animate={{ opacity: [1, 0.4, 1] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="flex text-md items-center space-x-6  font-bold text-red-700 "
+          transition={{ duration: 1.0, repeat: Infinity }}
+          className="flex text-md items-center space-x-6  font-bold text-white "
         >
           <a
             href="tel:+919031007097"

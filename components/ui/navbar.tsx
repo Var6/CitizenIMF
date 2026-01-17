@@ -179,13 +179,13 @@ export default function Navbar() {
               ))}
 
               {/* Direct Navigation Items */}
-              <Link href="/about" className="text-orange-700 hover:text-blue-600  py-2 text-lg px-2 font-medium transition-colors">
+              <Link href="/about" className="text-orange-700 hover:text-blue-600 text-left px-2 py-2 text-lg font-bold transition-colors flex items-center">
                 About
               </Link>
-              <Link href="/partners" className="text-orange-700 hover:text-blue-600 py-2 text-lg px-2 font-medium transition-colors">
+              <Link href="/partners" className="text-orange-700 hover:text-blue-600 text-left px-2 py-2 text-lg font-bold transition-colors flex items-center">
                 Partners
               </Link>
-              <Link href="/join-us" className="text-orange-700 hover:text-blue-600  py-2 text-lg px-2 font-medium transition-colors">
+              <Link href="/join-us" className="text-orange-700 hover:text-blue-600 text-left  px-2 py-2 text-lg font-bold transition-colors flex items-center">
                 Join Us
               </Link>
 
@@ -205,7 +205,10 @@ export default function Navbar() {
                 </Link>
                 </div>
   </div>
-                <div className="flex items-center">
+   <motion.div
+          animate={{ opacity: [1, 0.4, 1] }}
+          transition={{ duration: 1.0, repeat: Infinity }}
+             className="flex items-center">
   <Link href="https://www.citizenhousing.in">
     <Button
       borderRadius="1.75rem"
@@ -214,7 +217,7 @@ export default function Navbar() {
       CITIZEN HOUSING
     </Button>
   </Link>
-            </div>
+            </motion.div>
           </div>
 
           {/* Mobile menu button */}

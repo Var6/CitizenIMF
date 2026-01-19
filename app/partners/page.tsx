@@ -10,15 +10,15 @@ export default function PartnersPage() {
   const [selectedCategory, setSelectedCategory] = useState('all')
 
  const partners = [
-  { id: 1, name: 'bajaj', logo: '/partners/bajaj.jpg', category: 'general', established: '2001' },
-  { id: 2, name: 'care', logo: '/partners/care.jpg', category: 'health', established: '2012' },
-  { id: 3, name: 'icic', logo: '/partners/icic.jpg', category: 'general', established: '2001' },
-  { id: 4, name: 'lic', logo: '/partners/lic.jpg', category: 'life', established: '1956' },
-  { id: 5, name: 'max-life', logo: '/partners/max-life.jpg', category: 'life', established: '2000' },
-  { id: 6, name: 'national', logo: '/partners/national.jpg', category: 'general', established: '1906' },
-  { id: 7, name: 'niva', logo: '/partners/niva.jpg', category: 'health', established: '2008' },
-  { id: 8, name: 'pnb', logo: '/partners/pnb.jpg', category: 'life', established: '2001' },
-  { id: 9, name: 'tata', logo: '/partners/tata.jpg', category: 'general', established: '2001' },
+  { id: 1, name: 'Bajaj', logo: '/partners/bajaj.jpg', category: 'general', established: '2001' },
+  { id: 2, name: 'Care', logo: '/partners/care.jpg', category: 'health', established: '2012' },
+  { id: 3, name: 'ICICI', logo: '/partners/icic.jpg', category: 'general', established: '2001' },
+  { id: 4, name: 'LIC', logo: '/partners/lic.jpg', category: 'life', established: '1956' },
+  { id: 5, name: 'Max Life', logo: '/partners/max-life.jpg', category: 'life', established: '2000' },
+  { id: 6, name: 'National', logo: '/partners/national.jpg', category: 'general', established: '1906' },
+  { id: 7, name: 'Niva', logo: '/partners/niva.jpg', category: 'health', established: '2008' },
+  { id: 8, name: 'PNB', logo: '/partners/pnb.png', category: 'life', established: '2001' },
+  { id: 9, name: 'Tata AIG', logo: '/partners/tata.jpg', category: 'general', established: '2001' },
 ];
 
   const categories = [
@@ -55,28 +55,6 @@ export default function PartnersPage() {
     }
   ]
 
-  const values = [
-    {
-      title: "Integrity",
-      description: "We uphold the highest ethical standards, ensuring transparency and trust in everything we do.",
-      icon: "🛡️"
-    },
-    {
-      title: "Customer-Centric",
-      description: "Our clients are at the heart of our business. We strive to understand their needs and deliver personalized solutions.",
-      icon: "❤️"
-    },
-    {
-      title: "Teamwork",
-      description: "Collaboration and communication are key to our success. We work together to achieve our goals and support one another.",
-      icon: "👥"
-    },
-    {
-      title: "Excellence",
-      description: "We are committed to continuous improvement, setting high standards for ourselves and our services.",
-      icon: "⭐"
-    }
-  ]
 
   const filteredPartners = partners.filter(partner => 
     selectedCategory === 'all' || partner.category === selectedCategory
@@ -377,48 +355,6 @@ export default function PartnersPage() {
                     viewport={{ once: true }}
                   />
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Our Values Section */}
-      <section className="py-20 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-green-600 bg-clip-text mb-6">
-              Our Values
-            </h3>
-          </motion.div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <motion.div 
-                key={index} 
-                className="bg-white rounded-3xl p-6 shadow-2xl hover:shadow-3xl transition-all duration-500 text-center relative overflow-hidden group"
-                initial={{ opacity: 0, y: 50, scale: 0.9 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -15, scale: 1.02 }}
-              >
-                <motion.div 
-                  className="text-5xl mb-4"
-                  whileHover={{ scale: 1.2, rotate: 360 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  {value.icon}
-                </motion.div>
-                
-                <h4 className="text-xl font-bold text-gray-900 mb-3">{value.title}</h4>
-                <p className="text-gray-600 text-sm leading-relaxed">{value.description}</p>
               </motion.div>
             ))}
           </div>

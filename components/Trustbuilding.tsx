@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { motion } from "motion/react"
+import Image from 'next/image'
 
 export default function TrustBuildingSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -52,10 +53,10 @@ export default function TrustBuildingSection() {
 
   const testimonials = [
     {
-      name: 'Rajesh Kumar',
-      location: 'Patna, Bihar',
+      name: 'Sudhir Kumar Srivastava',
+      location: 'Noida',
       role: 'Business Owner',
-      image: '/testimonials/rajesh.jpg',
+      image: '/testimonials/SudhirSrivastav.jpeg',
       rating: 5,
       text: 'Citizen IMF helped me get the best health insurance for my family. Their team guided me through the entire process and I got coverage within 24 hours. Excellent service!',
       insurance: 'Health Insurance',
@@ -63,10 +64,10 @@ export default function TrustBuildingSection() {
       verified: true
     },
     {
-      name: 'Priya Sharma',
-      location: 'Delhi',
-      role: 'Software Engineer',
-      image: '/testimonials/priya.jpg',
+      name: 'Preeti Chandra',
+      location: 'Anishabad Patna',
+      role: 'House Maker',
+      image: '/testimonials/pree.jpeg',
       rating: 5,
       text: 'I was confused about term insurance options. Citizen IMF\'s advisor explained everything clearly and helped me choose the right policy. Very professional and trustworthy.',
       insurance: 'Term Insurance',
@@ -74,10 +75,10 @@ export default function TrustBuildingSection() {
       verified: true
     },
     {
-      name: 'Amit Patel',
-      location: 'Mumbai',
-      role: 'Entrepreneur',
-      image: '/testimonials/amit.jpg',
+      name: 'Roshan Kumar',
+      location: 'Malsalami',
+      role: 'Advocate',
+      image: '/testimonials/Roshan.jpeg',
       rating: 5,
       text: 'Got my car insurance renewed through Citizen IMF. They compared multiple options and saved me ₹3,000 on premium. Quick process and great support team.',
       insurance: 'Car Insurance',
@@ -85,10 +86,10 @@ export default function TrustBuildingSection() {
       verified: true
     },
     {
-      name: 'Sunita Devi',
-      location: 'Patna, Bihar',
-      role: 'Teacher',
-      image: '/testimonials/sunita.jpg',
+      name: 'Alka Jha',
+      location: 'Madhubani',
+      role: 'HR Manager',
+      image: '/testimonials/AlkaJHA.jpeg',
       rating: 5,
       text: 'When I needed to claim my health insurance, Citizen IMF\'s team helped me throughout. They handled all paperwork and I received my claim amount in 7 days.',
       insurance: 'Health Insurance Claim',
@@ -96,10 +97,10 @@ export default function TrustBuildingSection() {
       verified: true
     },
     {
-      name: 'Vikash Singh',
-      location: 'Gaya, Bihar',
-      role: 'Government Employee',
-      image: '/testimonials/vikash.jpg',
+      name: 'Sanjeev Anand',
+      location: 'New Delhi',
+      role: 'Social Worker APF',
+      image: '/testimonials/SanjeevAnand.jpeg',
       rating: 5,
       text: 'Excellent service for investment planning. They recommended ULIP plans that perfectly matched my goals. Regular updates and transparent communication.',
       insurance: 'Investment Plan',
@@ -258,7 +259,7 @@ export default function TrustBuildingSection() {
                 {/* Customer Photo */}
                 <div className="flex-shrink-0">
                   <div className="w-24 h-24 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
-                    {testimonials[currentTestimonial].name.split(' ').map(n => n[0]).join('')}
+                    <Image src={testimonials[currentTestimonial].image} alt={testimonials[currentTestimonial].name} width={96} height={96} className="rounded-full" />
                   </div>
                 </div>
                 

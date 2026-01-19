@@ -15,10 +15,10 @@ export default function AboutPage() {
   const sectionRef = useRef(null)
 
   const finalValues = {
-    insurance: 2600,
-    team: 89,
-    customers: 2800,
-    success: 99
+    insurance: 5000,
+    team: 8,
+    customers: 5000,
+    success: 95
   }
 
   const values = [

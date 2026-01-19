@@ -100,14 +100,6 @@ export default function PersonalAccidentPage() {
     }
   ]
 
-  const companies = [
-    { name: 'LIC', rating: 4.6, claimRatio: '98.2%', logo: '/partners/lic.jpg' },
-    { name: 'MaxLife', rating: 4.4, claimRatio: '96.8%', logo: '/partners/max-life.jpg' },
-    { name: 'bajaj', rating: 4.3, claimRatio: '95.2%', logo: '/partners/bajaj.jpg' },
-    { name: 'PNB MetLife', rating: 4.2, claimRatio: '94.5%', logo: '/partners/pnb.jpg' },
-    { name: 'Niva Bupa', rating: 4.4, claimRatio: '93.8%', logo: '/partners/niva.jpg' },
-    { name: 'Care Health', rating: 4.1, claimRatio: '92.1%', logo: '/partners/care.jpg' }
-  ]
 
   const coverageFeatures: Record<PlanType, string[]> = {
     basic: [
@@ -516,35 +508,7 @@ export default function PersonalAccidentPage() {
         </div>
       </section>
       
-      {/* Companies Section */}
-        <section className="py-20 bg-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <motion.div
-                    className="text-center mb-12"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                >
-                    <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Compare Quotes from Top Insurers</h2>
-                    <p className="text-lg text-gray-500">We partner with India's most trusted insurance companies.</p>
-                </motion.div>
-                <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
-                    {companies.map((company, index) => (
-                        <motion.div
-                            key={company.name}
-                            className="grayscale hover:grayscale-0 transition-all duration-300"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                        >
-                            <img src={company.logo} alt={company.name} className="h-12"/>
-                        </motion.div>
-                    ))}
-                </div>
-            </div>
-        </section>
+   
 
       {/* FAQ Section */}
       <section className="py-20 bg-gray-50">

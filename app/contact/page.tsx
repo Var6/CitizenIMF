@@ -31,15 +31,15 @@ export default function ContactPage() {
       value: "hello@citizenimf.com",
       description: "Send us your queries and we'll respond quickly",
       color: "from-green-500 to-emerald-500",
-      href: "mailto:citizenimf@gmail.com"
+      href: "mailto:hello@citizenomf.com"
     },
     {
       icon: "📍",
       title: "Office Address",
-      value: "C/o Shanti Devi(Besides Irrigation Office), By Pass Road, Anisabad, Patna -2",
+      value: "C/o Shanti Devi(Besides Irrigation Office), By Pass Road, Anisabad, Patna",
       description: "Visit us at our office for in-person consultation",
       color: "from-orange-500 to-red-500",
-      href: "https://maps.google.com"
+      href: "https://maps.app.goo.gl/KCfEQwUGBnzH5hZd9"
     }
   ]
 

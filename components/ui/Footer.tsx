@@ -18,7 +18,7 @@ export default function Footer() {
               <span className="text-2xl font-bold">Citizen IMF</span>
             </div>
             <p className="text-gray-200 mb-4 max-w-md text-sm leading-relaxed">
-              To have a positive impact on the lives of our clients by helping them achieve their goals and obtain peace of mind over their finances.
+             Citizen Savings & Credit IMF Pvt. Ltd. <br/> IRDA License Number - IMF187211901220210496 <br/> Valid Till: 27-Dec-2027 <br/> Principal Officer- Mr. Sanjay Kumar Mishra
             </p>
             <div className="flex space-x-4">
               <Link href="#" className="text-yellow-400 hover:text-yellow-300 transition-colors">

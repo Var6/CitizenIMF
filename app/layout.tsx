@@ -5,6 +5,10 @@ import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/Footer";
 import { Analytics } from "@vercel/analytics/next";
 import TopRibbon from "@/components/ui/Topribbion";
+import {
+  generateLocalBusinessSchema,
+  generateOrganizationSchema,
+} from "@/lib/schema";
 
 // Google Fonts
 const geistSans = Geist({
@@ -19,40 +23,44 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-// Metadata
+// Metadata - Optimized for Patna and local search
 export const metadata: Metadata = {
   metadataBase: new URL("https://citizenimf.com"),
   title: {
-    default: "Citizen IMF | Health Insurance & Investment Plans in India",
-    template: "%s | Citizen IMF",
+    default:
+      "Citizen IMF | Affordable Health Insurance in Patna, Bihar | Best Mediclaim Plans",
+    template: "%s | Citizen IMF - Health Insurance Patna",
   },
   description:
-    "Citizen IMF provides comprehensive health insurance, life coverage, motor insurance, and smart investment plans across India. Get personalized quotes and expert financial advice to secure your future.",
+    "Citizen IMF is your trusted health insurance advisor in Patna. Get affordable mediclaim policies, family health insurance, and group coverage with 24/7 claim support. Best health insurance plans in Bihar.",
   keywords: [
-    "health insurance India",
-    "investment plans",
-    "life insurance",
-    "motor insurance",
-    "two wheeler insurance",
-    "four wheeler insurance",
+    "health insurance Patna",
+    "health insurance in Patna",
+    "mediclaim policy Patna",
+    "family insurance Patna",
+    "affordable health insurance Patna",
+    "best health insurance Patna",
+    "health insurance Patna Bihar",
+    "insurance advisor Patna",
+    "insurance broker Patna",
+    "cashless mediclaim Patna",
+    "group health insurance Patna",
+    "individual mediclaim Patna",
+    "health insurance plans Patna",
+    "policy renewal Patna",
+    "insurance claim Patna",
     "Citizen IMF",
-    "financial planning",
-    "insurance advisor",
-    "mutual funds",
-    "pension plans",
-    "child plans",
-    "business insurance",
-    "travel insurance",
-    "personal accident insurance",
+    "financial planning Patna",
   ],
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",
   },
   openGraph: {
-    title: "Citizen IMF | Health Insurance & Investment Plans in India",
+    title:
+      "Citizen IMF | Affordable Health Insurance Plans in Patna & Bihar",
     description:
-      "Secure your future with Citizen IMF. Comprehensive insurance solutions and investment plans tailored for Indian families and businesses.",
+      "Get best health insurance plans in Patna with Citizen IMF. Affordable mediclaim, family insurance, and personalized coverage options. 24/7 customer support.",
     url: "https://citizenimf.com",
     siteName: "Citizen IMF",
     images: [
@@ -60,7 +68,7 @@ export const metadata: Metadata = {
         url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "Citizen IMF - Insurance and Investment Solutions",
+        alt: "Citizen IMF - Health Insurance Patna",
       },
     ],
     locale: "en_IN",
@@ -68,11 +76,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Citizen IMF | Insurance & Investment Solutions",
+    title:
+      "Health Insurance in Patna | Citizen IMF - Mediclaim & Family Plans",
     description:
-      "Comprehensive insurance and investment plans for Indian families and businesses.",
+      "Affordable health insurance, mediclaim policies, and family coverage in Patna. Get quotes in minutes with expert guidance from Citizen IMF.",
     images: ["/logo.png"],
     creator: "@citizenimf",
+    site: "@citizenimf",
   },
   robots: {
     index: true,
@@ -86,9 +96,21 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code", // replace with real Search Console code
+    google: "your-google-verification-code",
+    yandex: "your-yandex-code",
   },
   category: "Finance and Insurance",
+  manifest: "/manifest.json",
+  other: {
+    "geo.placename": "Patna, Bihar, India",
+    "geo.region": "IN-BR",
+    "ICBM": "25.5941, 85.1376",
+    "DC.title": "Health Insurance in Patna",
+    "DC.creator": "Citizen IMF",
+    "DC.subject": "Health Insurance, Mediclaim, Patna",
+    "DC.description":
+      "Affordable health insurance and mediclaim services in Patna",
+  },
 };
 
 export default function RootLayout({
@@ -99,13 +121,6 @@ export default function RootLayout({
   return (
     <html lang="en-IN">
       <head>
-        {/* Canonical URL */}
-        <link rel="canonical" href="https://citizenimf.com" />
-
-        {/* Theme color */}
-        <meta name="theme-color" content="#0891b2" />
-        <meta name="msapplication-TileColor" content="#0891b2" />
-
         {/* Preconnect fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -114,33 +129,71 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
 
-        {/* Structured data (Organization schema) */}
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://citizenimf.com" />
+
+        {/* Alternative language versions */}
+        <link
+          rel="alternate"
+          hrefLang="en-IN"
+          href="https://citizenimf.com"
+        />
+        <link
+          rel="alternate"
+          hrefLang="hi-IN"
+          href="https://citizenimf.com?lang=hi"
+        />
+
+        {/* Theme color */}
+        <meta name="theme-color" content="#0891b2" />
+        <meta name="msapplication-TileColor" content="#0891b2" />
+
+        {/* Geo-targeting */}
+        <meta name="geo.placename" content="Patna, Bihar, India" />
+        <meta name="geo.region" content="IN-BR" />
+        <meta name="ICBM" content="25.5941, 85.1376" />
+
+        {/* Additional meta tags for search and AI */}
+        <meta
+          name="article:publisher"
+          content="https://www.facebook.com/citizenimf"
+        />
+        <meta name="format-detection" content="telephone=no" />
+
+        {/* LocalBusiness Schema - Primary schema for local SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateLocalBusinessSchema()),
+          }}
+        />
+
+        {/* Organization Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateOrganizationSchema()),
+          }}
+        />
+
+        {/* WebSite schema for site search */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
+              "@type": "WebSite",
               name: "Citizen IMF",
               url: "https://citizenimf.com",
-              logo: "https://citizenimf.com/logo.png",
-              description:
-                "Comprehensive insurance and investment solutions for Indian families and businesses",
-              address: {
-                "@type": "PostalAddress",
-                addressCountry: "IN",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: {
+                  "@type": "EntryPoint",
+                  urlTemplate:
+                    "https://citizenimf.com/search?q={search_term_string}",
+                },
+                query_input: "required name=search_term_string",
               },
-              contactPoint: {
-                "@type": "ContactPoint",
-                contactType: "customer service",
-                areaServed: "IN",
-                availableLanguage: ["English", "Hindi"],
-              },
-              sameAs: [
-                "https://facebook.com/citizenimf",
-                "https://twitter.com/citizenimf",
-                "https://linkedin.com/company/citizenimf",
-              ],
             }),
           }}
         />

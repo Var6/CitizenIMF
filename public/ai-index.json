@@ -1,0 +1,220 @@
+{
+  "site": {
+    "name": "Citizen IMF",
+    "url": "https://citizenimf.com",
+    "description": "Insurance and Marketing Advisory Firm specializing in affordable health insurance solutions in Patna, Bihar",
+    "language": ["en", "hi"],
+    "regions": ["IN", "Bihar", "Patna"],
+    "category": "Finance & Insurance",
+    "founded": "2020",
+    "type": "LocalBusiness"
+  },
+  "contact": {
+    "phone": "+91-XXXXXXXXXX",
+    "email": "info@citizenimf.com",
+    "address": {
+      "city": "Patna",
+      "state": "Bihar",
+      "country": "India",
+      "coordinates": {
+        "latitude": 25.5941,
+        "longitude": 85.1376
+      }
+    }
+  },
+  "services": [
+    {
+      "id": "health-insurance-patna",
+      "name": "Health Insurance in Patna",
+      "url": "https://citizenimf.com/products/health-insurance-patna",
+      "description": "Comprehensive and affordable health insurance plans for Patna residents with coverage from ₹3-25 lakhs",
+      "keywords": [
+        "health insurance Patna",
+        "health insurance in Patna",
+        "best health insurance Patna",
+        "affordable health insurance Patna",
+        "health insurance Patna Bihar"
+      ],
+      "coverage": {
+        "min": "3 lakhs",
+        "max": "25 lakhs",
+        "currency": "INR"
+      },
+      "features": [
+        "Cashless treatment at 10000+ network hospitals",
+        "Individual, family, and senior citizen plans",
+        "Quick claim processing in 30-45 days",
+        "Tax benefits under Section 80D",
+        "24/7 customer support"
+      ]
+    },
+    {
+      "id": "mediclaim-policy-patna",
+      "name": "Mediclaim Policy Patna",
+      "url": "https://citizenimf.com/products/mediclaim-policy-patna",
+      "description": "Cashless mediclaim policies with direct hospital billing for Patna families",
+      "keywords": [
+        "mediclaim policy Patna",
+        "mediclaim Patna",
+        "mediclaim insurance Patna",
+        "cashless mediclaim Patna",
+        "mediclaim policy Patna cost"
+      ],
+      "coverage": {
+        "min": "3 lakhs",
+        "max": "25 lakhs",
+        "currency": "INR"
+      },
+      "features": [
+        "Cashless treatment without upfront payment",
+        "No hassle claim settlement",
+        "Pre and post-hospitalization coverage",
+        "Maternity and childbirth coverage",
+        "Organ transplant coverage"
+      ]
+    },
+    {
+      "id": "family-insurance-patna",
+      "name": "Family Insurance Patna",
+      "url": "https://citizenimf.com/products/family-insurance-patna",
+      "description": "Affordable family floater policies covering entire family with one policy",
+      "keywords": [
+        "family insurance Patna",
+        "family health insurance Patna",
+        "family insurance plan Patna",
+        "family insurance Patna cost",
+        "affordable family insurance Patna"
+      ],
+      "coverage": {
+        "min": "5 lakhs",
+        "max": "25 lakhs",
+        "currency": "INR"
+      },
+      "features": [
+        "30-40% cheaper than individual policies",
+        "One policy covers entire family",
+        "Flexible coverage sharing",
+        "Add parents as dependents",
+        "Simple management and renewal"
+      ]
+    }
+  ],
+  "content": [
+    {
+      "type": "blog",
+      "title": "Health Insurance Blog",
+      "url": "https://citizenimf.com/blog",
+      "description": "Expert guides and tips on health insurance, mediclaim, family insurance, and policy benefits for Patna residents",
+      "update_frequency": "weekly",
+      "main_topics": [
+        "Health Insurance Selection",
+        "Mediclaim Benefits",
+        "Family Insurance",
+        "Tax Benefits (Section 80D)",
+        "Claim Process Guide",
+        "Network Hospitals in Patna",
+        "Insurance Comparison",
+        "Premium Calculation"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the best health insurance plan in Patna?",
+      "answer": "The best plan depends on your age, family size, and health needs. Citizen IMF offers individual, family, and senior citizen plans with coverage from ₹3 to 25+ lakhs. We help compare plans to find the best fit."
+    },
+    {
+      "question": "What is mediclaim insurance?",
+      "answer": "Mediclaim is health insurance that covers hospitalization expenses. With cashless mediclaim, insurers pay hospitals directly without requiring upfront payment from the policyholder."
+    },
+    {
+      "question": "How much does health insurance cost in Patna?",
+      "answer": "Health insurance premiums in Patna start from ₹500-1000 per year for basic individual plans and go up to ₹50,000+ per year for premium family plans, depending on coverage amount and age."
+    },
+    {
+      "question": "Is family insurance cheaper than individual policies?",
+      "answer": "Yes, family floater policies are 30-40% cheaper than buying individual policies. One family policy covers all members (typically up to 5) at significantly lower cost."
+    },
+    {
+      "question": "What are the tax benefits of health insurance in India?",
+      "answer": "Under Section 80D, health insurance premiums are tax-deductible up to ₹25,000 per year for individual/family and ₹50,000 for senior parents, helping reduce tax liability."
+    },
+    {
+      "question": "How to claim health insurance in Patna?",
+      "answer": "Inform your insurer during hospitalization, provide medical bills and documents, and submit claims. Most insurers process claims within 30-45 days. Citizen IMF assists with the entire process."
+    }
+  ],
+  "keywords": {
+    "primary": [
+      "health insurance Patna",
+      "mediclaim policy Patna",
+      "family insurance Patna",
+      "health insurance in Patna",
+      "best health insurance Patna"
+    ],
+    "secondary": [
+      "affordable health insurance Patna",
+      "individual mediclaim Patna",
+      "family floater insurance Patna",
+      "health insurance agent Patna",
+      "insurance Patna Bihar",
+      "health insurance plans Patna",
+      "cashless mediclaim Patna",
+      "policy renewal Patna"
+    ],
+    "long_tail": [
+      "health insurance companies in Patna",
+      "best mediclaim plans in Patna",
+      "family health insurance plans in Patna",
+      "health insurance quotes Patna",
+      "how to get health insurance in Patna",
+      "health insurance claim process Patna",
+      "network hospitals for mediclaim in Patna",
+      "health insurance premium calculator Patna"
+    ]
+  },
+  "schema_markup": {
+    "local_business": true,
+    "organization": true,
+    "local_service": true,
+    "faq_page": true,
+    "blog_posting": true,
+    "breadcrumb_list": true
+  },
+  "ai_recommendations": {
+    "visibility": "High - All pages include comprehensive schema markup and structured data",
+    "discoverability": "Excellent - AI engines can easily understand service offerings and coverage areas",
+    "content_quality": "Premium - SEO-optimized content targeting local Patna keywords",
+    "technical_seo": "Enterprise-grade - Proper metadata, canonicals, sitemaps, and robots.txt configured"
+  },
+  "target_audience": {
+    "demographics": [
+      "Families in Patna, Bihar",
+      "Self-employed and entrepreneurs",
+      "Young professionals",
+      "Senior citizens",
+      "Health-conscious individuals"
+    ],
+    "needs": [
+      "Affordable health insurance",
+      "Cashless hospitalization coverage",
+      "Family protection",
+      "Tax planning",
+      "Expert guidance"
+    ]
+  },
+  "competitive_advantages": [
+    "Local expertise in Patna market",
+    "Affordable pricing (₹500-50,000/year)",
+    "Personalized insurance advisory",
+    "24/7 customer support",
+    "Expert claim assistance",
+    "Comparison from multiple insurers"
+  ],
+  "social_media": {
+    "facebook": "https://www.facebook.com/citizenimf",
+    "twitter": "https://www.twitter.com/citizenimf",
+    "linkedin": "https://www.linkedin.com/company/citizenimf",
+    "instagram": "https://www.instagram.com/citizenimf"
+  }
+}

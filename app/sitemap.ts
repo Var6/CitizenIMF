@@ -21,13 +21,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/contact`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/join-us`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.8,
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/partners`,
@@ -39,7 +39,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/renew`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.8,
+    },
+
+    // Blog pages
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.85,
     },
 
     // Products main page
@@ -50,66 +58,99 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
 
-    // Product subpages
+    // NEW: Patna-specific health insurance pages (HIGH PRIORITY)
+    {
+      url: `${baseUrl}/products/health-insurance-patna`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/products/mediclaim-policy-patna`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/products/family-insurance-patna`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+
+    // Product subpages (General)
     {
       url: `${baseUrl}/products/accident`,
       lastModified: new Date(),
       changeFrequency: "monthly",
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/products/cargo`,
       lastModified: new Date(),
       changeFrequency: "monthly",
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/products/commercial`,
       lastModified: new Date(),
       changeFrequency: "monthly",
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/products/four-wheeler`,
       lastModified: new Date(),
       changeFrequency: "monthly",
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/products/health`,
       lastModified: new Date(),
       changeFrequency: "monthly",
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/products/home`,
       lastModified: new Date(),
       changeFrequency: "monthly",
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/products/indemnity`,
       lastModified: new Date(),
       changeFrequency: "monthly",
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/products/keyman`,
       lastModified: new Date(),
       changeFrequency: "monthly",
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/products/life`,
       lastModified: new Date(),
       changeFrequency: "monthly",
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/products/shop`,
       lastModified: new Date(),
       changeFrequency: "monthly",
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/products/travel`,
       lastModified: new Date(),
       changeFrequency: "monthly",
+      priority: 0.75,
     },
     {
       url: `${baseUrl}/products/two-wheeler`,
       lastModified: new Date(),
       changeFrequency: "monthly",
+      priority: 0.75,
     },
   ];
 }
+

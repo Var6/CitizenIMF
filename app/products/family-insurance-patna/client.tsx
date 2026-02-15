@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export function FamilyInsurancePlans() {
   const plans = [
     {
@@ -162,9 +166,7 @@ export function FamilyInsuranceComparison() {
       </div>
     </section>
   );
-}
-"use client";
-import { motion } from "framer-motion";
+
 
 export function FamilyInsuranceHeroSection() {
   return (

@@ -3,6 +3,87 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 
+export function HealthInsurancePlans() {
+  const plans = [
+    {
+      title: "Basic Health Plan",
+      coverage: "₹3 Lakh",
+      premium: "₹500-1,500/yr",
+      members: "Individual",
+      features: [
+        "Hospitalization coverage",
+        "Day-care surgeries",
+        "Pre/post-hospitalization",
+        "Cashless at 5,000+ hospitals",
+      ],
+    },
+    {
+      title: "Family Floater Plan",
+      coverage: "₹10 Lakh",
+      premium: "₹2,000-4,000/yr",
+      members: "Up to 5 family members",
+      features: [
+        "Everything in Basic",
+        "Maternity coverage",
+        "10,000+ network hospitals",
+        "Trans-India coverage",
+      ],
+      highlight: true,
+    },
+    {
+      title: "Senior Citizen Plan",
+      coverage: "₹25 Lakh",
+      premium: "₹5,000-10,000/yr",
+      members: "Senior Citizens",
+      features: [
+        "Everything in Family Floater",
+        "No-claim bonus",
+        "Organ transplant",
+        "Ambulance benefit",
+      ],
+    },
+  ];
+  return (
+    <section className="py-16 px-6 bg-gray-50">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-3xl font-bold mb-12 text-center text-gray-800">
+          Health Insurance Plans Available in Patna
+        </h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          {plans.map((plan, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className={`p-8 rounded-lg shadow-lg ${
+                plan.highlight
+                  ? "bg-blue-600 text-white ring-2 ring-blue-400 transform scale-105"
+                  : "bg-white"
+              }`}
+            >
+              <h3 className="text-2xl font-bold mb-4">{plan.title}</h3>
+              <div className="mb-6">
+                <p className="text-sm opacity-75 mb-2">Sum Insured</p>
+                <p className="text-3xl font-bold mb-4">{plan.coverage}</p>
+                <p className="text-lg font-semibold mb-2">{plan.premium}</p>
+                <p className="text-sm opacity-75">{plan.members}</p>
+              </div>
+              <ul className="space-y-2">
+                {plan.features.map((feature, fidx) => (
+                  <li key={fidx} className="flex items-start gap-2">
+                    <span className="font-bold text-lg">✓</span>
+                    <span className="text-sm">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+
+
 export function HealthInsuranceHeroSection() {
   return (
     <section className="py-16 px-6 bg-gradient-to-r from-blue-600 to-green-600 text-white">

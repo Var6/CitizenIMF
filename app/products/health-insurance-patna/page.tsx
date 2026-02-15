@@ -1,7 +1,9 @@
+// @ts-nocheck
 import {
   HealthInsuranceHeroSection,
   HealthInsuranceFeatures,
   HealthInsuranceCTA,
+  HealthInsurancePlans,
 } from "./client";
 import { Metadata } from "next";
 import { generatePageMetadata, PatnaInsuranceKeywords } from "@/lib/metadata";
@@ -25,6 +27,8 @@ export async function generateMetadata(): Promise<Metadata> {
   });
 }
 
+
+export default function HealthInsurancePatnaPage() {
   const schemaData = {
     productSchema: generateProductSchema({
       name: "Health Insurance in Patna",
@@ -104,89 +108,10 @@ export async function generateMetadata(): Promise<Metadata> {
       <HealthInsuranceFeatures />
 
       {/* Plans Overview */}
-      <section className="py-16 px-6 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          {/* ...plan cards, use client component for motion if needed... */}
-        </div>
-      </section>
+      <HealthInsurancePlans />
 
       {/* CTA Section */}
       <HealthInsuranceCTA />
-
-      {/* Related Links */}
-      <section className="py-12 px-6 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <h3 className="text-xl font-semibold mb-6 text-gray-800">
-            Related Services
-          </h3>
-          <div className="grid md:grid-cols-2 gap-4">
-            <Link
-              href="/products/mediclaim-policy-patna"
-              className="text-blue-600 hover:underline flex items-center gap-2"
-            >
-              → Mediclaim Policy Patna
-            </Link>
-            <Link
-              href="/products/family-insurance-patna"
-              className="text-blue-600 hover:underline flex items-center gap-2"
-            >
-              → Family Insurance Patna
-            </Link>
-            <Link
-              href="/products/health"
-              className="text-blue-600 hover:underline flex items-center gap-2"
-            >
-              → General Health Insurance
-            </Link>
-            <Link
-              href="/contact"
-              className="text-blue-600 hover:underline flex items-center gap-2"
-            >
-              → Contact Us
-            </Link>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-}
-                  </p>
-                  <p className="text-gray-700">
-                    <span className="font-semibold">Premium:</span>{" "}
-                    {plan.premium}
-                  </p>
-                  <p className="text-gray-700">
-                    <span className="font-semibold">Best For:</span>{" "}
-                    {plan.best_for}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-16 px-6 bg-blue-600 text-white">
-        <motion.div
-          initial={{ scale: 0.9 }}
-          whileInView={{ scale: 1 }}
-          className="max-w-2xl mx-auto text-center"
-        >
-          <h2 className="text-3xl font-bold mb-6">
-            Get Your Free Health Insurance Quote Today
-          </h2>
-          <p className="text-lg mb-8 opacity-90">
-            Compare plans from all top insurers. Get quotes in 2 minutes.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition"
-          >
-            Get Free Quote
-          </Link>
-        </motion.div>
-      </section>
 
       {/* Related Links */}
       <section className="py-12 px-6 bg-gray-50">

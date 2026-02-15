@@ -82,6 +82,7 @@ export function HealthInsurancePlans() {
       </div>
     </section>
   );
+}
 
 
 export function HealthInsuranceHeroSection() {

@@ -12,7 +12,7 @@ interface FAQItem {
 const faqData: Record<CategoryKey, FAQItem[]> = {
   general: [
       {
-        question: "What is insurance and why do I need it?",
+        question: "What is insurance and why do I need it ?",
         answer: "Insurance is a financial protection tool that helps you safeguard against unexpected events. It provides financial support during emergencies like accidents, illness, or damage to your property. Having insurance ensures you don't have to bear the entire financial burden alone."
       },
       {
@@ -28,7 +28,7 @@ const faqData: Record<CategoryKey, FAQItem[]> = {
         answer: "Basic documents include: Identity proof (Aadhaar/PAN), Address proof, Age proof, Income proof (for life insurance), and medical reports (if required). Our team will guide you on specific requirements for each policy type."
       },
       {
-        question: "Can I cancel my policy after purchase?",
+        question: "Can I cancel my policy after purchase ?",
         answer: "Yes, most insurance policies have a 'free look period' of 15-30 days during which you can cancel and get a full refund. After this period, cancellation terms vary by policy type and insurance company."
       }
     ],
@@ -46,7 +46,7 @@ const faqData: Record<CategoryKey, FAQItem[]> = {
         answer: "Initial waiting period is typically 30 days for most illnesses. Pre-existing diseases have a waiting period of 2-4 years. Specific diseases like hernia, cataract may have 1-2 years waiting period."
       },
       {
-        question: "Can I get cashless treatment?",
+        question: "Can I get cashless treatment ?",
         answer: "Yes! Most of our health insurance plans offer cashless treatment at network hospitals. You just need to show your insurance card and get treatment without paying upfront."
       },
       {

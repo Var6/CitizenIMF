@@ -22,10 +22,10 @@ export default function PartnersPage() {
 ];
 
   const categories = [
-    { id: 'all', name: 'All Partners', icon: '🤝', color: 'from-blue-500 to-purple-500' },
+    { id: 'all', name: 'All Partners', icon: '🤝', color: 'from-blue-500 to-cyan-500' },
     { id: 'life', name: 'Life Insurance', icon: '💝', color: 'from-green-500 to-emerald-500' },
     { id: 'general', name: 'General Insurance', icon: '🛡️', color: 'from-orange-500 to-red-500' },
-    { id: 'mutual', name: 'Mutual Funds', icon: '📈', color: 'from-purple-500 to-pink-500' },
+    { id: 'mutual', name: 'Mutual Funds', icon: '📈', color: 'from-cyan-500 to-green-500' },
   ]
 
   const benefits = [
@@ -51,7 +51,7 @@ export default function PartnersPage() {
       title: "Competitive Benefits",
       description: "We offer a comprehensive benefits package that includes health insurance, retirement plans, paid time off, and more, ensuring that you and your family are well taken care of.",
       icon: "💰",
-      color: "from-purple-500 to-pink-500"
+      color: "from-cyan-500 to-green-500"
     }
   ]
 
@@ -72,7 +72,7 @@ export default function PartnersPage() {
       {/* Animated Background Elements */}
       <div className="fixed inset-0 pointer-events-none">
         <motion.div
-          className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/15 to-purple-400/15 rounded-full blur-3xl"
+          className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/15 to-cyan-400/15 rounded-full blur-3xl"
           animate={{
             x: [0, 100, 0],
             y: [0, -50, 0],
@@ -129,15 +129,15 @@ export default function PartnersPage() {
       </motion.div>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 via-purple-600 via-green-600 to-orange-500 text-white relative z-10 overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-cyan-600 to-green-600 text-white relative z-10 overflow-hidden">
         <motion.div 
           className="absolute inset-0 bg-black/10"
           animate={{
             background: [
-              "linear-gradient(45deg, rgba(59,130,246,0.1), rgba(168,85,247,0.1), rgba(34,197,94,0.1), rgba(249,115,22,0.1))",
-              "linear-gradient(90deg, rgba(168,85,247,0.1), rgba(34,197,94,0.1), rgba(249,115,22,0.1), rgba(59,130,246,0.1))",
-              "linear-gradient(135deg, rgba(34,197,94,0.1), rgba(249,115,22,0.1), rgba(59,130,246,0.1), rgba(168,85,247,0.1))",
-              "linear-gradient(180deg, rgba(249,115,22,0.1), rgba(59,130,246,0.1), rgba(168,85,247,0.1), rgba(34,197,94,0.1))"
+              "linear-gradient(45deg, rgba(59,130,246,0.1), rgba(8,145,178,0.1), rgba(34,197,94,0.1), rgba(249,115,22,0.1))",
+              "linear-gradient(90deg, rgba(8,145,178,0.1), rgba(34,197,94,0.1), rgba(249,115,22,0.1), rgba(59,130,246,0.1))",
+              "linear-gradient(135deg, rgba(34,197,94,0.1), rgba(249,115,22,0.1), rgba(59,130,246,0.1), rgba(8,145,178,0.1))",
+              "linear-gradient(180deg, rgba(249,115,22,0.1), rgba(59,130,246,0.1), rgba(8,145,178,0.1), rgba(34,197,94,0.1))"
             ]
           }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
@@ -236,7 +236,7 @@ export default function PartnersPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text mb-6">
+            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 via-cyan-600 to-green-600 bg-clip-text mb-6">
               Our Trusted Partners
             </h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -260,7 +260,7 @@ export default function PartnersPage() {
                 layout
               >
                 <motion.div 
-                  className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 />
                 
                 <div className="relative z-10 text-center">
@@ -281,13 +281,13 @@ export default function PartnersPage() {
                   </p>
 
                   <motion.div 
-                    className="w-16 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    className="w-16 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   />
                 </div>
 
                 {/* Decorative Elements */}
                 <motion.div 
-                  className="absolute top-4 right-4 w-6 h-6 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute top-4 right-4 w-6 h-6 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   animate={{
                     scale: [1, 1.2, 1],
                     rotate: [0, 180, 360],
@@ -310,7 +310,7 @@ export default function PartnersPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text mb-6">
+            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-green-600 via-cyan-600 to-blue-600 bg-clip-text mb-6">
               Why Work With Us?
             </h3>
           </motion.div>

@@ -95,7 +95,7 @@ export default function ContactPage() {
       {/* Animated Background Elements */}
       <div className="fixed inset-0 pointer-events-none">
         <motion.div
-          className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/15 to-purple-400/15 rounded-full blur-3xl"
+          className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/15 to-cyan-400/15 rounded-full blur-3xl"
           animate={{
             x: [0, 100, 0],
             y: [0, -50, 0],
@@ -152,7 +152,7 @@ export default function ContactPage() {
       </motion.div>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 via-purple-600 via-green-600 to-orange-500 text-white relative z-10 overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-cyan-600 to-green-600 text-white relative z-10 overflow-hidden">
         <motion.div 
           className="absolute inset-0 bg-black/10"
           animate={{
@@ -219,7 +219,7 @@ export default function ContactPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text mb-6">
+            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 via-cyan-600 to-green-600 bg-clip-text mb-6">
               Get In Touch
             </h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -435,7 +435,7 @@ export default function ContactPage() {
                     <motion.button
                       type="submit"
                       disabled={isSubmitting}
-                      className={`bg-gradient-to-r from-blue-600 to-purple-600 text-white px-12 py-4 rounded-full font-semibold text-lg transition-all shadow-lg ${
+                      className={`bg-gradient-to-r from-cyan-600 to-green-600 text-white px-12 py-4 rounded-full font-semibold text-lg transition-all shadow-lg ${
                         isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:shadow-xl'
                       }`}
                       whileHover={!isSubmitting ? { scale: 1.05 } : {}}
@@ -467,7 +467,7 @@ export default function ContactPage() {
               viewport={{ once: true }}
             >
               {/* Business Hours */}
-              <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl p-8 text-white">
+              <div className="bg-gradient-to-br from-blue-600 to-cyan-600 rounded-3xl p-8 text-white">
                 <h4 className="text-2xl font-bold mb-6 text-yellow-300">Business Hours</h4>
                 <div className="space-y-4">
                   {businessHours.map((schedule, index) => (
@@ -552,7 +552,7 @@ export default function ContactPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-green-600 bg-clip-text mb-6">
+            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-cyan-600 via-blue-600 to-green-600 bg-clip-text mb-6">
               Frequently Asked Questions
             </h3>
           </motion.div>

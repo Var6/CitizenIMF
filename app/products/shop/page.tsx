@@ -111,7 +111,7 @@ export default function ShopInsurance() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-br h-screen from-orange-600 via-red-600 to-pink-700 text-white">
+      <section className="py-16 bg-gradient-to-br h-screen from-blue-600 via-cyan-600 to-green-600 text-white">
         <div className="max-w-6xl mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>

@@ -28,8 +28,8 @@ export default function ProductsPage() {
       category: "motor",
       subcategory: "four-wheeler",
       icon: "🚗",
-      color: "from-indigo-500 to-blue-500",
-      bgColor: "bg-indigo-500",
+      color: "from-blue-500 to-cyan-500",
+      bgColor: "bg-blue-500",
       href: "/products/four-wheeler"
     },
     {
@@ -39,8 +39,8 @@ export default function ProductsPage() {
       category: "motor",
       subcategory: "commercial-motor",
       icon: "🚛",
-      color: "from-purple-500 to-indigo-500",
-      bgColor: "bg-purple-500",
+      color: "from-cyan-500 to-blue-500",
+      bgColor: "bg-cyan-600",
       href: "/products/commercial"
     },
 
@@ -74,8 +74,8 @@ export default function ProductsPage() {
       category: "health-life",
       subcategory: "life",
       icon: "💝",
-      color: "from-pink-500 to-rose-500",
-      bgColor: "bg-pink-500",
+      color: "from-green-500 to-cyan-500",
+      bgColor: "bg-green-500",
       href: "/products/life"
     },
 
@@ -98,8 +98,8 @@ export default function ProductsPage() {
       category: "business",
       subcategory: "marine-cargo",
       icon: "🚢",
-      color: "from-teal-500 to-cyan-500",
-      bgColor: "bg-teal-500",
+      color: "from-blue-500 to-green-500",
+      bgColor: "bg-blue-600",
       href: "/products/marine-cargo"
     },
     {
@@ -109,8 +109,8 @@ export default function ProductsPage() {
       category: "business",
       subcategory: "keyman",
       icon: "👨‍💼",
-      color: "from-violet-500 to-purple-500",
-      bgColor: "bg-violet-500",
+      color: "from-cyan-500 to-green-500",
+      bgColor: "bg-cyan-600",
       href: "/products/keyman"
     },
     {
@@ -179,8 +179,8 @@ export default function ProductsPage() {
       category: "investment",
       subcategory: "pension",
       icon: "👴",
-      color: "from-indigo-500 to-purple-500",
-      bgColor: "bg-indigo-500",
+      color: "from-blue-500 to-cyan-500",
+      bgColor: "bg-blue-600",
       href: "/products/pension"
     },
     {
@@ -190,8 +190,8 @@ export default function ProductsPage() {
       category: "investment",
       subcategory: "child-plans",
       icon: "👶",
-      color: "from-rose-500 to-pink-500",
-      bgColor: "bg-rose-500",
+      color: "from-green-500 to-blue-500",
+      bgColor: "bg-green-600",
       href: "/products/child-plans"
     }
   ]
@@ -213,7 +213,7 @@ export default function ProductsPage() {
   })
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
       {/* Enhanced Background Animation */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
@@ -230,7 +230,7 @@ export default function ProductsPage() {
           }}
         />
         <motion.div
-          className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-br from-purple-400/20 to-pink-600/20 rounded-full blur-3xl"
+          className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-br from-cyan-400/20 to-green-600/20 rounded-full blur-3xl"
           animate={{
             x: [0, -100, 0],
             y: [0, 50, 0],
@@ -243,7 +243,7 @@ export default function ProductsPage() {
           }}
         />
         <motion.div
-          className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-br from-emerald-400/10 to-teal-600/10 rounded-full blur-2xl"
+          className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-br from-cyan-400/10 to-green-600/10 rounded-full blur-2xl"
           animate={{
             rotate: [0, 360],
             scale: [1, 1.3, 1],
@@ -304,7 +304,7 @@ export default function ProductsPage() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <span className="text-transparent bg-gradient-to-r from-cyan-300 via-purple-300 to-pink-300 bg-clip-text">
+              <span className="text-transparent bg-gradient-to-r from-cyan-300 via-blue-300 to-green-300 bg-clip-text">
                 Products
               </span>
             </motion.h1>
@@ -339,7 +339,7 @@ export default function ProductsPage() {
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div 
-          className="absolute bottom-20 right-10 w-16 h-16 bg-pink-400/20 rounded-full blur-xl"
+          className="absolute bottom-20 right-10 w-16 h-16 bg-orange-400/20 rounded-full blur-xl"
           animate={{
             y: [0, 15, 0],
             x: [0, -15, 0],
@@ -392,7 +392,7 @@ export default function ProductsPage() {
                   onClick={() => setSelectedCategory(category.id)}
                   className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 ${
                     selectedCategory === category.id
-                      ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg'
+                      ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg'
                       : 'bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 border border-white/20'
                   }`}
                   whileHover={{ scale: 1.05, y: -2 }}
@@ -485,7 +485,7 @@ export default function ProductsPage() {
 
                 {/* Decorative Elements */}
                 <motion.div 
-                  className="absolute top-4 right-4 w-6 h-6 bg-gradient-to-br from-cyan-400/30 to-purple-400/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute top-4 right-4 w-6 h-6 bg-gradient-to-br from-cyan-400/30 to-blue-400/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   animate={{
                     scale: [1, 1.2, 1],
                     rotate: [0, 180, 360],
@@ -514,7 +514,7 @@ export default function ProductsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-cyan-600 via-purple-600 to-pink-600 text-white relative z-10 overflow-hidden">        
+      <section className="py-20 bg-gradient-to-r from-blue-600 via-cyan-600 to-green-600 text-white relative z-10 overflow-hidden">        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.h3 
             className="text-4xl lg:text-6xl font-black mb-6 text-transparent bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text"

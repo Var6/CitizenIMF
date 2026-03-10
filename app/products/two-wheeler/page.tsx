@@ -51,7 +51,7 @@ export default function TwoWheelerInsurancePage() {
     //   icon: '💎',
     //   description: 'No depreciation deduction',
     //   startingPrice: '₹3,500/year*',
-    //   color: 'from-purple-500 to-pink-500'
+    //   color: 'from-cyan-500 to-green-500'
     // }
   ]
 
@@ -78,7 +78,7 @@ export default function TwoWheelerInsurancePage() {
       icon: '🚑',
       title: 'Roadside Assistance',
       description: '24/7 emergency roadside assistance including towing and breakdown support',
-      color: 'from-purple-500 to-pink-500'
+      color: 'from-cyan-500 to-green-500'
     },
     {
       icon: '💰',
@@ -90,7 +90,7 @@ export default function TwoWheelerInsurancePage() {
       icon: '📱',
       title: 'Instant Policy',
       description: 'Buy bike insurance online in 2 minutes with instant policy issuance',
-      color: 'from-indigo-500 to-purple-500'
+      color: 'from-blue-500 to-cyan-500'
     }
   ]
 
@@ -231,7 +231,7 @@ export default function TwoWheelerInsurancePage() {
       </div>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-orange-600 via-red-600 to-pink-600 text-white relative z-10 overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-cyan-600 to-green-600 text-white relative z-10 overflow-hidden">
         <motion.div 
           className="absolute inset-0 bg-black/10"
           animate={{
@@ -409,7 +409,7 @@ export default function TwoWheelerInsurancePage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 bg-clip-text mb-6">
+            <h2 className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 via-cyan-600 to-green-600 bg-clip-text mb-6">
               Choose Your Bike Insurance
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -539,7 +539,7 @@ export default function TwoWheelerInsurancePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-orange-600 via-red-600 to-pink-600 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-cyan-600 to-green-600 text-white relative overflow-hidden">
         <motion.div 
           className="absolute inset-0"
           animate={{

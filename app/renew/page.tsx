@@ -70,7 +70,7 @@ export default function RenewPage() {
       title: "Flexible Payment Options",
       description: "Choose from multiple payment modes - annual, semi-annual, quarterly, or monthly. Online payment available for instant processing.",
       icon: "💳",
-      color: "from-purple-500 to-pink-500"
+      color: "from-cyan-500 to-green-500"
     }
   ]
 
@@ -158,7 +158,7 @@ export default function RenewPage() {
       {/* Animated Background Elements */}
       <div className="fixed inset-0 pointer-events-none">
         <motion.div
-          className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/15 to-purple-400/15 rounded-full blur-3xl"
+          className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/15 to-cyan-400/15 rounded-full blur-3xl"
           animate={{
             x: [0, 100, 0],
             y: [0, -50, 0],
@@ -215,7 +215,7 @@ export default function RenewPage() {
       </motion.div>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 via-purple-600 via-green-600 to-orange-500 text-white relative z-10 overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-cyan-600 to-green-600 text-white relative z-10 overflow-hidden">
         <motion.div 
           className="absolute inset-0 bg-black/10"
           animate={{
@@ -316,7 +316,7 @@ export default function RenewPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text mb-6">
+            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 via-cyan-600 to-green-600 bg-clip-text mb-6">
               Why Renew With Us?
             </h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -380,7 +380,7 @@ export default function RenewPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text mb-6">
+            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-green-600 via-cyan-600 to-blue-600 bg-clip-text mb-6">
               {step === 1 ? "Find Your Policy" : step === 2 ? "Review & Update" : "Complete Renewal"}
             </h3>
           </motion.div>
@@ -462,7 +462,7 @@ export default function RenewPage() {
                   <motion.button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`bg-gradient-to-r from-blue-600 to-purple-600 text-white px-12 py-4 rounded-full font-semibold text-lg transition-all shadow-lg ${
+                    className={`bg-gradient-to-r from-cyan-600 to-green-600 text-white px-12 py-4 rounded-full font-semibold text-lg transition-all shadow-lg ${
                       isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:shadow-xl'
                     }`}
                     whileHover={!isSubmitting ? { scale: 1.05 } : {}}
@@ -656,7 +656,7 @@ export default function RenewPage() {
       </section>
 
       {/* Important Information Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50 relative z-10">
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-cyan-50 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-12"
@@ -665,7 +665,7 @@ export default function RenewPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-4xl font-bold text-transparent bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 bg-clip-text mb-6">
+            <h3 className="text-4xl font-bold text-transparent bg-gradient-to-r from-orange-600 via-yellow-500 to-green-600 bg-clip-text mb-6">
               Important Renewal Information
             </h3>
           </motion.div>
@@ -711,7 +711,7 @@ export default function RenewPage() {
       </section>
 
       {/* Contact Support Section */}
-      <section className="py-20 bg-gradient-to-br from-green-600 via-blue-600 to-purple-600 text-white relative z-10 overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-cyan-600 to-green-600 text-white relative z-10 overflow-hidden">
         <motion.div 
           className="absolute inset-0"
           animate={{

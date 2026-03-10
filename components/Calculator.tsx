@@ -154,7 +154,7 @@ export default function InsurancePremiumCalculator() {
       id: 'life',
       name: 'Life Insurance',
       icon: '💝',
-      color: 'from-purple-500 to-pink-500',
+      color: 'from-cyan-500 to-green-500',
       description: 'Life protection for your family'
     },
     {
@@ -168,14 +168,14 @@ export default function InsurancePremiumCalculator() {
       id: 'shop',
       name: 'Shop Insurance',
       icon: '🏪',
-      color: 'from-indigo-500 to-purple-500',
+      color: 'from-blue-500 to-cyan-500',
       description: 'Business & shop protection'
     },
     {
       id: 'marine',
       name: 'Marine Cargo',
       icon: '🚢',
-      color: 'from-teal-500 to-blue-500',
+      color: 'from-cyan-500 to-blue-500',
       description: 'Cargo transit insurance'
     }
   ]
@@ -322,7 +322,7 @@ export default function InsurancePremiumCalculator() {
         <select
           value={formData.life.age}
           onChange={(e) => handleInputChange('life', 'age', e.target.value)}
-          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
         >
           <option value="">Select Age</option>
           {Array.from({ length: 45 }, (_, i) => i + 18).map(age => (
@@ -335,7 +335,7 @@ export default function InsurancePremiumCalculator() {
         <select
           value={formData.life.gender}
           onChange={(e) => handleInputChange('life', 'gender', e.target.value)}
-          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
         >
           <option value="male">Male</option>
           <option value="female">Female</option>
@@ -346,7 +346,7 @@ export default function InsurancePremiumCalculator() {
         <select
           value={formData.life.sumAssured}
           onChange={(e) => handleInputChange('life', 'sumAssured', e.target.value)}
-          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
         >
           <option value="10">₹10 Lakh</option>
           <option value="25">₹25 Lakh</option>
@@ -362,7 +362,7 @@ export default function InsurancePremiumCalculator() {
         <select
           value={formData.life.policyTerm}
           onChange={(e) => handleInputChange('life', 'policyTerm', e.target.value)}
-          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
         >
           <option value="10">10 Years</option>
           <option value="15">15 Years</option>
@@ -445,7 +445,7 @@ export default function InsurancePremiumCalculator() {
         <select
           value={formData.shop.businessType}
           onChange={(e) => handleInputChange('shop', 'businessType', e.target.value)}
-          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
         >
           <option value="retail">Retail Shop</option>
           <option value="grocery">Grocery Store</option>
@@ -462,7 +462,7 @@ export default function InsurancePremiumCalculator() {
         <select
           value={formData.shop.shopArea}
           onChange={(e) => handleInputChange('shop', 'shopArea', e.target.value)}
-          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
         >
           <option value="500">Up to 500 sq ft</option>
           <option value="1000">500 - 1000 sq ft</option>
@@ -476,7 +476,7 @@ export default function InsurancePremiumCalculator() {
         <select
           value={formData.shop.stockValue}
           onChange={(e) => handleInputChange('shop', 'stockValue', e.target.value)}
-          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
         >
           <option value="5">₹5 Lakh</option>
           <option value="10">₹10 Lakh</option>
@@ -493,7 +493,7 @@ export default function InsurancePremiumCalculator() {
           value={formData.shop.location}
           onChange={(e) => handleInputChange('shop', 'location', e.target.value)}
           placeholder="Enter shop location"
-          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
         />
       </div>
     </div>
@@ -506,7 +506,7 @@ export default function InsurancePremiumCalculator() {
         <select
           value={formData.marine.cargoType}
           onChange={(e) => handleInputChange('marine', 'cargoType', e.target.value)}
-          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
         >
           <option value="general">General Cargo</option>
           <option value="electronics">Electronics</option>
@@ -523,7 +523,7 @@ export default function InsurancePremiumCalculator() {
         <select
           value={formData.marine.cargoValue}
           onChange={(e) => handleInputChange('marine', 'cargoValue', e.target.value)}
-          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
         >
           <option value="5">₹5 Lakh</option>
           <option value="10">₹10 Lakh</option>
@@ -541,7 +541,7 @@ export default function InsurancePremiumCalculator() {
           value={formData.marine.origin}
           onChange={(e) => handleInputChange('marine', 'origin', e.target.value)}
           placeholder="From (City/Port)"
-          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
         />
       </div>
       <div>
@@ -551,7 +551,7 @@ export default function InsurancePremiumCalculator() {
           value={formData.marine.destination}
           onChange={(e) => handleInputChange('marine', 'destination', e.target.value)}
           placeholder="To (City/Port)"
-          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
         />
       </div>
     </div>
@@ -574,7 +574,7 @@ export default function InsurancePremiumCalculator() {
       {/* Background Animation */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
-          className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-3xl"
+          className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/10 to-cyan-400/10 rounded-full blur-3xl"
           animate={{
             x: [0, 100, 0],
             y: [0, -50, 0],
@@ -597,7 +597,7 @@ export default function InsurancePremiumCalculator() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 via-cyan-600 to-green-600 bg-clip-text mb-6">
             Get Instant Insurance Quotes
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -719,7 +719,7 @@ export default function InsurancePremiumCalculator() {
             <div className="text-gray-600 text-sm">Happy Customers</div>
           </div>
           <div className="bg-white rounded-2xl p-6 shadow-lg">
-            <div className="text-3xl font-bold text-purple-600 mb-2">24/7</div>
+            <div className="text-3xl font-bold text-cyan-600 mb-2">24/7</div>
             <div className="text-gray-600 text-sm">Support Available</div>
           </div>
         </motion.div>

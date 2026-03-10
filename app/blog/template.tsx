@@ -124,7 +124,7 @@ export default function BlogPostPage() {
         </div>
 
         {/* Featured Image */}
-        <div className="mb-12 h-96 bg-gradient-to-br from-blue-200 to-purple-200 rounded-lg flex items-center justify-center">
+        <div className="mb-12 h-96 bg-gradient-to-br from-blue-200 to-cyan-200 rounded-lg flex items-center justify-center">
           <img
             src={POST_DATA.image}
             alt={POST_DATA.title}
@@ -224,7 +224,7 @@ export default function BlogPostPage() {
         </div>
 
         {/* CTA */}
-        <div className="my-12 p-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg text-center">
+        <div className="my-12 p-8 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg text-center">
           <h3 className="text-2xl font-bold mb-4">Ready to Get Insured?</h3>
           <p className="mb-6 opacity-90">
             Get a free quote for health insurance in Patna
@@ -283,7 +283,7 @@ export default function BlogPostPage() {
                 href="#"
                 className="group bg-gray-50 rounded-lg overflow-hidden hover:shadow-lg transition"
               >
-                <div className="h-40 bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center text-4xl group-hover:scale-110 transition">
+                <div className="h-40 bg-gradient-to-br from-blue-100 to-cyan-100 flex items-center justify-center text-4xl group-hover:scale-110 transition">
                   📄
                 </div>
                 <div className="p-6">

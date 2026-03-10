@@ -84,7 +84,7 @@ export default function LifeInsurance() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-br from-emerald-600 via-green-600 to-teal-700 text-white">
+      <section className="py-16 bg-gradient-to-br from-blue-600 via-cyan-600 to-green-600 text-white">
         <div className="max-w-6xl mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
@@ -92,7 +92,7 @@ export default function LifeInsurance() {
                 Life
                 <span className="text-transparent bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text"> Insurance</span>
               </h1>
-              <p className="text-lg text-emerald-100 mb-6">
+              <p className="text-lg text-cyan-100 mb-6">
                 Secure your family's future with comprehensive life insurance. Get coverage up to ₹2 Crores with affordable premiums starting from just ₹490/month.
               </p>
             </div>
@@ -104,7 +104,7 @@ export default function LifeInsurance() {
                 <select
                   value={formData.planType}
                   onChange={(e) => handleInputChange('planType', e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-emerald-500"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-cyan-500"
                   required
                 >
                   <option value="">Select Plan Type</option>
@@ -120,7 +120,7 @@ export default function LifeInsurance() {
                   <select
                     value={formData.age}
                     onChange={(e) => handleInputChange('age', e.target.value)}
-                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-emerald-500"
+                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-cyan-500"
                     required
                   >
                     <option value="">Your Age</option>
@@ -134,7 +134,7 @@ export default function LifeInsurance() {
                   <select
                     value={formData.gender}
                     onChange={(e) => handleInputChange('gender', e.target.value)}
-                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-emerald-500"
+                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-cyan-500"
                     required
                   >
                     <option value="">Gender</option>
@@ -147,7 +147,7 @@ export default function LifeInsurance() {
                   <select
                     value={formData.income}
                     onChange={(e) => handleInputChange('income', e.target.value)}
-                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-emerald-500"
+                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-cyan-500"
                     required
                   >
                     <option value="">Annual Income</option>
@@ -161,7 +161,7 @@ export default function LifeInsurance() {
                   <select
                     value={formData.coverage}
                     onChange={(e) => handleInputChange('coverage', e.target.value)}
-                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-emerald-500"
+                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-cyan-500"
                     required
                   >
                     <option value="">Coverage Needed</option>
@@ -178,7 +178,7 @@ export default function LifeInsurance() {
                   value={formData.mobile}
                   onChange={(e) => handleInputChange('mobile', e.target.value)}
                   placeholder="Mobile Number"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-emerald-500"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-cyan-500"
                   required
                 />
 
@@ -215,7 +215,7 @@ export default function LifeInsurance() {
       {/* Coverage Plans */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 lg:px-8">
-          <h2 className="text-4xl font-bold text-center text-transparent bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text mb-12">
+          <h2 className="text-4xl font-bold text-center text-transparent bg-gradient-to-r from-cyan-600 to-green-600 bg-clip-text mb-12">
             Choose Your Life Protection
           </h2>
           
@@ -225,7 +225,7 @@ export default function LifeInsurance() {
                 <div className="text-center mb-6">
                   <div className="text-4xl mb-3">{plan.icon}</div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                  <div className="text-2xl font-bold text-transparent bg-gradient-to-r from-emerald-500 to-green-500 bg-clip-text">
+                  <div className="text-2xl font-bold text-transparent bg-gradient-to-r from-cyan-500 to-green-500 bg-clip-text">
                     {plan.price}
                   </div>
                 </div>

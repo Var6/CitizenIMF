@@ -39,9 +39,9 @@ export default function HealthInsurancePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-100 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-cyan-50">
       {/* Hero Section */}
-      <section className="py-20 px-6 text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <section className="py-20 px-6 text-center bg-gradient-to-r from-blue-600 to-cyan-600 text-white">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -159,7 +159,7 @@ export default function HealthInsurancePage() {
               type="submit"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-2xl transition-all"
+              className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-2xl transition-all"
             >
               Get Free Quotes Now
             </motion.button>

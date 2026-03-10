@@ -172,7 +172,7 @@ export function FamilyInsuranceComparison() {
 
 export function FamilyInsuranceHeroSection() {
   return (
-    <section className="py-16 px-6 bg-gradient-to-r from-pink-600 to-purple-600 text-white">
+    <section className="py-16 px-6 bg-gradient-to-r from-blue-600 to-cyan-600 text-white">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -236,7 +236,7 @@ export function FamilyInsuranceFeatures() {
             key={idx}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="bg-white p-8 rounded-lg shadow-lg border-l-4 border-pink-600"
+            className="bg-white p-8 rounded-lg shadow-lg border-l-4 border-cyan-600"
           >
             <div className="text-4xl mb-4">{feature.icon}</div>
             <h3 className="text-xl font-semibold mb-3 text-gray-800">
@@ -252,7 +252,7 @@ export function FamilyInsuranceFeatures() {
 
 export function FamilyInsuranceCTA() {
   return (
-    <section className="py-16 px-6 bg-gradient-to-r from-pink-600 to-purple-600 text-white">
+    <section className="py-16 px-6 bg-gradient-to-r from-blue-600 to-cyan-600 text-white">
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-6">
           Get a Family Insurance Quote
@@ -262,7 +262,7 @@ export function FamilyInsuranceCTA() {
         </p>
         <a
           href="/contact"
-          className="inline-block bg-white text-pink-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition"
+          className="inline-block bg-white text-cyan-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition"
         >
           Get Free Quote
         </a>

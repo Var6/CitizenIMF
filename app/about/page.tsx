@@ -63,8 +63,8 @@ export default function AboutPage() {
           <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
         </svg>
       ),
-      color: "from-purple-500 to-pink-500",
-      bgColor: "bg-purple-500"
+      color: "from-cyan-500 to-green-500",
+      bgColor: "bg-cyan-600"
     }
   ]
 
@@ -136,7 +136,7 @@ export default function AboutPage() {
       {/* Animated Background Elements */}
       <div className="fixed inset-0 pointer-events-none">
         <motion.div
-          className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"
+          className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full blur-3xl"
           animate={{
             x: [0, 100, 0],
             y: [0, -50, 0],
@@ -193,7 +193,7 @@ export default function AboutPage() {
       </motion.div>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 via-purple-600 via-green-600 to-orange-500 text-white relative z-10 overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-cyan-600 to-green-600 text-white relative z-10 overflow-hidden">
         <motion.div 
           className="absolute inset-0 bg-black/10"
           animate={{
@@ -269,7 +269,7 @@ export default function AboutPage() {
             >
               <h3 className="text-4xl font-bold text-gray-900 mb-6">
                 Welcome to{' '}
-                <span className="text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text">
+                <span className="text-transparent bg-gradient-to-r from-blue-600 via-cyan-600 to-green-600 bg-clip-text">
                   Citizen Savings & Credit IMF Pvt. Ltd.
                 </span>
               </h3>
@@ -301,7 +301,7 @@ export default function AboutPage() {
               viewport={{ once: true }}
             >
               <motion.div 
-                className="bg-gradient-to-br from-blue-600 via-purple-600 to-green-600 rounded-3xl p-8 text-white shadow-2xl"
+                className="bg-gradient-to-br from-blue-600 via-cyan-600 to-green-600 rounded-3xl p-8 text-white shadow-2xl"
                 whileHover={{ scale: 1.05, rotateY: 5 }}
                 transition={{ duration: 0.3 }}
               >
@@ -345,7 +345,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text mb-6">
+            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 via-cyan-600 to-green-600 bg-clip-text mb-6">
               Our Services
             </h3>
           </motion.div>
@@ -360,10 +360,10 @@ export default function AboutPage() {
               whileHover={{ y: -10 }}
             >
               <motion.div 
-                className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               />
               <div className="relative z-10">
-                <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mb-6"></div>
+                <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full mb-6"></div>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   Citizen Savings & Credit is an insurance marketing firm that offers a comprehensive & diverse range of professional services spanning non-life insurances including health insurance, life insurance, pension plans and mutual funds.
                 </p>
@@ -371,7 +371,7 @@ export default function AboutPage() {
             </motion.div>
             
             <motion.div 
-              className="bg-gradient-to-br from-green-600 via-blue-600 to-purple-600 rounded-3xl p-8 text-white shadow-2xl relative overflow-hidden group"
+              className="bg-gradient-to-br from-green-600 via-cyan-600 to-blue-600 rounded-3xl p-8 text-white shadow-2xl relative overflow-hidden group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -405,7 +405,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 relative z-10">
+      <section className="py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-cyan-50 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -472,7 +472,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-green-600 bg-clip-text mb-6">
+            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-cyan-600 via-blue-600 to-green-600 bg-clip-text mb-6">
               Our Values
             </h3>
           </motion.div>
@@ -517,7 +517,7 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-green-600 text-white relative z-10 overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-cyan-600 to-green-600 text-white relative z-10 overflow-hidden">
         <motion.div 
           className="absolute inset-0"
           animate={{
@@ -580,7 +580,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text mb-6">
+            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 via-cyan-600 to-green-600 bg-clip-text mb-6">
               Our Achievements
             </h3>
           </motion.div>
@@ -590,7 +590,7 @@ export default function AboutPage() {
               { value: counters.insurance, label: "Gave insurance", color: "from-blue-500 to-cyan-500", suffix: "" },
               { value: counters.team, label: "Professional team", color: "from-green-500 to-emerald-500", suffix: "+" },
               { value: counters.customers, label: "Satisfied customers", color: "from-orange-500 to-red-500", suffix: "" },
-              { value: counters.success, label: "Our success rate", color: "from-purple-500 to-pink-500", suffix: "%" }
+              { value: counters.success, label: "Our success rate", color: "from-cyan-500 to-green-500", suffix: "%" }
             ].map((stat, index) => (
               <motion.div
                 key={index}

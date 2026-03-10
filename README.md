@@ -1,8 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CitizenIMF
+
+CitizenIMF is a Next.js application focused on civic/financial transparency workflows (IMF-style reporting) and citizen-facing dashboards.
+
+## Features
+
+- Citizen-facing dashboard UI
+- Structured pages using the Next.js App Router
+- Fast local development with hot reload
+- Production-ready build and start scripts
+
+## Tech Stack
+
+- Next.js (App Router)
+- React
+- TypeScript (recommended)
+- Node.js
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ (recommended)
+- One of: npm, yarn, pnpm, or bun
+
+### Install
+
+```bash
+npm install
+```
+
+### Run the development server
 
 ```bash
 npm run dev
@@ -14,23 +41,58 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build for production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+### Start the production server
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Environment Variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Create a local environment file (not committed):
 
-## Deploy on Vercel
+- `.env.local`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Example:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+# .env.local
+NEXT_PUBLIC_APP_NAME=CitizenIMF
+```
+
+> Note: Only variables prefixed with `NEXT_PUBLIC_` are exposed to the browser.
+
+## Project Structure
+
+Common locations in a Next.js App Router project:
+
+- `app/` – routes, layouts, and pages
+- `public/` – static assets
+
+## Deployment
+
+The recommended deployment target is Vercel:
+
+- Connect the GitHub repository to Vercel
+- Set required environment variables
+- Deploy
+
+You can also deploy anywhere Node.js is supported (Docker, VPS, etc.) as long as you run `npm run build` and `npm run start`.
+
+## Contributing
+
+1. Create a branch
+2. Make your changes
+3. Open a pull request
+
+## License
+
+Add a license file (e.g., MIT) and reference it here.

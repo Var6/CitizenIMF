@@ -524,7 +524,7 @@ export default function TwoWheelerInsurancePage() {
                   {step.icon}
                 </motion.div>
                 
-                <div className="text-2xl font-bold text-orange-600 mb-2">{step.step}</div>
+                <div className="text-2xl font-bold text-cyan-600 mb-2">{step.step}</div>
                 <h4 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h4>
                 <p className="text-gray-600">{step.description}</p>
                 
@@ -694,7 +694,7 @@ export default function TwoWheelerInsurancePage() {
           >
             <Link 
               href="/faq/two-wheeler-insurance" 
-              className="inline-flex items-center text-orange-600 font-semibold hover:text-cyan-700 transition-colors"
+              className="inline-flex items-center text-cyan-600 font-semibold hover:text-cyan-700 transition-colors"
             >
               View All Two-Wheeler Insurance FAQs
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

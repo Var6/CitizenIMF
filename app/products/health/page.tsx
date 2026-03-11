@@ -39,9 +39,9 @@ export default function HealthInsurancePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-100 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-cyan-50 to-green-50">
       {/* Hero Section */}
-      <section className="py-20 px-6 text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <section className="py-20 px-6 text-center bg-gradient-to-r from-cyan-600 to-green-600 text-white">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -159,7 +159,7 @@ export default function HealthInsurancePage() {
               type="submit"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-2xl transition-all"
+              className="w-full bg-gradient-to-r from-cyan-600 to-green-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-2xl transition-all"
             >
               Get Free Quotes Now
             </motion.button>
@@ -188,7 +188,7 @@ export default function HealthInsurancePage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2 }}
-                className="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-md text-center"
+                className="bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50 p-8 rounded-2xl shadow-md text-center"
               >
                 <div className="text-4xl mb-4">{benefit.icon}</div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">{benefit.title}</h3>

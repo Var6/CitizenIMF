@@ -49,7 +49,7 @@ export default function CommercialVehicleInsurance() {
       icon: '🏢',
       description: 'Multi-vehicle coverage',
       startingPrice: '₹45,000/year*',
-      color: 'from-purple-500 to-pink-500'
+      color: 'from-blue-500 to-cyan-500'
     }
   ]
 
@@ -70,13 +70,13 @@ export default function CommercialVehicleInsurance() {
       icon: '🚑',
       title: 'Emergency Support',
       description: '24/7 roadside assistance and towing services.',
-      color: 'from-orange-500 to-red-500'
+      color: 'from-cyan-600 to-green-600'
     },
     {
       icon: '💼',
       title: 'Business Protection',
       description: 'Protect your business assets and income from claims.',
-      color: 'from-purple-500 to-pink-500'
+      color: 'from-blue-500 to-cyan-500'
     }
   ]
 
@@ -162,7 +162,7 @@ export default function CommercialVehicleInsurance() {
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-700 via-indigo-800 to-purple-900 text-white relative z-10">
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-cyan-600 to-green-600 text-white relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -359,7 +359,7 @@ export default function CommercialVehicleInsurance() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text mb-6">
+            <h2 className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-cyan-600 to-green-600 bg-clip-text mb-6">
               Choose Your Coverage Plan
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">

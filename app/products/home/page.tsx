@@ -84,7 +84,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-br from-amber-600 via-orange-600 to-red-600 text-white">
+      <section className="py-16 bg-gradient-to-br from-blue-600 via-cyan-600 to-green-600 text-white">
         <div className="max-w-6xl mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
@@ -92,7 +92,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                 Home
                 <span className="text-transparent bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text"> Insurance</span>
               </h1>
-              <p className="text-lg text-amber-100 mb-6">
+              <p className="text-lg text-cyan-100 mb-6">
                 Protect your dream home with comprehensive coverage. Safeguard your property, belongings, and family from unexpected damages starting at ₹3,500/year.
               </p>
             </div>
@@ -104,7 +104,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                 <select
                   value={formData.propertyType}
                   onChange={(e) => handleInputChange('propertyType', e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-amber-500"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-blue-500"
                   required
                 >
                   <option value="">Select Property Type</option>
@@ -120,7 +120,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   <select
                     value={formData.propertyValue}
                     onChange={(e) => handleInputChange('propertyValue', e.target.value)}
-                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-amber-500"
+                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-blue-500"
                     required
                   >
                     <option value="">Property Value</option>
@@ -134,7 +134,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   <select
                     value={formData.area}
                     onChange={(e) => handleInputChange('area', e.target.value)}
-                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-amber-500"
+                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-blue-500"
                     required
                   >
                     <option value="">Carpet Area</option>
@@ -152,7 +152,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                     value={formData.location}
                     onChange={(e) => handleInputChange('location', e.target.value)}
                     placeholder="City/Location"
-                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-amber-500"
+                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-blue-500"
                     required
                   />
 
@@ -161,7 +161,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                     value={formData.ownerName}
                     onChange={(e) => handleInputChange('ownerName', e.target.value)}
                     placeholder="Owner Name"
-                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-amber-500"
+                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-blue-500"
                     required
                   />
                 </div>
@@ -171,7 +171,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   value={formData.mobile}
                   onChange={(e) => handleInputChange('mobile', e.target.value)}
                   placeholder="Mobile Number"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-amber-500"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-blue-500"
                   required
                 />
 
@@ -209,13 +209,13 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       {/* Coverage Plans */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 lg:px-8">
-          <h2 className="text-4xl font-bold text-center text-transparent bg-gradient-to-r from-amber-600 to-red-600 bg-clip-text mb-12">
+          <h2 className="text-4xl font-bold text-center text-transparent bg-gradient-to-r from-cyan-600 to-green-600 bg-clip-text mb-12">
             Choose Your Home Protection
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {coveragePlans.map((plan, index) => (
-              <div key={index} className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-200">
+              <div key={index} className="bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-200">
                 <div className="text-center mb-6">
                   <div className="text-4xl mb-3">{plan.icon}</div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>

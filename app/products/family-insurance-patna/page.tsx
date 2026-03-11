@@ -122,7 +122,7 @@ export default function FamilyInsurancePatnaPage() {
       <FamilyInsuranceComparison />
 
       {/* CTA */}
-      <section className="py-16 px-6 bg-gradient-to-r from-green-600 to-emerald-600 text-white">
+      <section className="py-16 px-6 bg-gradient-to-r from-cyan-600 to-green-600 text-white">
         {/* ...client CTA component if needed... */}
       </section>
 

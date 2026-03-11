@@ -46,7 +46,7 @@ export default function MarineCargoInsurancePage() {
       icon: '🌊',
       description: 'Maximum protection',
       startingPrice: '0.35% of cargo value*',
-      color: 'from-purple-500 to-blue-500'
+      color: 'from-blue-500 to-cyan-500'
     },
     {
       id: 'premium',
@@ -54,7 +54,7 @@ export default function MarineCargoInsurancePage() {
       icon: '⭐',
       description: 'Ultimate coverage',
       startingPrice: '0.45% of cargo value*',
-      color: 'from-orange-500 to-red-500'
+      color: 'from-cyan-600 to-green-600'
     }
   ]
 
@@ -75,13 +75,13 @@ export default function MarineCargoInsurancePage() {
       icon: '⚡',
       title: 'Quick Claims Settlement',
       description: 'Fast and efficient claims processing with dedicated marine insurance experts',
-      color: 'from-orange-500 to-red-500'
+      color: 'from-cyan-600 to-green-600'
     },
     {
       icon: '📋',
       title: 'Flexible Terms',
       description: 'Customizable coverage terms and conditions to match your specific cargo requirements',
-      color: 'from-purple-500 to-pink-500'
+      color: 'from-blue-500 to-cyan-500'
     },
     {
       icon: '💰',
@@ -93,7 +93,7 @@ export default function MarineCargoInsurancePage() {
       icon: '🏆',
       title: 'Expert Support',
       description: '24/7 marine insurance specialists and claims assistance worldwide',
-      color: 'from-indigo-500 to-purple-500'
+      color: 'from-blue-500 to-cyan-500'
     }
   ]
 
@@ -228,7 +228,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       {/* Animated Background Elements */}
       <div className="fixed inset-0 pointer-events-none">
         <motion.div
-          className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/10 to-teal-400/10 rounded-full blur-3xl"
+          className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/10 to-cyan-400/10 rounded-full blur-3xl"
           animate={{
             x: [0, 100, 0],
             y: [0, -50, 0],
@@ -256,7 +256,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       </div>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-700 via-cyan-600 to-teal-600 text-white relative z-10 overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-cyan-600 to-green-600 text-white relative z-10 overflow-hidden">
         <motion.div 
           className="absolute inset-0 bg-black/10"
           animate={{
@@ -461,7 +461,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       </section>
 
       {/* Plan Types Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"
@@ -470,7 +470,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 bg-clip-text mb-6">
+            <h2 className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-cyan-600 via-blue-600 to-green-600 bg-clip-text mb-6">
               Marine Insurance Coverage
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -598,7 +598,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-700 via-cyan-600 to-teal-600 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-cyan-600 to-green-600 text-white relative overflow-hidden">
         <motion.div 
           className="absolute inset-0"
           animate={{
@@ -692,7 +692,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"

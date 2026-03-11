@@ -43,7 +43,7 @@ export default function FourWheelerInsurancePage() {
       icon: '⚡',
       description: 'Own damage coverage only',
       startingPrice: '₹10,000/year*',
-      color: 'from-orange-500 to-red-500'
+      color: 'from-cyan-600 to-green-600'
     },
     // {
     //   id: 'zerodep',
@@ -51,7 +51,7 @@ export default function FourWheelerInsurancePage() {
     //   icon: '💎',
     //   description: 'No depreciation deduction',
     //   startingPrice: '₹6,500/year*',
-    //   color: 'from-purple-500 to-pink-500'
+    //   color: 'from-blue-500 to-cyan-500'
     // }
   ]
 
@@ -72,13 +72,13 @@ export default function FourWheelerInsurancePage() {
       icon: '🔧',
       title: 'Cashless Repairs',
       description: 'Get your car repaired at 6500+ authorized garages without upfront payment',
-      color: 'from-orange-500 to-red-500'
+      color: 'from-cyan-600 to-green-600'
     },
     {
       icon: '🚑',
       title: 'Roadside Assistance',
       description: '24/7 emergency roadside assistance including towing, breakdown support and emergency fuel',
-      color: 'from-purple-500 to-pink-500'
+      color: 'from-blue-500 to-cyan-500'
     },
     {
       icon: '💰',
@@ -90,7 +90,7 @@ export default function FourWheelerInsurancePage() {
       icon: '📱',
       title: 'Instant Policy',
       description: 'Buy car insurance online in 2 minutes with instant policy issuance',
-      color: 'from-indigo-500 to-purple-500'
+      color: 'from-blue-500 to-cyan-500'
     }
   ]
 
@@ -231,7 +231,7 @@ export default function FourWheelerInsurancePage() {
       </div>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-green-600 text-white relative z-10 overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-cyan-600 to-green-600 text-white relative z-10 overflow-hidden">
         <motion.div 
           className="absolute inset-0 bg-black/10"
           animate={{
@@ -386,7 +386,7 @@ export default function FourWheelerInsurancePage() {
                 </div>
                 <motion.button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all"
+                  className="w-full bg-gradient-to-r from-cyan-600 to-green-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -402,7 +402,7 @@ export default function FourWheelerInsurancePage() {
       </section>
 
       {/* Plan Types Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"
@@ -411,7 +411,7 @@ export default function FourWheelerInsurancePage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text mb-6">
+            <h2 className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 via-cyan-600 to-green-600 bg-clip-text mb-6">
               Choose Your Car Insurance
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -515,7 +515,7 @@ export default function FourWheelerInsurancePage() {
                 viewport={{ once: true }}
               >
                 <motion.div 
-                  className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white text-3xl shadow-lg"
+                  className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-cyan-600 to-green-600 flex items-center justify-center text-white text-3xl shadow-lg"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -528,7 +528,7 @@ export default function FourWheelerInsurancePage() {
                 
                 {/* Connecting Line */}
                 {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-blue-300 to-purple-300 transform -translate-x-4"></div>
+                  <div className="hidden md:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-blue-300 to-cyan-300 transform -translate-x-4"></div>
                 )}
               </motion.div>
             ))}
@@ -537,7 +537,7 @@ export default function FourWheelerInsurancePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-green-600 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-cyan-600 to-green-600 text-white relative overflow-hidden">
         <motion.div 
           className="absolute inset-0"
           animate={{
@@ -631,7 +631,7 @@ export default function FourWheelerInsurancePage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"

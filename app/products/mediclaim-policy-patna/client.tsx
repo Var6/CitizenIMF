@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export function MediclaimHeroSection() {
   return (
-    <section className="py-16 px-6 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+    <section className="py-16 px-6 bg-gradient-to-r from-blue-600 via-cyan-600 to-green-600 text-white">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -70,7 +70,7 @@ export function MediclaimBenefits() {
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="bg-white p-6 rounded-lg shadow-md border-t-4 border-purple-600"
+              className="bg-white p-6 rounded-lg shadow-md border-t-4 border-cyan-600"
             >
               <h3 className="text-lg font-semibold mb-3 text-gray-800">
                 {benefit.title}
@@ -86,7 +86,7 @@ export function MediclaimBenefits() {
 
 export function MediclaimCTA() {
   return (
-    <section className="py-16 px-6 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+    <section className="py-16 px-6 bg-gradient-to-r from-blue-600 via-cyan-600 to-green-600 text-white">
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-6">
           Compare & Buy Mediclaim Policy Now
@@ -96,7 +96,7 @@ export function MediclaimCTA() {
         </p>
         <Link
           href="/contact"
-          className="inline-block bg-white text-purple-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition"
+          className="inline-block bg-white text-cyan-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition"
         >
           Get Free Quote
         </Link>

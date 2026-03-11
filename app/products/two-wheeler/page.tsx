@@ -43,7 +43,7 @@ export default function TwoWheelerInsurancePage() {
       icon: '⚡',
       description: 'Own damage coverage only',
       startingPrice: '₹2,000/year*',
-      color: 'from-orange-500 to-red-500'
+      color: 'from-cyan-600 to-green-600'
     },
     // {
     //   id: 'zerodep',
@@ -51,7 +51,7 @@ export default function TwoWheelerInsurancePage() {
     //   icon: '💎',
     //   description: 'No depreciation deduction',
     //   startingPrice: '₹3,500/year*',
-    //   color: 'from-purple-500 to-pink-500'
+    //   color: 'from-blue-500 to-cyan-500'
     // }
   ]
 
@@ -72,13 +72,13 @@ export default function TwoWheelerInsurancePage() {
       icon: '🔧',
       title: 'Cashless Repairs',
       description: 'Get your bike repaired at 4000+ authorized garages without upfront payment',
-      color: 'from-orange-500 to-red-500'
+      color: 'from-cyan-600 to-green-600'
     },
     {
       icon: '🚑',
       title: 'Roadside Assistance',
       description: '24/7 emergency roadside assistance including towing and breakdown support',
-      color: 'from-purple-500 to-pink-500'
+      color: 'from-blue-500 to-cyan-500'
     },
     {
       icon: '💰',
@@ -90,7 +90,7 @@ export default function TwoWheelerInsurancePage() {
       icon: '📱',
       title: 'Instant Policy',
       description: 'Buy bike insurance online in 2 minutes with instant policy issuance',
-      color: 'from-indigo-500 to-purple-500'
+      color: 'from-blue-500 to-cyan-500'
     }
   ]
 
@@ -203,7 +203,7 @@ export default function TwoWheelerInsurancePage() {
       {/* Animated Background Elements */}
       <div className="fixed inset-0 pointer-events-none">
         <motion.div
-          className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-orange-400/10 to-red-400/10 rounded-full blur-3xl"
+          className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/10 to-cyan-400/10 rounded-full blur-3xl"
           animate={{
             x: [0, 100, 0],
             y: [0, -50, 0],
@@ -231,7 +231,7 @@ export default function TwoWheelerInsurancePage() {
       </div>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-orange-600 via-red-600 to-pink-600 text-white relative z-10 overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-cyan-600 to-green-600 text-white relative z-10 overflow-hidden">
         <motion.div 
           className="absolute inset-0 bg-black/10"
           animate={{
@@ -255,7 +255,7 @@ export default function TwoWheelerInsurancePage() {
                 Two-Wheeler
                 <span className="text-transparent bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text"> Insurance</span>
               </h1>
-              <p className="text-xl text-orange-100 mb-8 leading-relaxed">
+              <p className="text-xl text-cyan-100 mb-8 leading-relaxed">
                 Protect your bike with comprehensive insurance starting from ₹1,000/year. Get instant quotes, cashless repairs at 6000+ garages, and 24/7 roadside assistance.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -267,7 +267,7 @@ export default function TwoWheelerInsurancePage() {
                   Get Instant Quote
                 </motion.button>
                 <motion.button 
-                  className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-orange-600 transition-colors"
+                  className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-cyan-600 transition-colors"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -308,7 +308,7 @@ export default function TwoWheelerInsurancePage() {
                     value={formData.vehicleNumber}
                     onChange={(e) => handleInputChange('vehicleNumber', e.target.value)}
                     placeholder="Enter registration number (e.g. MH12AB1234)"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent uppercase"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent uppercase"
                     required
                   />
                 </div>
@@ -318,7 +318,7 @@ export default function TwoWheelerInsurancePage() {
                     <select
                       value={formData.bikeModel}
                       onChange={(e) => handleInputChange('bikeModel', e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       required
                     >
                       <option value="">Select your bike</option>
@@ -337,7 +337,7 @@ export default function TwoWheelerInsurancePage() {
                     <select
                       value={formData.manufacturingYear}
                       onChange={(e) => handleInputChange('manufacturingYear', e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       required
                     >
                       <option value="">Select year</option>
@@ -354,7 +354,7 @@ export default function TwoWheelerInsurancePage() {
                     value={formData.city}
                     onChange={(e) => handleInputChange('city', e.target.value)}
                     placeholder="Enter your city"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     required
                   />
                 </div>
@@ -366,7 +366,7 @@ export default function TwoWheelerInsurancePage() {
                       value={formData.name}
                       onChange={(e) => handleInputChange('name', e.target.value)}
                       placeholder="Enter full name"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       required
                     />
                   </div>
@@ -377,14 +377,14 @@ export default function TwoWheelerInsurancePage() {
                       value={formData.mobile}
                       onChange={(e) => handleInputChange('mobile', e.target.value)}
                       placeholder="Enter mobile number"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       required
                     />
                   </div>
                 </div>
                 <motion.button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-orange-600 to-red-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all"
+                  className="w-full bg-gradient-to-r from-cyan-600 to-green-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -400,7 +400,7 @@ export default function TwoWheelerInsurancePage() {
       </section>
 
       {/* Plan Types Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-orange-50">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"
@@ -409,7 +409,7 @@ export default function TwoWheelerInsurancePage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 bg-clip-text mb-6">
+            <h2 className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 via-cyan-600 to-green-600 bg-clip-text mb-6">
               Choose Your Bike Insurance
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -517,7 +517,7 @@ export default function TwoWheelerInsurancePage() {
                 viewport={{ once: true }}
               >
                 <motion.div 
-                  className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-orange-500 to-red-500 flex items-center justify-center text-white text-3xl shadow-lg"
+                  className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-cyan-600 to-green-600 flex items-center justify-center text-white text-3xl shadow-lg"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -539,7 +539,7 @@ export default function TwoWheelerInsurancePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-orange-600 via-red-600 to-pink-600 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-cyan-600 to-green-600 text-white relative overflow-hidden">
         <motion.div 
           className="absolute inset-0"
           animate={{
@@ -565,7 +565,7 @@ export default function TwoWheelerInsurancePage() {
           </motion.h3>
           
           <motion.p 
-            className="text-xl text-orange-100 max-w-3xl mx-auto mb-8"
+            className="text-xl text-cyan-100 max-w-3xl mx-auto mb-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -589,7 +589,7 @@ export default function TwoWheelerInsurancePage() {
               Get Free Bike Quote
             </motion.button>
             <motion.button 
-              className="border-2 border-white text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-orange-600 transition-colors"
+              className="border-2 border-white text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-cyan-600 transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -625,7 +625,7 @@ export default function TwoWheelerInsurancePage() {
                   {item.icon}
                 </motion.div>
                 <h4 className="text-2xl font-bold text-yellow-200 mb-2">{item.title}</h4>
-                <p className="text-orange-100 text-sm">{item.desc}</p>
+                <p className="text-cyan-100 text-sm">{item.desc}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -633,7 +633,7 @@ export default function TwoWheelerInsurancePage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-orange-50">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"
@@ -694,7 +694,7 @@ export default function TwoWheelerInsurancePage() {
           >
             <Link 
               href="/faq/two-wheeler-insurance" 
-              className="inline-flex items-center text-orange-600 font-semibold hover:text-orange-700 transition-colors"
+              className="inline-flex items-center text-orange-600 font-semibold hover:text-cyan-700 transition-colors"
             >
               View All Two-Wheeler Insurance FAQs
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -46,7 +46,7 @@ export default function TrustBuildingSection() {
       suffix: '%',
       label: 'Claims Settled',
       icon: '✅',
-      color: 'from-purple-500 to-pink-500',
+      color: 'from-blue-500 to-cyan-500',
       description: 'Successful claim settlement'
     }
   ]
@@ -136,7 +136,7 @@ export default function TrustBuildingSection() {
       title: 'Lifetime Support',
       description: '24/7 support for claims, renewals and queries',
       icon: '🛡️',
-      color: 'from-purple-500 to-pink-500'
+      color: 'from-blue-500 to-cyan-500'
     }
   ]
 
@@ -171,7 +171,7 @@ export default function TrustBuildingSection() {
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
-          className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-br from-blue-400/5 to-purple-400/5 rounded-full blur-3xl"
+          className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-br from-blue-400/5 to-cyan-400/5 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             rotate: [0, 180, 360],
@@ -235,7 +235,7 @@ export default function TrustBuildingSection() {
 
         {/* Testimonials Section */}
         <motion.div 
-          className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8 lg:p-12"
+          className="bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50 rounded-3xl p-8 lg:p-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -302,7 +302,7 @@ export default function TrustBuildingSection() {
                       <div className="text-gray-500 text-sm">{testimonials[currentTestimonial].location}</div>
                     </div>
                     <div className="mt-4 lg:mt-0 text-center lg:text-right">
-                      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium inline-block">
+                      <div className="bg-gradient-to-r from-cyan-600 to-green-600 text-white px-4 py-2 rounded-full text-sm font-medium inline-block">
                         {testimonials[currentTestimonial].insurance}
                       </div>
                       <div className="text-gray-500 text-sm mt-1">{testimonials[currentTestimonial].date}</div>

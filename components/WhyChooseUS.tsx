@@ -95,7 +95,7 @@ export default function WhyChooseSection() {
   }, [isVisible])
 
   return (
-    <section ref={sectionRef} className="py-20 bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <section ref={sectionRef} className="py-20 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div 
           className={`text-center mb-16 transform transition-all duration-1000 ${

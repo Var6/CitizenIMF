@@ -35,7 +35,7 @@ export default function HeroCarousel() {
       "From life and health to motor and business insurance — our AI-powered platform brings transparency, speed, and convenience to every policy you choose.",
     buttonText: "Explore Solutions",
     buttonLink: "/products",
-    bgColor: "from-green-600 to-blue-600"
+    bgColor: "from-cyan-600 to-green-600"
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ export default function HeroCarousel() {
       "We bridge the gap between insurance and technology, helping individuals and enterprises make smarter, data-driven decisions for long-term security and growth.",
     buttonText: "Learn More",
     buttonLink: "/about",
-    bgColor: "from-purple-600 to-indigo-600"
+    bgColor: "from-blue-600 via-cyan-600 to-green-600"
   }
 ];
 

@@ -44,13 +44,13 @@ export default function JoinUsPage() {
       title: "Commitment to Community",
       description: "At Citizen Savings & Credit IMF Pvt. we believe in giving back. Our community involvement initiatives provide opportunities for you to contribute positively and make a difference in the lives of others.",
       icon: "🤝",
-      color: "from-orange-500 to-red-500"
+      color: "from-cyan-600 to-green-600"
     },
     {
       title: "Competitive Benefits",
       description: "We offer a comprehensive benefits package that includes health insurance, retirement plans, paid time off, and more, ensuring that you and your family are well taken care of.",
       icon: "💰",
-      color: "from-purple-500 to-pink-500"
+      color: "from-blue-500 to-cyan-500"
     }
   ]
 
@@ -133,7 +133,7 @@ export default function JoinUsPage() {
       {/* Animated Background Elements */}
       <div className="fixed inset-0 pointer-events-none">
         <motion.div
-          className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/15 to-purple-400/15 rounded-full blur-3xl"
+          className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/15 to-cyan-400/15 rounded-full blur-3xl"
           animate={{
             x: [0, 100, 0],
             y: [0, -50, 0],
@@ -146,7 +146,7 @@ export default function JoinUsPage() {
           }}
         />
         <motion.div
-          className="absolute top-20 -right-40 w-96 h-96 bg-gradient-to-br from-green-400/15 to-blue-400/15 rounded-full blur-3xl"
+          className="absolute top-20 -right-40 w-96 h-96 bg-gradient-to-br from-cyan-400/10 to-green-400/10 rounded-full blur-3xl"
           animate={{
             x: [0, -80, 0],
             y: [0, 100, 0],
@@ -175,7 +175,7 @@ export default function JoinUsPage() {
 
       {/* Breadcrumb */}
       <motion.div 
-        className="bg-gradient-to-r from-gray-100 via-blue-50 to-green-50 py-4 relative z-10"
+        className="bg-gradient-to-r from-blue-50 via-cyan-50 to-green-50 py-4 relative z-10"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -190,7 +190,7 @@ export default function JoinUsPage() {
       </motion.div>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 via-purple-600 via-green-600 to-orange-500 text-white relative z-10 overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-cyan-600 to-green-600 text-white relative z-10 overflow-hidden">
         <motion.div 
           className="absolute inset-0 bg-black/10"
           animate={{
@@ -255,7 +255,7 @@ export default function JoinUsPage() {
       </section>
 
       {/* Why Work With Us Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative z-10">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"
@@ -264,7 +264,7 @@ export default function JoinUsPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text mb-6">
+            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 via-cyan-600 to-green-600 bg-clip-text mb-6">
               Why Work With Us?
             </h3>
           </motion.div>
@@ -325,7 +325,7 @@ export default function JoinUsPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-green-600 bg-clip-text mb-6">
+            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-cyan-600 via-blue-600 to-green-600 bg-clip-text mb-6">
               Our Values
             </h3>
           </motion.div>
@@ -358,7 +358,7 @@ export default function JoinUsPage() {
       </section>
 
       {/* Application Form Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50 relative z-10">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50 relative z-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"
@@ -367,7 +367,7 @@ export default function JoinUsPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text mb-6">
+            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-cyan-600 to-green-600 bg-clip-text mb-6">
               Join Our Team
             </h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -557,7 +557,7 @@ export default function JoinUsPage() {
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`bg-gradient-to-r from-blue-600 to-purple-600 text-white px-12 py-4 rounded-full font-semibold text-lg transition-all shadow-lg ${
+                  className={`bg-gradient-to-r from-cyan-600 to-green-600 text-white px-12 py-4 rounded-full font-semibold text-lg transition-all shadow-lg ${
                     isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:shadow-xl'
                   }`}
                   whileHover={!isSubmitting ? { scale: 1.05 } : {}}
@@ -582,7 +582,7 @@ export default function JoinUsPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-br from-orange-500 via-yellow-500 to-green-500 text-white relative z-10 overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-cyan-600 to-green-600 text-white relative z-10 overflow-hidden">
         <motion.div 
           className="absolute inset-0"
           animate={{
@@ -608,7 +608,7 @@ export default function JoinUsPage() {
           </motion.h3>
           
           <motion.p 
-            className="text-xl text-orange-100 max-w-3xl mx-auto mb-8 leading-relaxed italic"
+            className="text-xl text-cyan-100 max-w-3xl mx-auto mb-8 leading-relaxed italic"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -645,7 +645,7 @@ export default function JoinUsPage() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link 
                 href="/contact" 
-                className="border-2 border-white text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-orange-600 transition-colors inline-block"
+                className="border-2 border-white text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-cyan-600 transition-colors inline-block"
               >
                 Contact HR
               </Link>
@@ -680,7 +680,7 @@ export default function JoinUsPage() {
                   {item.icon}
                 </motion.div>
                 <h4 className="text-lg font-bold text-yellow-200 mb-2">{item.title}</h4>
-                <p className="text-orange-100 text-sm">{item.desc}</p>
+                <p className="text-cyan-100 text-sm">{item.desc}</p>
               </motion.div>
             ))}
           </motion.div>

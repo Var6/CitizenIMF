@@ -22,10 +22,10 @@ export default function PartnersPage() {
 ];
 
   const categories = [
-    { id: 'all', name: 'All Partners', icon: '🤝', color: 'from-blue-500 to-purple-500' },
+    { id: 'all', name: 'All Partners', icon: '🤝', color: 'from-cyan-600 to-green-600' },
     { id: 'life', name: 'Life Insurance', icon: '💝', color: 'from-green-500 to-emerald-500' },
-    { id: 'general', name: 'General Insurance', icon: '🛡️', color: 'from-orange-500 to-red-500' },
-    { id: 'mutual', name: 'Mutual Funds', icon: '📈', color: 'from-purple-500 to-pink-500' },
+    { id: 'general', name: 'General Insurance', icon: '🛡️', color: 'from-cyan-600 to-green-600' },
+    { id: 'mutual', name: 'Mutual Funds', icon: '📈', color: 'from-blue-500 to-cyan-500' },
   ]
 
   const benefits = [
@@ -45,13 +45,13 @@ export default function PartnersPage() {
       title: "Commitment to Community",
       description: "At Citizen Savings & Credit IMF Pvt. Ltd. we believe in giving back. Our community involvement initiatives provide opportunities for you to contribute positively and make a difference in the lives of others.",
       icon: "🤝",
-      color: "from-orange-500 to-red-500"
+      color: "from-cyan-600 to-green-600"
     },
     {
       title: "Competitive Benefits",
       description: "We offer a comprehensive benefits package that includes health insurance, retirement plans, paid time off, and more, ensuring that you and your family are well taken care of.",
       icon: "💰",
-      color: "from-purple-500 to-pink-500"
+      color: "from-blue-500 to-cyan-500"
     }
   ]
 
@@ -72,7 +72,7 @@ export default function PartnersPage() {
       {/* Animated Background Elements */}
       <div className="fixed inset-0 pointer-events-none">
         <motion.div
-          className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/15 to-purple-400/15 rounded-full blur-3xl"
+          className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/15 to-cyan-400/15 rounded-full blur-3xl"
           animate={{
             x: [0, 100, 0],
             y: [0, -50, 0],
@@ -85,7 +85,7 @@ export default function PartnersPage() {
           }}
         />
         <motion.div
-          className="absolute top-20 -right-40 w-96 h-96 bg-gradient-to-br from-green-400/15 to-blue-400/15 rounded-full blur-3xl"
+          className="absolute top-20 -right-40 w-96 h-96 bg-gradient-to-br from-cyan-400/10 to-green-400/10 rounded-full blur-3xl"
           animate={{
             x: [0, -80, 0],
             y: [0, 100, 0],
@@ -114,7 +114,7 @@ export default function PartnersPage() {
 
       {/* Breadcrumb */}
       <motion.div 
-        className="bg-gradient-to-r from-gray-100 via-blue-50 to-green-50 py-4 relative z-10"
+        className="bg-gradient-to-r from-blue-50 via-cyan-50 to-green-50 py-4 relative z-10"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -129,7 +129,7 @@ export default function PartnersPage() {
       </motion.div>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 via-purple-600 via-green-600 to-orange-500 text-white relative z-10 overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-cyan-600 to-green-600 text-white relative z-10 overflow-hidden">
         <motion.div 
           className="absolute inset-0 bg-black/10"
           animate={{
@@ -194,7 +194,7 @@ export default function PartnersPage() {
       </section>
 
       {/* Partner Categories Filter */}
-      <section className="py-10 bg-gradient-to-br from-gray-50 to-blue-50 relative z-10">
+      <section className="py-10 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="flex flex-wrap gap-4 justify-center"
@@ -236,7 +236,7 @@ export default function PartnersPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text mb-6">
+            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 via-cyan-600 to-green-600 bg-clip-text mb-6">
               Our Trusted Partners
             </h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -260,7 +260,7 @@ export default function PartnersPage() {
                 layout
               >
                 <motion.div 
-                  className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 />
                 
                 <div className="relative z-10 text-center">
@@ -281,13 +281,13 @@ export default function PartnersPage() {
                   </p>
 
                   <motion.div 
-                    className="w-16 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    className="w-16 h-1 bg-gradient-to-r from-cyan-600 to-green-600 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   />
                 </div>
 
                 {/* Decorative Elements */}
                 <motion.div 
-                  className="absolute top-4 right-4 w-6 h-6 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute top-4 right-4 w-6 h-6 bg-gradient-to-br from-blue-400/15 to-cyan-400/15 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   animate={{
                     scale: [1, 1.2, 1],
                     rotate: [0, 180, 360],
@@ -301,7 +301,7 @@ export default function PartnersPage() {
       </section>
 
       {/* Why Work With Us Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative z-10">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"
@@ -310,7 +310,7 @@ export default function PartnersPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text mb-6">
+            <h3 className="text-5xl font-bold text-transparent bg-gradient-to-r from-cyan-600 to-green-600 bg-clip-text mb-6">
               Why Work With Us?
             </h3>
           </motion.div>
@@ -362,7 +362,7 @@ export default function PartnersPage() {
       </section>
 
       {/* Join Our Team CTA */}
-      <section className="py-20 bg-gradient-to-br from-orange-500 via-yellow-500 to-green-500 text-white relative z-10 overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-cyan-600 to-green-600 text-white relative z-10 overflow-hidden">
         <motion.div 
           className="absolute inset-0"
           animate={{
@@ -388,7 +388,7 @@ export default function PartnersPage() {
           </motion.h3>
           
           <motion.p 
-            className="text-xl text-orange-100 max-w-4xl mx-auto mb-6 leading-relaxed"
+            className="text-xl text-cyan-100 max-w-4xl mx-auto mb-6 leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -435,7 +435,7 @@ export default function PartnersPage() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link 
                 href="/contact" 
-                className="border-2 border-white text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-orange-600 transition-colors inline-block"
+                className="border-2 border-white text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-cyan-600 transition-colors inline-block"
               >
                 Become a Partner
               </Link>

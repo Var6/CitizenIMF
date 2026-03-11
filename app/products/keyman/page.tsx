@@ -78,7 +78,7 @@ export default function KeymanInsurance() {
       icon: '📈',
       title: 'Investor Confidence',
       desc: 'Maintains stakeholder trust and secures future funding opportunities',
-      gradient: 'from-green-500 to-teal-500'
+      gradient: 'from-green-500 to-cyan-500'
     },
     {
       icon: '💼',
@@ -155,7 +155,7 @@ export default function KeymanInsurance() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white overflow-hidden">
+      <section className="relative py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-900 text-white overflow-hidden">
         {/* Animated Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
@@ -167,7 +167,7 @@ export default function KeymanInsurance() {
         {/* Glowing Orbs */}
         <div className="absolute top-0 left-0 w-full h-full">
           <div className="absolute top-20 left-10 w-96 h-96 bg-blue-500 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-80 h-80 bg-purple-500 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-pulse animation-delay-2000"></div>
+          <div className="absolute bottom-20 right-10 w-80 h-80 bg-cyan-500 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-pulse animation-delay-2000"></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
@@ -396,7 +396,7 @@ export default function KeymanInsurance() {
                 <div className={`overflow-hidden transition-all duration-500 ${
                   openFaq === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}>
-                  <div className="p-8 pt-0 text-gray-700 leading-relaxed bg-gradient-to-r from-blue-50/30 to-purple-50/30">
+                  <div className="p-8 pt-0 text-gray-700 leading-relaxed bg-gradient-to-r from-blue-50/30 to-cyan-50/30">
                     {faq.answer}
                   </div>
                 </div>
@@ -407,7 +407,7 @@ export default function KeymanInsurance() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-900 via-indigo-900 to-purple-900 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-r from-blue-900 via-blue-800 to-cyan-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-cyan-600/20"></div>
         <div className="relative max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-4xl lg:text-5xl font-black mb-6">

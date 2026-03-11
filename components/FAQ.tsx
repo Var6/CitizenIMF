@@ -146,7 +146,7 @@ const faqData: Record<CategoryKey, FAQItem[]> = {
 
   // Define the available categories for filter buttons
   const categories = [
-    { id: 'general' as CategoryKey, name: 'General', icon: '❓', color: 'from-blue-500 to-purple-500' },
+    { id: 'general' as CategoryKey, name: 'General', icon: '❓', color: 'from-blue-500 to-cyan-500' },
     { id: 'health' as CategoryKey, name: 'Health', icon: '🩺', color: 'from-green-500 to-blue-500' },
     { id: 'motor' as CategoryKey, name: 'Motor', icon: '🚗', color: 'from-yellow-500 to-orange-500' },
     { id: 'life' as CategoryKey, name: 'Life', icon: '🌱', color: 'from-blue-500 to-cyan-500' },
@@ -167,7 +167,7 @@ export default function FAQ() {
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
-          className="absolute top-40 left-20 w-32 h-32 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-2xl"
+          className="absolute top-40 left-20 w-32 h-32 bg-gradient-to-br from-blue-400/10 to-cyan-400/10 rounded-full blur-2xl"
           animate={{
             x: [0, 50, 0],
             y: [0, -30, 0],

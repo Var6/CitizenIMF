@@ -258,7 +258,7 @@ export default function TrustBuildingSection() {
               <div className="flex flex-col lg:flex-row items-center lg:items-start space-y-6 lg:space-y-0 lg:space-x-8">
                 {/* Customer Photo */}
                 <div className="flex-shrink-0">
-                  <div className="w-24 h-24 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+                  <div className="w-24 h-24 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
                     <Image src={testimonials[currentTestimonial].image} alt={testimonials[currentTestimonial].name} width={96} height={96} className="rounded-full" />
                   </div>
                 </div>

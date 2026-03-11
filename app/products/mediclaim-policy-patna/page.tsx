@@ -77,7 +77,7 @@ export default function MediclaimPolicyPatnaPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-50 via-white to-pink-50">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-cyan-50 to-green-50">
       {/* Schema Scripts */}
       <script
         type="application/ld+json"
@@ -134,7 +134,7 @@ export default function MediclaimPolicyPatnaPage() {
               </li>
             </ul>
           </div>
-          <div className="bg-pink-50 p-8 rounded-lg border-l-4 border-cyan-600">
+          <div className="bg-cyan-50 p-8 rounded-lg border-l-4 border-cyan-600">
             <h3 className="text-xl font-bold mb-4 text-gray-800">
               What's Covered?
             </h3>

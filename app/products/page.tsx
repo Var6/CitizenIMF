@@ -40,7 +40,7 @@ export default function ProductsPage() {
       subcategory: "commercial-motor",
       icon: "🚛",
       color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-purple-500",
+      bgColor: "bg-cyan-500",
       href: "/products/commercial"
     },
 
@@ -75,7 +75,7 @@ export default function ProductsPage() {
       subcategory: "life",
       icon: "💝",
       color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-pink-500",
+      bgColor: "bg-cyan-500",
       href: "/products/life"
     },
 
@@ -98,8 +98,8 @@ export default function ProductsPage() {
       category: "business",
       subcategory: "marine-cargo",
       icon: "🚢",
-      color: "from-teal-500 to-cyan-500",
-      bgColor: "bg-teal-500",
+      color: "from-blue-500 to-cyan-500",
+      bgColor: "bg-blue-500",
       href: "/products/marine-cargo"
     },
     {
@@ -304,7 +304,7 @@ export default function ProductsPage() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <span className="text-transparent bg-gradient-to-r from-cyan-300 via-purple-300 to-pink-300 bg-clip-text">
+              <span className="text-transparent bg-gradient-to-r from-cyan-300 via-blue-300 to-green-300 bg-clip-text">
                 Products
               </span>
             </motion.h1>
@@ -339,7 +339,7 @@ export default function ProductsPage() {
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div 
-          className="absolute bottom-20 right-10 w-16 h-16 bg-pink-400/20 rounded-full blur-xl"
+          className="absolute bottom-20 right-10 w-16 h-16 bg-orange-400/20 rounded-full blur-xl"
           animate={{
             y: [0, 15, 0],
             x: [0, -15, 0],
@@ -392,7 +392,7 @@ export default function ProductsPage() {
                   onClick={() => setSelectedCategory(category.id)}
                   className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 ${
                     selectedCategory === category.id
-                      ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg'
+                      ? 'bg-gradient-to-r from-cyan-500 to-green-500 text-white shadow-lg'
                       : 'bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 border border-white/20'
                   }`}
                   whileHover={{ scale: 1.05, y: -2 }}
@@ -485,7 +485,7 @@ export default function ProductsPage() {
 
                 {/* Decorative Elements */}
                 <motion.div 
-                  className="absolute top-4 right-4 w-6 h-6 bg-gradient-to-br from-cyan-400/30 to-purple-400/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute top-4 right-4 w-6 h-6 bg-gradient-to-br from-cyan-400/30 to-green-400/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   animate={{
                     scale: [1, 1.2, 1],
                     rotate: [0, 180, 360],

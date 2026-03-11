@@ -64,7 +64,7 @@ export default function AboutPage() {
         </svg>
       ),
       color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-purple-500"
+      bgColor: "bg-cyan-500"
     }
   ]
 
@@ -405,7 +405,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 relative z-10">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[

@@ -79,7 +79,7 @@ export function ArticleGrid({ blogArticles }: { blogArticles: BlogArticle[] }) {
             whileInView={{ opacity: 1, y: 0 }}
             className="group bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition"
           >
-            <div className="h-40 bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center text-6xl group-hover:scale-110 transition">
+            <div className="h-40 bg-gradient-to-br from-blue-100 to-cyan-100 flex items-center justify-center text-6xl group-hover:scale-110 transition">
               {article.image}
             </div>
             <div className="p-6">

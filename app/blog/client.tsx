@@ -121,7 +121,7 @@ export function NewsletterCTA() {
             placeholder="Enter your email"
             className="flex-1 px-4 py-3 rounded-lg border-0"
           />
-          <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition font-semibold">
+          <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-semibold">
             Subscribe
           </button>
         </form>

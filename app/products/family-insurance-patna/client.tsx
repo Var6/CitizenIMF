@@ -172,7 +172,7 @@ export function FamilyInsuranceComparison() {
 
 export function FamilyInsuranceHeroSection() {
   return (
-    <section className="py-16 px-6 bg-gradient-to-r from-blue-600 via-cyan-600 to-green-600 text-white">
+    <section className="py-16 px-6 bg-gradient-to-r from-blue-600 to-cyan-600 text-white">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -252,7 +252,7 @@ export function FamilyInsuranceFeatures() {
 
 export function FamilyInsuranceCTA() {
   return (
-    <section className="py-16 px-6 bg-gradient-to-r from-blue-600 via-cyan-600 to-green-600 text-white">
+    <section className="py-16 px-6 bg-gradient-to-r from-blue-600 to-cyan-600 text-white">
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-6">
           Get a Family Insurance Quote

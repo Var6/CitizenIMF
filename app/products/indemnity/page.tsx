@@ -75,7 +75,7 @@ export default function IndemnityInsurance() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="py-16 bg-gradient-to-br from-blue-600 via-cyan-600 to-green-600 text-white">
+      <section className="py-16 bg-gradient-to-br from-blue-700 via-cyan-600 to-green-600 text-white">
         <div className="max-w-6xl mx-auto px-4 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <h1 className="text-4xl lg:text-5xl font-bold mb-4">Professional
@@ -108,7 +108,7 @@ export default function IndemnityInsurance() {
               <input type="text" value={formData.name} onChange={(e)=>handleInputChange('name',e.target.value)} placeholder="Full Name" className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900"/>
               <input type="email" value={formData.email} onChange={(e)=>handleInputChange('email',e.target.value)} placeholder="Email" className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900"/>
               <input type="tel" value={formData.mobile} onChange={(e)=>handleInputChange('mobile',e.target.value)} placeholder="Mobile Number" className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900"/>
-              <button type='submit'  className="w-full hover:cursor-pointer bg-gradient-to-r from-cyan-600 via-blue-600 to-green-600 text-white py-3 rounded-lg font-bold text-lg shadow-lg">Get Indemnity Insurance Quotes</button>
+              <button type='submit'  className="w-full hover:cursor-pointer bg-gradient-to-r from-cyan-600 to-green-600 text-white py-3 rounded-lg font-bold text-lg shadow-lg">Get Indemnity Insurance Quotes</button>
             </div>
           </form>
         </div>
@@ -117,14 +117,14 @@ export default function IndemnityInsurance() {
       {/* Plans */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-transparent bg-gradient-to-r from-cyan-600 via-blue-600 to-green-600 bg-clip-text mb-12">Choose Your Coverage Plan</h2>
+          <h2 className="text-4xl font-bold text-center text-transparent bg-gradient-to-r from-cyan-600 to-green-600 bg-clip-text mb-12">Choose Your Coverage Plan</h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {plans.map((plan, i)=>(
-              <div key={i} className="bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50 rounded-2xl p-6 shadow-lg border border-gray-200">
+              <div key={i} className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 shadow-lg border border-gray-200">
                 <div className="text-center mb-6">
                   <div className="text-4xl mb-3">{plan.icon}</div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                  <div className="text-2xl font-bold text-transparent bg-gradient-to-r from-cyan-600 via-blue-600 to-green-600 bg-clip-text">{plan.price}</div>
+                  <div className="text-2xl font-bold text-transparent bg-gradient-to-r from-cyan-600 to-green-600 bg-clip-text">{plan.price}</div>
                 </div>
                 <ul className="space-y-3">
                   {plan.features.map((f,j)=>(

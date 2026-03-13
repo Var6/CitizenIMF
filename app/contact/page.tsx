@@ -38,7 +38,7 @@ export default function ContactPage() {
       title: "Office Address",
       value: "C/o Shanti Devi(Besides Irrigation Office), By Pass Road, Anisabad, Patna",
       description: "Visit us at our office for in-person consultation",
-      color: "from-cyan-600 to-green-600",
+      color: "from-orange-500 to-red-500",
       href: "https://maps.app.goo.gl/KCfEQwUGBnzH5hZd9"
     }
   ]
@@ -108,7 +108,7 @@ export default function ContactPage() {
           }}
         />
         <motion.div
-          className="absolute top-20 -right-40 w-96 h-96 bg-gradient-to-br from-cyan-400/10 to-green-400/10 rounded-full blur-3xl"
+          className="absolute top-20 -right-40 w-96 h-96 bg-gradient-to-br from-green-400/15 to-blue-400/15 rounded-full blur-3xl"
           animate={{
             x: [0, -80, 0],
             y: [0, 100, 0],
@@ -137,7 +137,7 @@ export default function ContactPage() {
 
       {/* Breadcrumb */}
       <motion.div 
-        className="bg-gradient-to-r from-blue-50 via-cyan-50 to-green-50 py-4 relative z-10"
+        className="bg-gradient-to-r from-gray-100 via-blue-50 to-green-50 py-4 relative z-10"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -210,7 +210,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Information Cards */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50 relative z-10">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"
@@ -467,7 +467,7 @@ export default function ContactPage() {
               viewport={{ once: true }}
             >
               {/* Business Hours */}
-              <div className="bg-gradient-to-br from-cyan-600 to-green-600 rounded-3xl p-8 text-white">
+              <div className="bg-gradient-to-br from-blue-600 to-cyan-600 rounded-3xl p-8 text-white">
                 <h4 className="text-2xl font-bold mb-6 text-yellow-300">Business Hours</h4>
                 <div className="space-y-4">
                   {businessHours.map((schedule, index) => (
@@ -518,12 +518,12 @@ export default function ContactPage() {
 
               {/* Location Card */}
               <motion.div 
-                className="bg-gradient-to-br from-cyan-600 to-green-600 rounded-3xl p-8 text-white"
+                className="bg-gradient-to-br from-orange-500 to-red-500 rounded-3xl p-8 text-white"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
                 <h4 className="text-2xl font-bold mb-4 text-yellow-300">Visit Our Office</h4>
-                <p className="text-cyan-100 mb-4 text-sm">
+                <p className="text-orange-100 mb-4 text-sm">
                   Come meet us in person for detailed consultation and personalized service.
                 </p>
                 <motion.a
@@ -543,7 +543,7 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50 relative z-10">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"

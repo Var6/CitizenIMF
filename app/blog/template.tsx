@@ -224,7 +224,7 @@ export default function BlogPostPage() {
         </div>
 
         {/* CTA */}
-        <div className="my-12 p-8 bg-gradient-to-r from-cyan-600 to-green-600 text-white rounded-lg text-center">
+        <div className="my-12 p-8 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg text-center">
           <h3 className="text-2xl font-bold mb-4">Ready to Get Insured?</h3>
           <p className="mb-6 opacity-90">
             Get a free quote for health insurance in Patna

@@ -77,7 +77,7 @@ export default function MediclaimPolicyPatnaPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-cyan-50 to-green-50">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-cyan-50">
       {/* Schema Scripts */}
       <script
         type="application/ld+json"
@@ -134,29 +134,29 @@ export default function MediclaimPolicyPatnaPage() {
               </li>
             </ul>
           </div>
-          <div className="bg-cyan-50 p-8 rounded-lg border-l-4 border-cyan-600">
+          <div className="bg-green-50 p-8 rounded-lg border-l-4 border-green-600">
             <h3 className="text-xl font-bold mb-4 text-gray-800">
               What's Covered?
             </h3>
             <ul className="space-y-3 text-gray-700">
               <li className="flex items-start gap-3">
-                <span className="text-cyan-600 font-bold">▪</span>
+                <span className="text-green-600 font-bold">▪</span>
                 <span>Hospitalization (indoor admission)</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-cyan-600 font-bold">▪</span>
+                <span className="text-green-600 font-bold">▪</span>
                 <span>Day-care surgeries</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-cyan-600 font-bold">▪</span>
+                <span className="text-green-600 font-bold">▪</span>
                 <span>Maternity and childbirth</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-cyan-600 font-bold">▪</span>
+                <span className="text-green-600 font-bold">▪</span>
                 <span>Organ transplant coverage</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-cyan-600 font-bold">▪</span>
+                <span className="text-green-600 font-bold">▪</span>
                 <span>Critical illness riders</span>
               </li>
             </ul>

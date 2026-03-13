@@ -149,9 +149,9 @@ const faqData: Record<CategoryKey, FAQItem[]> = {
     { id: 'general' as CategoryKey, name: 'General', icon: '❓', color: 'from-blue-500 to-cyan-500' },
     { id: 'health' as CategoryKey, name: 'Health', icon: '🩺', color: 'from-green-500 to-blue-500' },
     { id: 'motor' as CategoryKey, name: 'Motor', icon: '🚗', color: 'from-yellow-500 to-orange-500' },
-    { id: 'life' as CategoryKey, name: 'Life', icon: '🌱', color: 'from-blue-500 to-cyan-500' },
-    { id: 'investment' as CategoryKey, name: 'Investment', icon: '💰', color: 'from-cyan-600 to-green-600' },
-    { id: 'claims' as CategoryKey, name: 'Claims', icon: '📄', color: 'from-cyan-600 to-green-600' },
+    { id: 'life' as CategoryKey, name: 'Life', icon: '🌱', color: 'from-cyan-500 to-green-500' },
+    { id: 'investment' as CategoryKey, name: 'Investment', icon: '💰', color: 'from-green-600 to-blue-600' },
+    { id: 'claims' as CategoryKey, name: 'Claims', icon: '📄', color: 'from-orange-500 to-red-500' },
   ];
 
   // State for active category and open FAQ
@@ -163,7 +163,7 @@ const faqData: Record<CategoryKey, FAQItem[]> = {
   }
 export default function FAQ() {
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
@@ -203,7 +203,7 @@ export default function FAQ() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-cyan-600 via-blue-600 to-green-600 bg-clip-text mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 via-cyan-600 to-green-600 bg-clip-text mb-6">
             Frequently Asked Questions
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">

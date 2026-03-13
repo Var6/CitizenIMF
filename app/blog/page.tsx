@@ -109,7 +109,7 @@ export default function BlogPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-cyan-50 to-green-50">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-cyan-50">
       {/* Schema */}
       <script
         type="application/ld+json"
@@ -130,7 +130,7 @@ export default function BlogPage() {
                 key={idx}
                 className={`px-4 py-2 rounded-full transition ${
                   idx === 0
-                    ? "bg-blue-600 text-white"
+                    ? "bg-cyan-600 text-white"
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
               >
@@ -160,25 +160,25 @@ export default function BlogPage() {
           <div className="grid md:grid-cols-2 gap-4">
             <Link
               href="/products/health-insurance-patna"
-              className="text-blue-600 hover:underline flex items-center gap-2"
+              className="text-cyan-600 hover:underline flex items-center gap-2"
             >
               → Health Insurance in Patna
             </Link>
             <Link
               href="/products/mediclaim-policy-patna"
-              className="text-blue-600 hover:underline flex items-center gap-2"
+              className="text-cyan-600 hover:underline flex items-center gap-2"
             >
               → Mediclaim Policy Patna
             </Link>
             <Link
               href="/products/family-insurance-patna"
-              className="text-blue-600 hover:underline flex items-center gap-2"
+              className="text-cyan-600 hover:underline flex items-center gap-2"
             >
               → Family Insurance Patna
             </Link>
             <Link
               href="/contact"
-              className="text-blue-600 hover:underline flex items-center gap-2"
+              className="text-cyan-600 hover:underline flex items-center gap-2"
             >
               → Contact Us
             </Link>

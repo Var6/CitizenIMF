@@ -213,7 +213,7 @@ export default function Navbar() {
   <Link href="https://www.citizenhousing.in">
     <Button
       borderRadius="1.75rem"
-      className="bg-gradient-to-r from-blue-600 to-green-800 text-white rounded-full hover:shadow-lg transition-all"
+      className="bg-gradient-to-r from-cyan-600 to-green-600 text-white rounded-full hover:shadow-lg transition-all"
     >
       CITIZEN HOUSING
     </Button>

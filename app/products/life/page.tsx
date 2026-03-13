@@ -104,7 +104,7 @@ export default function LifeInsurance() {
                 <select
                   value={formData.planType}
                   onChange={(e) => handleInputChange('planType', e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-cyan-500"
                   required
                 >
                   <option value="">Select Plan Type</option>
@@ -120,7 +120,7 @@ export default function LifeInsurance() {
                   <select
                     value={formData.age}
                     onChange={(e) => handleInputChange('age', e.target.value)}
-                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-blue-500"
+                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-cyan-500"
                     required
                   >
                     <option value="">Your Age</option>
@@ -134,7 +134,7 @@ export default function LifeInsurance() {
                   <select
                     value={formData.gender}
                     onChange={(e) => handleInputChange('gender', e.target.value)}
-                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-blue-500"
+                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-cyan-500"
                     required
                   >
                     <option value="">Gender</option>
@@ -147,7 +147,7 @@ export default function LifeInsurance() {
                   <select
                     value={formData.income}
                     onChange={(e) => handleInputChange('income', e.target.value)}
-                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-blue-500"
+                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-cyan-500"
                     required
                   >
                     <option value="">Annual Income</option>
@@ -161,7 +161,7 @@ export default function LifeInsurance() {
                   <select
                     value={formData.coverage}
                     onChange={(e) => handleInputChange('coverage', e.target.value)}
-                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-blue-500"
+                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-cyan-500"
                     required
                   >
                     <option value="">Coverage Needed</option>
@@ -178,7 +178,7 @@ export default function LifeInsurance() {
                   value={formData.mobile}
                   onChange={(e) => handleInputChange('mobile', e.target.value)}
                   placeholder="Mobile Number"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-cyan-500"
                   required
                 />
 
@@ -221,11 +221,11 @@ export default function LifeInsurance() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {coveragePlans.map((plan, index) => (
-              <div key={index} className="bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-200">
+              <div key={index} className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-200">
                 <div className="text-center mb-6">
                   <div className="text-4xl mb-3">{plan.icon}</div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                  <div className="text-2xl font-bold text-transparent bg-gradient-to-r from-emerald-500 to-green-500 bg-clip-text">
+                  <div className="text-2xl font-bold text-transparent bg-gradient-to-r from-cyan-500 to-green-500 bg-clip-text">
                     {plan.price}
                   </div>
                 </div>

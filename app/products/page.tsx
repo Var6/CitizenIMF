@@ -29,7 +29,7 @@ export default function ProductsPage() {
       subcategory: "four-wheeler",
       icon: "🚗",
       color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-cyan-500",
+      bgColor: "bg-blue-500",
       href: "/products/four-wheeler"
     },
     {
@@ -39,8 +39,8 @@ export default function ProductsPage() {
       category: "motor",
       subcategory: "commercial-motor",
       icon: "🚛",
-      color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-cyan-500",
+      color: "from-cyan-500 to-blue-500",
+      bgColor: "bg-cyan-600",
       href: "/products/commercial"
     },
 
@@ -74,8 +74,8 @@ export default function ProductsPage() {
       category: "health-life",
       subcategory: "life",
       icon: "💝",
-      color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-cyan-500",
+      color: "from-green-500 to-cyan-500",
+      bgColor: "bg-green-500",
       href: "/products/life"
     },
 
@@ -87,7 +87,7 @@ export default function ProductsPage() {
       category: "business",
       subcategory: "shop",
       icon: "🏪",
-      color: "from-cyan-600 to-green-600",
+      color: "from-orange-500 to-red-500",
       bgColor: "bg-orange-500",
       href: "/products/shop"
     },
@@ -98,8 +98,8 @@ export default function ProductsPage() {
       category: "business",
       subcategory: "marine-cargo",
       icon: "🚢",
-      color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-blue-500",
+      color: "from-blue-500 to-green-500",
+      bgColor: "bg-blue-600",
       href: "/products/marine-cargo"
     },
     {
@@ -109,8 +109,8 @@ export default function ProductsPage() {
       category: "business",
       subcategory: "keyman",
       icon: "👨‍💼",
-      color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-violet-500",
+      color: "from-cyan-500 to-green-500",
+      bgColor: "bg-cyan-600",
       href: "/products/keyman"
     },
     {
@@ -180,7 +180,7 @@ export default function ProductsPage() {
       subcategory: "pension",
       icon: "👴",
       color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-cyan-500",
+      bgColor: "bg-blue-600",
       href: "/products/pension"
     },
     {
@@ -190,8 +190,8 @@ export default function ProductsPage() {
       category: "investment",
       subcategory: "child-plans",
       icon: "👶",
-      color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-rose-500",
+      color: "from-green-500 to-blue-500",
+      bgColor: "bg-green-600",
       href: "/products/child-plans"
     }
   ]
@@ -213,11 +213,11 @@ export default function ProductsPage() {
   })
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-900 to-blue-900 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
       {/* Enhanced Background Animation */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
-          className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-br from-blue-400/15 to-cyan-400/15 rounded-full blur-3xl"
+          className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-br from-cyan-400/20 to-blue-600/20 rounded-full blur-3xl"
           animate={{
             x: [0, 100, 0],
             y: [0, -50, 0],
@@ -230,7 +230,7 @@ export default function ProductsPage() {
           }}
         />
         <motion.div
-          className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-br from-cyan-400/10 to-green-400/10 rounded-full blur-3xl"
+          className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-br from-cyan-400/20 to-green-600/20 rounded-full blur-3xl"
           animate={{
             x: [0, -100, 0],
             y: [0, 50, 0],
@@ -243,7 +243,7 @@ export default function ProductsPage() {
           }}
         />
         <motion.div
-          className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-br from-orange-400/10 to-yellow-400/10 rounded-full blur-2xl"
+          className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-br from-cyan-400/10 to-green-600/10 rounded-full blur-2xl"
           animate={{
             rotate: [0, 360],
             scale: [1, 1.3, 1],
@@ -287,7 +287,7 @@ export default function ProductsPage() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center space-x-2 text-sm">
-            <Link href="/" className="text-cyan-400 hover:text-cyan-100 font-medium transition-colors">Home</Link>
+            <Link href="/" className="text-cyan-400 hover:text-cyan-300 font-medium transition-colors">Home</Link>
             <span className="text-gray-400">/</span>
             <span className="text-white font-semibold">Products</span>
           </nav>
@@ -392,7 +392,7 @@ export default function ProductsPage() {
                   onClick={() => setSelectedCategory(category.id)}
                   className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 ${
                     selectedCategory === category.id
-                      ? 'bg-gradient-to-r from-cyan-500 to-green-500 text-white shadow-lg'
+                      ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg'
                       : 'bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 border border-white/20'
                   }`}
                   whileHover={{ scale: 1.05, y: -2 }}
@@ -485,7 +485,7 @@ export default function ProductsPage() {
 
                 {/* Decorative Elements */}
                 <motion.div 
-                  className="absolute top-4 right-4 w-6 h-6 bg-gradient-to-br from-cyan-400/30 to-green-400/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute top-4 right-4 w-6 h-6 bg-gradient-to-br from-cyan-400/30 to-blue-400/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   animate={{
                     scale: [1, 1.2, 1],
                     rotate: [0, 180, 360],
@@ -514,7 +514,7 @@ export default function ProductsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-cyan-600 to-green-600 text-white relative z-10 overflow-hidden">        
+      <section className="py-20 bg-gradient-to-r from-blue-600 via-cyan-600 to-green-600 text-white relative z-10 overflow-hidden">        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.h3 
             className="text-4xl lg:text-6xl font-black mb-6 text-transparent bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text"

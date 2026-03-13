@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export function BlogHeader() {
   return (
-    <section className="py-16 px-6 bg-gradient-to-r from-cyan-600 to-green-600 text-white">
+    <section className="py-16 px-6 bg-gradient-to-r from-blue-600 to-cyan-600 text-white">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -28,11 +28,11 @@ export function FeaturedArticle() {
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="bg-gradient-to-br from-cyan-600 to-green-600 text-white rounded-lg p-8 mb-12"
+        className="bg-gradient-to-br from-blue-600 to-cyan-600 text-white rounded-lg p-8 mb-12"
       >
         <div className="grid md:grid-cols-3 gap-8 items-center">
           <div className="md:col-span-2">
-            <span className="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-semibold">
+            <span className="bg-white text-cyan-600 px-3 py-1 rounded-full text-sm font-semibold">
               Featured Article
             </span>
             <h2 className="text-3xl font-bold my-4">
@@ -45,7 +45,7 @@ export function FeaturedArticle() {
             </p>
             <Link
               href="#"
-              className="inline-block bg-white text-blue-600 font-bold py-2 px-6 rounded-lg hover:bg-gray-100 transition"
+              className="inline-block bg-white text-cyan-600 font-bold py-2 px-6 rounded-lg hover:bg-gray-100 transition"
             >
               Read Article →
             </Link>
@@ -86,7 +86,7 @@ export function ArticleGrid({ blogArticles }: { blogArticles: BlogArticle[] }) {
               <span className="inline-block bg-cyan-100 text-cyan-700 text-xs font-semibold px-3 py-1 rounded mb-3">
                 {article.category}
               </span>
-              <h3 className="text-xl font-bold mb-3 text-gray-800 group-hover:text-blue-600 transition">
+              <h3 className="text-xl font-bold mb-3 text-gray-800 group-hover:text-cyan-600 transition">
                 {article.title}
               </h3>
               <p className="text-gray-600 mb-4 line-clamp-2">
@@ -121,7 +121,7 @@ export function NewsletterCTA() {
             placeholder="Enter your email"
             className="flex-1 px-4 py-3 rounded-lg border-0"
           />
-          <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-semibold">
+          <button className="bg-cyan-600 text-white px-6 py-3 rounded-lg hover:bg-cyan-700 transition font-semibold">
             Subscribe
           </button>
         </form>

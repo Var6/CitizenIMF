@@ -49,7 +49,7 @@ export default function PersonalAccidentPage() {
       icon: '👨‍👩‍👧‍👦',
       description: 'Protect your entire family',
       startingPrice: '₹1,599/year*',
-      color: 'from-cyan-600 to-green-600'
+      color: 'from-orange-500 to-red-500'
     },
     {
       id: 'premium',
@@ -57,7 +57,7 @@ export default function PersonalAccidentPage() {
       icon: '💎',
       description: 'Maximum accident coverage',
       startingPrice: '₹2,499/year*',
-      color: 'from-blue-500 to-cyan-500'
+      color: 'from-cyan-500 to-green-500'
     }
   ]
 
@@ -78,13 +78,13 @@ export default function PersonalAccidentPage() {
       icon: '🏥',
       title: 'Medical Expenses',
       description: 'Coverage for accident-related hospitalization and medical treatment costs.',
-      color: 'from-cyan-600 to-green-600'
+      color: 'from-orange-500 to-red-500'
     },
     {
       icon: '🚑',
       title: 'Emergency Transport',
       description: 'Ambulance charges and emergency transportation costs covered.',
-      color: 'from-blue-500 to-cyan-500'
+      color: 'from-cyan-500 to-green-500'
     },
     {
       icon: '📄',
@@ -211,7 +211,7 @@ export default function PersonalAccidentPage() {
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
       {/* Hero Section with Form */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 via-cyan-600 to-green-600 text-white relative z-10 overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-cyan-700 to-green-800 text-white relative z-10 overflow-hidden">
         <div className="absolute inset-0 bg-black/10 opacity-50"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -362,7 +362,7 @@ export default function PersonalAccidentPage() {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
             >
-                <h2 className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-cyan-600 to-green-600 bg-clip-text mb-6">
+                <h2 className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text mb-6">
                     Choose Your Personal Accident Plan
                 </h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -471,7 +471,7 @@ export default function PersonalAccidentPage() {
       </section>
 
       {/* How it works */}
-      <section className="py-20 bg-gradient-to-b from-blue-50 via-cyan-50 to-green-50">
+      <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"

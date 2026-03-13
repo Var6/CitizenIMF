@@ -43,7 +43,7 @@ export default function FourWheelerInsurancePage() {
       icon: '⚡',
       description: 'Own damage coverage only',
       startingPrice: '₹10,000/year*',
-      color: 'from-cyan-600 to-green-600'
+      color: 'from-orange-500 to-red-500'
     },
     // {
     //   id: 'zerodep',
@@ -51,7 +51,7 @@ export default function FourWheelerInsurancePage() {
     //   icon: '💎',
     //   description: 'No depreciation deduction',
     //   startingPrice: '₹6,500/year*',
-    //   color: 'from-blue-500 to-cyan-500'
+    //   color: 'from-cyan-500 to-green-500'
     // }
   ]
 
@@ -72,13 +72,13 @@ export default function FourWheelerInsurancePage() {
       icon: '🔧',
       title: 'Cashless Repairs',
       description: 'Get your car repaired at 6500+ authorized garages without upfront payment',
-      color: 'from-cyan-600 to-green-600'
+      color: 'from-orange-500 to-red-500'
     },
     {
       icon: '🚑',
       title: 'Roadside Assistance',
       description: '24/7 emergency roadside assistance including towing, breakdown support and emergency fuel',
-      color: 'from-blue-500 to-cyan-500'
+      color: 'from-cyan-500 to-green-500'
     },
     {
       icon: '💰',
@@ -216,7 +216,7 @@ export default function FourWheelerInsurancePage() {
           }}
         />
         <motion.div
-          className="absolute top-20 -right-40 w-96 h-96 bg-gradient-to-br from-cyan-400/10 to-green-400/10 rounded-full blur-3xl"
+          className="absolute top-20 -right-40 w-96 h-96 bg-gradient-to-br from-cyan-400/10 to-blue-400/10 rounded-full blur-3xl"
           animate={{
             x: [0, -80, 0],
             y: [0, 100, 0],
@@ -402,7 +402,7 @@ export default function FourWheelerInsurancePage() {
       </section>
 
       {/* Plan Types Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"
@@ -515,7 +515,7 @@ export default function FourWheelerInsurancePage() {
                 viewport={{ once: true }}
               >
                 <motion.div 
-                  className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-cyan-600 to-green-600 flex items-center justify-center text-white text-3xl shadow-lg"
+                  className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center text-white text-3xl shadow-lg"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -631,7 +631,7 @@ export default function FourWheelerInsurancePage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"

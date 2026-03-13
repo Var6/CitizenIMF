@@ -84,13 +84,13 @@ export default function KeymanInsurance() {
       icon: '💼',
       title: 'Debt Protection',
       desc: 'Helps repay business loans, liabilities and operational expenses',
-      gradient: 'from-blue-500 to-cyan-500'
+      gradient: 'from-cyan-500 to-green-500'
     },
     {
       icon: '💰',
       title: 'Tax Benefits',
       desc: 'Premium payments and claim proceeds offer significant tax advantages',
-      gradient: 'from-cyan-600 to-green-600'
+      gradient: 'from-orange-500 to-red-500'
     }
   ]
 
@@ -151,11 +151,11 @@ export default function KeymanInsurance() {
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-20 left-10 w-32 h-32 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
         <div className="absolute top-40 right-20 w-40 h-40 bg-cyan-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse animation-delay-2000"></div>
-        <div className="absolute bottom-40 left-20 w-36 h-36 bg-cyan-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse animation-delay-4000"></div>
+        <div className="absolute bottom-40 left-20 w-36 h-36 bg-green-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse animation-delay-4000"></div>
       </div>
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-900 text-white overflow-hidden">
+      <section className="relative py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-cyan-900 text-white overflow-hidden">
         {/* Animated Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
@@ -179,7 +179,7 @@ export default function KeymanInsurance() {
             
             <h1 className="text-5xl lg:text-7xl font-black mb-6 leading-tight">
               Keyman
-              <span className="block text-transparent bg-gradient-to-r from-cyan-600 via-blue-600 to-green-600 bg-clip-text animate-pulse">
+              <span className="block text-transparent bg-gradient-to-r from-cyan-300 via-blue-300 to-cyan-300 bg-clip-text animate-pulse">
                 Insurance
               </span>
             </h1>
@@ -196,14 +196,14 @@ export default function KeymanInsurance() {
                 <span className="text-sm text-slate-300 ml-2">4.9/5 Customer Rating</span>
               </div>
               <div className="text-sm text-slate-300">
-                <span className="font-bold text-cyan-100">5+</span> Businesses Protected
+                <span className="font-bold text-cyan-300">5+</span> Businesses Protected
               </div>
             </div>
           </div>
 
           {/* Enhanced Form */}
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-green-600 rounded-3xl blur-xl opacity-20"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-3xl blur-xl opacity-20"></div>
             <div className="relative bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20">
               <div className="text-center mb-8">
                 <h3 className="text-3xl font-bold text-gray-900 mb-2">Get Instant Quote</h3>
@@ -280,7 +280,7 @@ export default function KeymanInsurance() {
                   ) : (
                     <>
                       <span className="relative z-10">Get Keyman Insurance Quotes</span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-cyan-600 to-green-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-green-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </>
                   )}
                 </button>
@@ -298,7 +298,7 @@ export default function KeymanInsurance() {
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-black text-transparent bg-gradient-to-r from-cyan-600 via-blue-600 to-green-600 bg-clip-text mb-6">
+            <h2 className="text-4xl lg:text-5xl font-black text-transparent bg-gradient-to-r from-gray-900 via-blue-600 to-cyan-600 bg-clip-text mb-6">
               Choose Your Protection Plan
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -311,12 +311,12 @@ export default function KeymanInsurance() {
               <div 
                 key={i} 
                 className={`relative bg-white rounded-3xl p-8 shadow-xl border-2 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl ${
-                  plan.popular ? 'border-gradient-to-r from-cyan-600 to-green-600 scale-105' : 'border-gray-200 hover:border-blue-300'
+                  plan.popular ? 'border-gradient-to-r from-blue-500 to-cyan-500 scale-105' : 'border-gray-200 hover:border-blue-300'
                 }`}
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-cyan-600 to-green-600 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+                    <span className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
                       🌟 Most Popular
                     </span>
                   </div>
@@ -326,7 +326,7 @@ export default function KeymanInsurance() {
                   <div className="text-6xl mb-4">{plan.icon}</div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-3">{plan.name}</h3>
                   <div className="space-y-2">
-                    <div className="text-3xl font-black text-transparent bg-gradient-to-r from-cyan-600 to-green-600 bg-clip-text">
+                    <div className="text-3xl font-black text-transparent bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text">
                       {plan.price}
                     </div>
                     <div className="text-sm text-gray-500 line-through">{plan.originalPrice}</div>
@@ -344,7 +344,7 @@ export default function KeymanInsurance() {
 
                 <button className={`w-full py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:-translate-y-0.5 ${
                   plan.popular 
-                    ? 'bg-gradient-to-r from-cyan-600 to-green-600 text-white shadow-lg hover:shadow-xl' 
+                    ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg hover:shadow-xl' 
                     : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
                 }`}>
                   Choose This Plan
@@ -364,7 +364,7 @@ export default function KeymanInsurance() {
  
 
       {/* Enhanced FAQ Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6">
@@ -407,7 +407,7 @@ export default function KeymanInsurance() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-900 via-blue-800 to-cyan-900 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-r from-blue-900 via-cyan-900 to-green-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-cyan-600/20"></div>
         <div className="relative max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-4xl lg:text-5xl font-black mb-6">

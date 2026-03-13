@@ -111,7 +111,7 @@ export default function ShopInsurance() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-br h-screen from-orange-600 via-red-600 to-pink-700 text-white">
+      <section className="py-16 bg-gradient-to-br h-screen from-blue-600 via-cyan-600 to-green-600 text-white">
         <div className="max-w-6xl mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
@@ -122,7 +122,7 @@ export default function ShopInsurance() {
                   Insurance
                 </span>
               </h1>
-              <p className="text-lg text-orange-100 mb-6">
+              <p className="text-lg text-cyan-100 mb-6">
                 Protect your business with comprehensive coverage for shops,
                 stores, and commercial establishments. Starting from just
                 ₹2,500/year.
@@ -141,7 +141,7 @@ export default function ShopInsurance() {
                   onChange={(e) =>
                     handleInputChange('businessType', e.target.value)
                   }
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-orange-500"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-blue-500"
                   required
                 >
                   <option value="">Select Business Type</option>
@@ -160,7 +160,7 @@ export default function ShopInsurance() {
                     onChange={(e) =>
                       handleInputChange('shopSize', e.target.value)
                     }
-                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-orange-500"
+                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-blue-500"
                     required
                   >
                     <option value="">Shop Size</option>
@@ -177,7 +177,7 @@ export default function ShopInsurance() {
                       handleInputChange('location', e.target.value)
                     }
                     placeholder="City/Location"
-                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-orange-500"
+                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-blue-500"
                     required
                   />
                 </div>
@@ -190,7 +190,7 @@ export default function ShopInsurance() {
                       handleInputChange('ownerName', e.target.value)
                     }
                     placeholder="Owner Name"
-                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-orange-500"
+                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-blue-500"
                     required
                   />
 
@@ -201,7 +201,7 @@ export default function ShopInsurance() {
                       handleInputChange('mobile', e.target.value)
                     }
                     placeholder="Mobile Number"
-                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-orange-500"
+                    className="px-4 py-3 rounded-lg border border-gray-300 text-gray-900 focus:ring-2 focus:ring-blue-500"
                     required
                   />
                 </div>
@@ -249,7 +249,7 @@ export default function ShopInsurance() {
       {/* Coverage Plans */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 lg:px-8">
-          <h2 className="text-4xl font-bold text-center text-transparent bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text mb-12">
+          <h2 className="text-4xl font-bold text-center text-transparent bg-gradient-to-r from-cyan-600 to-green-600 bg-clip-text mb-12">
             Choose Your Protection Plan
           </h2>
 
@@ -257,14 +257,14 @@ export default function ShopInsurance() {
             {coverageTypes.map((plan, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-200"
+                className="bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-200"
               >
                 <div className="text-center mb-6">
                   <div className="text-4xl mb-3">{plan.icon}</div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
                     {plan.name}
                   </h3>
-                  <div className="text-2xl font-bold text-transparent bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text">
+                  <div className="text-2xl font-bold text-transparent bg-gradient-to-r from-cyan-600 to-green-600 bg-clip-text">
                     {plan.price}
                   </div>
                 </div>

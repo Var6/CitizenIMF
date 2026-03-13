@@ -81,7 +81,7 @@ export default function FamilyInsurancePatnaPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-pink-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-cyan-50 to-green-50">
       {/* Schema Scripts */}
       <script
         type="application/ld+json"
@@ -122,7 +122,7 @@ export default function FamilyInsurancePatnaPage() {
       <FamilyInsuranceComparison />
 
       {/* CTA */}
-      <section className="py-16 px-6 bg-gradient-to-r from-green-600 to-emerald-600 text-white">
+      <section className="py-16 px-6 bg-gradient-to-r from-cyan-600 to-green-600 text-white">
         {/* ...client CTA component if needed... */}
       </section>
 

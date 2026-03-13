@@ -77,7 +77,7 @@ export default function MediclaimPolicyPatnaPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-50 via-white to-pink-50">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-cyan-50 to-green-50">
       {/* Schema Scripts */}
       <script
         type="application/ld+json"
@@ -107,56 +107,56 @@ export default function MediclaimPolicyPatnaPage() {
           What is Mediclaim Policy?
         </h2>
         <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-blue-50 p-8 rounded-lg border-l-4 border-purple-600">
+          <div className="bg-blue-50 p-8 rounded-lg border-l-4 border-cyan-600">
             <h3 className="text-xl font-bold mb-4 text-gray-800">
               Key Benefits
             </h3>
             <ul className="space-y-3 text-gray-700">
               <li className="flex items-start gap-3">
-                <span className="text-purple-600 font-bold">✓</span>
+                <span className="text-cyan-600 font-bold">✓</span>
                 <span>Cashless treatment at 10,000+ hospitals</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-purple-600 font-bold">✓</span>
+                <span className="text-cyan-600 font-bold">✓</span>
                 <span>Coverage from ₹3 lakhs to ₹25+ lakhs</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-purple-600 font-bold">✓</span>
+                <span className="text-cyan-600 font-bold">✓</span>
                 <span>No need to pay upfront bills</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-purple-600 font-bold">✓</span>
+                <span className="text-cyan-600 font-bold">✓</span>
                 <span>Direct hospital billing by insurer</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-purple-600 font-bold">✓</span>
+                <span className="text-cyan-600 font-bold">✓</span>
                 <span>Pre and post-hospitalization coverage</span>
               </li>
             </ul>
           </div>
-          <div className="bg-pink-50 p-8 rounded-lg border-l-4 border-pink-600">
+          <div className="bg-cyan-50 p-8 rounded-lg border-l-4 border-cyan-600">
             <h3 className="text-xl font-bold mb-4 text-gray-800">
               What's Covered?
             </h3>
             <ul className="space-y-3 text-gray-700">
               <li className="flex items-start gap-3">
-                <span className="text-pink-600 font-bold">▪</span>
+                <span className="text-cyan-600 font-bold">▪</span>
                 <span>Hospitalization (indoor admission)</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-pink-600 font-bold">▪</span>
+                <span className="text-cyan-600 font-bold">▪</span>
                 <span>Day-care surgeries</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-pink-600 font-bold">▪</span>
+                <span className="text-cyan-600 font-bold">▪</span>
                 <span>Maternity and childbirth</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-pink-600 font-bold">▪</span>
+                <span className="text-cyan-600 font-bold">▪</span>
                 <span>Organ transplant coverage</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-pink-600 font-bold">▪</span>
+                <span className="text-cyan-600 font-bold">▪</span>
                 <span>Critical illness riders</span>
               </li>
             </ul>
@@ -174,7 +174,7 @@ export default function MediclaimPolicyPatnaPage() {
         </h2>
         <div className="overflow-x-auto">
           <table className="w-full border-collapse border border-gray-300">
-            <thead className="bg-purple-600 text-white">
+            <thead className="bg-cyan-600 text-white">
               <tr>
                 <th className="border p-4 text-left">Plan Type</th>
                 <th className="border p-4 text-left">Coverage</th>
@@ -233,25 +233,25 @@ export default function MediclaimPolicyPatnaPage() {
           <div className="grid md:grid-cols-2 gap-4">
             <Link
               href="/products/health-insurance-patna"
-              className="text-purple-600 hover:underline flex items-center gap-2"
+              className="text-cyan-600 hover:underline flex items-center gap-2"
             >
               → Health Insurance in Patna
             </Link>
             <Link
               href="/products/family-insurance-patna"
-              className="text-purple-600 hover:underline flex items-center gap-2"
+              className="text-cyan-600 hover:underline flex items-center gap-2"
             >
               → Family Insurance Patna
             </Link>
             <Link
               href="/products/health"
-              className="text-purple-600 hover:underline flex items-center gap-2"
+              className="text-cyan-600 hover:underline flex items-center gap-2"
             >
               → General Health Plans
             </Link>
             <Link
               href="/blog"
-              className="text-purple-600 hover:underline flex items-center gap-2"
+              className="text-cyan-600 hover:underline flex items-center gap-2"
             >
               → Insurance Blog
             </Link>

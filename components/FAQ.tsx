@@ -146,12 +146,12 @@ const faqData: Record<CategoryKey, FAQItem[]> = {
 
   // Define the available categories for filter buttons
   const categories = [
-    { id: 'general' as CategoryKey, name: 'General', icon: '❓', color: 'from-blue-500 to-purple-500' },
+    { id: 'general' as CategoryKey, name: 'General', icon: '❓', color: 'from-blue-500 to-cyan-500' },
     { id: 'health' as CategoryKey, name: 'Health', icon: '🩺', color: 'from-green-500 to-blue-500' },
     { id: 'motor' as CategoryKey, name: 'Motor', icon: '🚗', color: 'from-yellow-500 to-orange-500' },
-    { id: 'life' as CategoryKey, name: 'Life', icon: '🌱', color: 'from-purple-500 to-pink-500' },
-    { id: 'investment' as CategoryKey, name: 'Investment', icon: '💰', color: 'from-green-600 to-blue-600' },
-    { id: 'claims' as CategoryKey, name: 'Claims', icon: '📄', color: 'from-orange-500 to-red-500' },
+    { id: 'life' as CategoryKey, name: 'Life', icon: '🌱', color: 'from-blue-500 to-cyan-500' },
+    { id: 'investment' as CategoryKey, name: 'Investment', icon: '💰', color: 'from-cyan-600 to-green-600' },
+    { id: 'claims' as CategoryKey, name: 'Claims', icon: '📄', color: 'from-cyan-600 to-green-600' },
   ];
 
   // State for active category and open FAQ
@@ -163,11 +163,11 @@ const faqData: Record<CategoryKey, FAQItem[]> = {
   }
 export default function FAQ() {
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
-          className="absolute top-40 left-20 w-32 h-32 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-2xl"
+          className="absolute top-40 left-20 w-32 h-32 bg-gradient-to-br from-blue-400/10 to-cyan-400/10 rounded-full blur-2xl"
           animate={{
             x: [0, 50, 0],
             y: [0, -30, 0],
@@ -203,7 +203,7 @@ export default function FAQ() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-cyan-600 via-blue-600 to-green-600 bg-clip-text mb-6">
             Frequently Asked Questions
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -320,7 +320,7 @@ export default function FAQ() {
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 rounded-3xl p-8 text-white">
+          <div className="bg-gradient-to-r from-blue-600 via-cyan-600 to-green-600 rounded-3xl p-8 text-white">
             <h3 className="text-3xl font-bold mb-4">Still Have Questions?</h3>
             <p className="text-xl text-blue-100 mb-6">
               Our expert advisors are here to help you 24/7

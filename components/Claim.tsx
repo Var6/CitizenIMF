@@ -93,7 +93,7 @@ export default function ClaimsBlogNewsletter() {
   }
 
   return (
-    <section ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section ref={sectionRef} className="py-20 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Tab Navigation */}
         <div 
@@ -189,7 +189,7 @@ export default function ClaimsBlogNewsletter() {
           >
             <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Latest <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600">Insights</span>
+                Latest <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-green-600">Insights</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Stay informed with our latest articles on financial planning, investment strategies, and market trends.
@@ -232,7 +232,7 @@ export default function ClaimsBlogNewsletter() {
             </div>
 
             <div className="text-center mt-12">
-              <button className="bg-gradient-to-r from-green-600 to-blue-600 text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-lg transition-all transform hover:scale-105">
+              <button className="bg-gradient-to-r from-cyan-600 to-green-600 text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-lg transition-all transform hover:scale-105">
                 View All Articles
               </button>
             </div>
@@ -247,7 +247,7 @@ export default function ClaimsBlogNewsletter() {
             }`}
           >
             <div className="max-w-4xl mx-auto text-center">
-              <div className="bg-gradient-to-br from-orange-500 via-yellow-500 to-green-500 rounded-3xl p-12 text-black">
+              <div className="bg-gradient-to-br from-cyan-600 to-green-600 rounded-3xl p-12 text-black">
                 <h2 className="text-4xl lg:text-5xl font-bold mb-6">
                   Stay Updated with Our Newsletter
                 </h2>

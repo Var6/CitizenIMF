@@ -18,7 +18,7 @@ export default function TopRibbon() {
         {/* LEFT: Social Media Icons */}
         <div className="flex items-center space-x-4">
           <Link
-            href="https://facebook.com"
+            href="https://facebook.com "
             target="_blank"
             aria-label="Facebook"
             className="hover:scale-110 transition"

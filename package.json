@@ -10,12 +10,12 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "@vercel/analytics": "^1.5.0",
+    "@vercel/analytics": "^1.1.4",
     "clsx": "^2.1.1",
     "emailjs-com": "^3.2.0",
     "lucide-react": "^0.542.0",
     "motion": "^12.23.26",
-    "next": "16.0.10",
+    "next": "^9.3.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^3.4.0"

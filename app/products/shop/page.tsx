@@ -109,7 +109,7 @@ export default function ShopInsurance() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white relative overflow-hidden">
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-br h-screen from-blue-600 via-cyan-600 to-green-600 text-white">
         <div className="max-w-6xl mx-auto px-4 lg:px-8">

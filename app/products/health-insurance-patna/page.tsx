@@ -80,7 +80,7 @@ export default function HealthInsurancePatnaPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-cyan-50 to-green-50">
+    <div className="min-h-screen bg-white relative overflow-hidden">
       {/* Schema Scripts */}
       <script
         type="application/ld+json"

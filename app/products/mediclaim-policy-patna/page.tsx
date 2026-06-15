@@ -77,7 +77,7 @@ export default function MediclaimPolicyPatnaPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-cyan-50">
+    <div className="min-h-screen bg-white relative overflow-hidden">
       {/* Schema Scripts */}
       <script
         type="application/ld+json"

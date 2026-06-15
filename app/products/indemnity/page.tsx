@@ -73,7 +73,7 @@ export default function IndemnityInsurance() {
  }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white relative overflow-hidden">
       {/* Hero */}
       <section className="py-16 bg-gradient-to-br from-blue-700 via-cyan-600 to-green-600 text-white">
         <div className="max-w-6xl mx-auto px-4 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">

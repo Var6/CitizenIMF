@@ -213,11 +213,11 @@ export default function ProductsPage() {
   })
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
-      {/* Enhanced Background Animation */}
-      <div className="absolute inset-0 pointer-events-none">
+    <div className="min-h-screen bg-white relative overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="fixed inset-0 pointer-events-none">
         <motion.div
-          className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-br from-cyan-400/20 to-blue-600/20 rounded-full blur-3xl"
+          className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-br from-blue-400/15 to-cyan-400/15 rounded-full blur-3xl"
           animate={{
             x: [0, 100, 0],
             y: [0, -50, 0],
@@ -230,7 +230,7 @@ export default function ProductsPage() {
           }}
         />
         <motion.div
-          className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-br from-cyan-400/20 to-green-600/20 rounded-full blur-3xl"
+          className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-br from-green-400/15 to-blue-400/15 rounded-full blur-3xl"
           animate={{
             x: [0, -100, 0],
             y: [0, 50, 0],
@@ -243,73 +243,62 @@ export default function ProductsPage() {
           }}
         />
         <motion.div
-          className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-br from-cyan-400/10 to-green-600/10 rounded-full blur-2xl"
+          className="absolute bottom-20 left-1/2 w-72 h-72 bg-gradient-to-br from-orange-400/15 to-yellow-400/15 rounded-full blur-3xl"
           animate={{
-            rotate: [0, 360],
-            scale: [1, 1.3, 1],
+            x: [0, -60, 0],
+            y: [0, -80, 0],
+            scale: [1, 1.2, 1],
           }}
           transition={{
-            duration: 30,
+            duration: 18,
             repeat: Infinity,
-            ease: "linear"
+            ease: "easeInOut"
           }}
         />
-        
-        {/* Floating particles */}
-        {Array.from({ length: 30 }).map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-white/20 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -100, 0],
-              opacity: [0, 1, 0],
-            }}
-            transition={{
-              duration: Math.random() * 10 + 5,
-              repeat: Infinity,
-              delay: Math.random() * 5,
-              ease: "easeInOut"
-            }}
-          />
-        ))}
       </div>
 
       {/* Breadcrumb */}
-      <motion.div 
-        className="bg-white/10 backdrop-blur-sm py-4 relative z-10 border-b border-white/20"
+      <motion.div
+        className="bg-gradient-to-r from-gray-100 via-blue-50 to-green-50 py-4 relative z-10"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center space-x-2 text-sm">
-            <Link href="/" className="text-cyan-400 hover:text-cyan-300 font-medium transition-colors">Home</Link>
-            <span className="text-gray-400">/</span>
-            <span className="text-white font-semibold">Products</span>
+            <Link href="/" className="text-blue-600 hover:text-blue-700 font-medium transition-colors">Home</Link>
+            <span className="text-gray-500">/</span>
+            <span className="text-gray-700 font-semibold">Products</span>
           </nav>
         </div>
       </motion.div>
 
       {/* Hero Section */}
-      <section className="py-20 text-white relative z-10 overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-cyan-600 to-green-600 text-white relative z-10 overflow-hidden">
+        <motion.div
+          className="absolute inset-0 bg-black/10"
+          animate={{
+            background: [
+              "linear-gradient(45deg, rgba(59,130,246,0.1), rgba(168,85,247,0.1), rgba(34,197,94,0.1), rgba(249,115,22,0.1))",
+              "linear-gradient(90deg, rgba(168,85,247,0.1), rgba(34,197,94,0.1), rgba(249,115,22,0.1), rgba(59,130,246,0.1))",
+              "linear-gradient(135deg, rgba(34,197,94,0.1), rgba(249,115,22,0.1), rgba(59,130,246,0.1), rgba(168,85,247,0.1))",
+              "linear-gradient(180deg, rgba(249,115,22,0.1), rgba(59,130,246,0.1), rgba(168,85,247,0.1), rgba(34,197,94,0.1))"
+            ]
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
-            <motion.h1 
-              className="text-6xl lg:text-8xl font-black mb-6"
+            <motion.h1
+              className="text-6xl lg:text-8xl font-black mb-6 bg-gradient-to-r from-white via-yellow-200 to-white bg-clip-text text-transparent"
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <span className="text-transparent bg-gradient-to-r from-cyan-300 via-blue-300 to-green-300 bg-clip-text">
-                Products
-              </span>
+              Products
             </motion.h1>
-            
-            <motion.h2 
+
+            <motion.h2
               className="text-3xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-yellow-300 via-orange-300 to-red-300 bg-clip-text mb-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -317,9 +306,9 @@ export default function ProductsPage() {
             >
               Complete Insurance & Investment Solutions
             </motion.h2>
-            
-            <motion.p 
-              className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
+
+            <motion.p
+              className="text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -328,30 +317,22 @@ export default function ProductsPage() {
             </motion.p>
           </div>
         </div>
-
-        {/* Floating Elements */}
-        <motion.div 
-          className="absolute top-20 left-10 w-20 h-20 bg-cyan-400/20 rounded-full blur-xl"
-          animate={{
-            y: [0, -20, 0],
-            x: [0, 10, 0],
-          }}
+        <motion.div
+          className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full blur-sm"
+          animate={{ y: [0, -20, 0], x: [0, 10, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         />
-        <motion.div 
-          className="absolute bottom-20 right-10 w-16 h-16 bg-orange-400/20 rounded-full blur-xl"
-          animate={{
-            y: [0, 15, 0],
-            x: [0, -15, 0],
-          }}
+        <motion.div
+          className="absolute bottom-20 right-10 w-16 h-16 bg-yellow-400/20 rounded-full blur-sm"
+          animate={{ y: [0, 15, 0], x: [0, -15, 0] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
       </section>
 
       {/* Search and Filter Section */}
-      <section className="py-10 bg-white/5 backdrop-blur-sm relative z-10 border-y border-white/10">
+      <section className="py-10 bg-gradient-to-br from-gray-50 to-blue-50 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="flex flex-col lg:flex-row gap-6 items-center justify-between"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -359,7 +340,7 @@ export default function ProductsPage() {
             viewport={{ once: true }}
           >
             {/* Search Bar */}
-            <motion.div 
+            <motion.div
               className="relative w-full lg:w-96"
               whileHover={{ scale: 1.02 }}
             >
@@ -368,9 +349,9 @@ export default function ProductsPage() {
                 placeholder="Search products..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full px-6 py-4 rounded-2xl border-2 border-white/20 bg-white/10 backdrop-blur-sm text-white placeholder-gray-300 focus:ring-4 focus:ring-cyan-500/30 focus:border-cyan-400 transition-all duration-300 shadow-lg"
+                className="w-full px-6 py-4 rounded-2xl border-2 border-gray-200 bg-white text-gray-800 placeholder-gray-400 focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 shadow-lg"
               />
-              <motion.div 
+              <motion.div
                 className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"
                 whileHover={{ scale: 1.1 }}
               >
@@ -379,7 +360,7 @@ export default function ProductsPage() {
             </motion.div>
 
             {/* Category Filter */}
-            <motion.div 
+            <motion.div
               className="flex flex-wrap gap-3 justify-center"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -392,8 +373,8 @@ export default function ProductsPage() {
                   onClick={() => setSelectedCategory(category.id)}
                   className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 ${
                     selectedCategory === category.id
-                      ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg'
-                      : 'bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 border border-white/20'
+                      ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-lg'
+                      : 'bg-white text-gray-700 hover:bg-blue-50 border border-gray-200 shadow-sm'
                   }`}
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
@@ -413,17 +394,16 @@ export default function ProductsPage() {
       {/* Products Grid */}
       <section className="py-20 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
             layout
           >
             {filteredProducts.map((product, index) => (
               <Link href={product.href} key={product.id}>
 
-
               <motion.div
                 key={product.id}
-                className="group relative bg-white/10 backdrop-blur-lg rounded-3xl p-6 shadow-2xl hover:shadow-cyan-500/25 transition-all duration-500 overflow-hidden border border-white/20"
+                className="group relative bg-white rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
@@ -432,19 +412,14 @@ export default function ProductsPage() {
                 layout
                 >
                 {/* Animated Background Gradient */}
-                <motion.div 
-                  className={`absolute inset-0 bg-gradient-to-br ${product.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
+                <motion.div
+                  className={`absolute inset-0 bg-gradient-to-br ${product.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
                 />
-                
-                {/* Gradient border effect */}
-                <div className={`absolute inset-0 rounded-3xl bg-gradient-to-r ${product.color} p-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-500`}>
-                  <div className="bg-slate-900/90 backdrop-blur-lg rounded-3xl h-full w-full" />
-                </div>
-                
+
                 {/* Content */}
                 <div className="relative z-10">
                   {/* Icon */}
-                  <motion.div 
+                  <motion.div
                     className={`w-16 h-16 ${product.bgColor} rounded-2xl flex items-center justify-center text-2xl text-white mb-4 shadow-lg`}
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.3 }}
@@ -453,28 +428,26 @@ export default function ProductsPage() {
                   </motion.div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors line-clamp-2">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
                     {product.title}
                   </h3>
-                  
+
                   {/* Description */}
-                  <p className="text-gray-300 text-sm leading-relaxed mb-6 line-clamp-4">
+                  <p className="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-4">
                     {product.description}
                   </p>
 
                   {/* Action Buttons */}
                   <div className="flex flex-col gap-2">
-                   
-                      <motion.button 
+                      <motion.button
                         className={`w-full bg-gradient-to-r ${product.color} text-white px-4 py-2.5 rounded-xl font-semibold hover:shadow-lg transition-all text-sm`}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
                         Learn More
                       </motion.button>
-                 
-                    <motion.button 
-                      className="w-full border border-white/30 text-gray-300 px-4 py-2.5 rounded-xl font-semibold hover:border-cyan-400 hover:text-cyan-400 transition-all text-sm"
+                    <motion.button
+                      className="w-full border border-gray-200 text-gray-600 px-4 py-2.5 rounded-xl font-semibold hover:border-blue-500 hover:text-blue-600 transition-all text-sm"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       >
@@ -483,14 +456,9 @@ export default function ProductsPage() {
                   </div>
                 </div>
 
-                {/* Decorative Elements */}
-                <motion.div 
-                  className="absolute top-4 right-4 w-6 h-6 bg-gradient-to-br from-cyan-400/30 to-blue-400/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  animate={{
-                    scale: [1, 1.2, 1],
-                    rotate: [0, 180, 360],
-                  }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                {/* Decorative dot */}
+                <motion.div
+                  className={`absolute top-4 right-4 w-6 h-6 bg-gradient-to-br ${product.color} rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300`}
                 />
               </motion.div>
             </Link>
@@ -499,15 +467,15 @@ export default function ProductsPage() {
 
           {/* No Results Message */}
           {filteredProducts.length === 0 && (
-            <motion.div 
+            <motion.div
               className="text-center py-20"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6 }}
             >
               <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-2xl font-bold text-white mb-2">No products found</h3>
-              <p className="text-gray-400">Try adjusting your search or filter criteria</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">No products found</h3>
+              <p className="text-gray-500">Try adjusting your search or filter criteria</p>
             </motion.div>
           )}
         </div>

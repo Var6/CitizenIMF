@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://citizenimf.com
+
+# Sitemaps
+Sitemap: https://citizenimf.com/sitemap.xml

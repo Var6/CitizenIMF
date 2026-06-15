@@ -26,12 +26,7 @@ export const sendEmail = async (formData: Record<string, string>) => {
   } catch (error) {
     // EmailJS rejects with { status, text } — log both so the real cause is visible.
     const err = error as { status?: number; text?: string };
-    const detail = `EmailJS error ${err?.status ?? "?"}: ${err?.text ?? String(error)}`;
-    console.error(detail);
-    // Temporary: surface the real cause on screen for production debugging.
-    if (typeof window !== "undefined") {
-      window.alert(detail);
-    }
+    console.error(`EmailJS error ${err?.status ?? "?"}: ${err?.text ?? String(error)}`);
     throw error;
   }
 };

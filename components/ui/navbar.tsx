@@ -198,11 +198,10 @@ export default function Navbar() {
                   Renew Policy
                 </Link>
                 <Link
-                  href="/contact"
-                  
+                  href="https://app.citizenimf.com"
                   className="text-blue-600 border border-blue-600 px-4 py-2 rounded-full text-sm font-medium hover:shadow-lg transition-all"
                 >
-                  Get Quote
+                  Partner's Login
                 </Link>
                 </div>
   </div>

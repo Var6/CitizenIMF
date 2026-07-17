@@ -434,7 +434,7 @@ export default function PartnersPage() {
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link 
-                href="/contact" 
+                href="https://app.citizenimf.com/register" 
                 className="border-2 border-white text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-orange-600 transition-colors inline-block"
               >
                 Become a Partner
